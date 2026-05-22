@@ -1842,13 +1842,23 @@ function CoPanel({co,data,upd,bang,onClose,onContact,onDeal,onProject}) {
 
 
 
+/* ── CoFv: stable field renderer (defined OUTSIDE CoInfoTab to prevent input remounting on every keystroke) ── */
+
+function CoFv({co,form,setForm,editing,k,label,multi=false}){
+
+  const onCh=e=>setForm({...form,[k]:e.target.value});
+
+  return <F l={label}>{editing?(multi?<textarea className="txa" value={form[k]||''} onChange={onCh}/>:<input className="inp" value={form[k]||''} onChange={onCh}/>):<div className="fv" style={multi?{whiteSpace:'pre-wrap'}:{}}>{co[k]||<span className="fv dim">—</span>}</div>}</F>;
+
+}
+
+
+
 /* ── CoInfoTab ── */
 
 function CoInfoTab({co,form,setForm,editing,data,upd}) {
 
   const ev=(k,v)=>setForm({...form,[k]:v});
-
-  const Fv=({k,label,multi=false})=><F l={label}>{editing?(multi?<textarea className="txa" value={form[k]||''} onChange={e=>ev(k,e.target.value)}/>:<input className="inp" value={form[k]||''} onChange={e=>ev(k,e.target.value)}/>):<div className="fv" style={multi?{whiteSpace:'pre-wrap'}:{}}>{co[k]||<span className="fv dim">—</span>}</div>}</F>;
 
   const togInd=ind=>setForm({...form,industries:form.industries.includes(ind)?form.industries.filter(x=>x!==ind):[...form.industries,ind]});
 
@@ -1894,13 +1904,13 @@ function CoInfoTab({co,form,setForm,editing,data,upd}) {
 
     <div className="frow">
 
-      <Fv k="inn" label="ИНН"/><Fv k="city" label="Город"/>
+      <CoFv co={co} form={form} setForm={setForm} editing={editing} k="inn" label="ИНН"/><CoFv co={co} form={form} setForm={setForm} editing={editing} k="city" label="Город"/>
 
     </div>
 
-    <Fv k="role" label="Роль компании"/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="role" label="Роль компании"/>
 
-    <Fv k="applicability" label="Применяемость продукции"/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="applicability" label="Применяемость продукции"/>
 
     <div className="sdiv"><div className="stitle">Контакты компании</div></div>
 
@@ -1916,31 +1926,31 @@ function CoInfoTab({co,form,setForm,editing,data,upd}) {
 
     <div className="sdiv"><div className="stitle">Бизнес-информация</div></div>
 
-    <Fv k="description" label="Что делает компания" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="description" label="Что делает компания" multi/>
 
-    <Fv k="whyRelevant" label="Почему релевантна теме" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="whyRelevant" label="Почему релевантна теме" multi/>
 
-    <Fv k="processes" label="Вероятные процессы" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="processes" label="Вероятные процессы" multi/>
 
-    <Fv k="applicationPoints" label="Точки применения решений" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="applicationPoints" label="Точки применения решений" multi/>
 
     <div className="sdiv"><div className="stitle">Подходящие решения</div></div>
 
-    <Fv k="solutionInnomatec" label="Innomatec" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="solutionInnomatec" label="Innomatec" multi/>
 
-    <Fv k="solutionLangAn" label="LangAn" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="solutionLangAn" label="LangAn" multi/>
 
     <div className="sdiv"><div className="stitle">Дополнительно</div></div>
 
-    <Fv k="searchTheme" label="Поисковая тема"/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="searchTheme" label="Поисковая тема"/>
 
-    <Fv k="inclusionBasis" label="Основание включения" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="inclusionBasis" label="Основание включения" multi/>
 
-    <Fv k="source" label="Источник"/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="source" label="Источник"/>
 
-    <Fv k="verificationStatus" label="Статус верификации"/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="verificationStatus" label="Статус верификации"/>
 
-    <Fv k="comment" label="Комментарий" multi/>
+    <CoFv co={co} form={form} setForm={setForm} editing={editing} k="comment" label="Комментарий" multi/>
 
     {co.createdAt&&<div className="date-stamp">Создана: {fmtDate(co.createdAt)}</div>}
 

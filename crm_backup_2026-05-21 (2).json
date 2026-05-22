@@ -1,6 +1,98 @@
 {
   "companies": [
     {
+      "inn": "4715019631",
+      "tags": [
+        1
+      ],
+      "industries": [
+        "Промышленное производство"
+      ],
+      "id": 200,
+      "name": "ТВСЗ, АО",
+      "applicability": "MUR",
+      "role": "",
+      "city": "Тихвин",
+      "phone": "+ 7 (81367) 31-680",
+      "email": "info@tvsz.ru",
+      "website": "http://tvsz.ru/",
+      "description": "вагоны",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "priority": "A",
+      "status": "Лид",
+      "createdAt": "2026-05-21T11:28:51.576Z",
+      "industry": "Промышленное производство"
+    },
+    {
+      "inn": "7714013456",
+      "tags": [],
+      "industries": [
+        "Авиация и авиационные двигатели",
+        "Испытательное оборудование"
+      ],
+      "id": 199,
+      "name": "ГИПРОНИИАВИАПРОМ МОСКВА",
+      "applicability": "",
+      "role": "",
+      "city": "",
+      "phone": "+7 (495) 228-83-38",
+      "email": "vmgap@vmgap.ru",
+      "website": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "priority": "A",
+      "status": "Лид",
+      "createdAt": "2026-05-21T10:25:53.002Z",
+      "industry": "Авиация и авиационные двигатели"
+    },
+    {
+      "inn": "1650126122",
+      "tags": [],
+      "industries": [
+        "Автомобилестроение"
+      ],
+      "id": 198,
+      "name": "ООО \"ЦФ КАМА\"",
+      "applicability": "",
+      "role": "OEM",
+      "city": "Набережные Челны",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "priority": "A",
+      "status": "Лид",
+      "createdAt": "2026-05-21T10:04:44.114Z"
+    },
+    {
       "inn": "",
       "tags": [],
       "industries": [
@@ -5915,9 +6007,65 @@
       "createdAt": "2025-01-15T10:00:00Z"
     },
     {
-      "id": 198,
-      "name": "АО «Трансмашхолдинг»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 201,
+      "name": "Уральский завод локомотивов",
+      "city": "Екатеринбург",
+      "phone": "",
+      "email": "",
+      "website": "https://www.uzloco.ru",
+      "role": "Производитель продукции",
+      "description": "Производство локомотивов и тяговых агрегатов",
+      "whyRelevant": "Производство двигателей и гидравлических систем → контроль герметичности, leak test",
+      "processes": "Двигатели, гидравлические системы",
+      "applicationPoints": "Рубашка охлаждения двигателя, гидроблок",
+      "solutionInnomatec": "Innomatec LTC-802 / LTC-EV",
+      "solutionLangAn": "LangAn Quick Connectors LA600/LA802",
+      "priority": "A",
+      "applicability": "",
+      "searchTheme": "Железнодорожный сектор",
+      "inclusionBasis": "Наличие производства двигателей и гидравлики",
+      "source": "https://www.uzloco.ru",
+      "verificationStatus": "Требует проверки",
+      "comment": "Подтвердить наличие leak test в цехах",
+      "status": "Лид",
+      "createdAt": "2026-05-21T18:34:17.663Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 202,
+      "name": "Трансмашхолдинг, Нижегородский филиал",
+      "city": "Нижний Новгород",
+      "phone": "",
+      "email": "",
+      "website": "https://www.tmholding.ru",
+      "role": "Производитель продукции",
+      "description": "Сборка вагонов и локомотивов, гидравлика, тормозные системы",
+      "whyRelevant": "Испытания гидравлики и пневматики → применение LTC и Quick Connectors",
+      "processes": "Гидравлические системы, тормозные линии",
+      "applicationPoints": "Гидроблок, тормозная магистраль",
+      "solutionInnomatec": "Innomatec LTC-802",
+      "solutionLangAn": "LangAn LA600 / LA802",
+      "priority": "A",
+      "applicability": "",
+      "searchTheme": "Железнодорожный сектор",
+      "inclusionBasis": "Наличие гидравлических испытаний",
+      "source": "https://www.tmholding.ru",
+      "verificationStatus": "Требует проверки",
+      "comment": "",
+      "status": "Лид",
+      "createdAt": "2026-05-21T18:34:17.663Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 203,
+      "name": "АО «Трансмашхолдинг»",
       "city": "Санкт-Петербург",
       "phone": "",
       "email": "",
@@ -5937,17 +6085,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.004Z"
+      "createdAt": "2026-05-21T18:43:44.339Z"
     },
     {
-      "id": 199,
-      "name": "ООО «Локомотивы России»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 204,
+      "name": "ООО «Локомотивы России»",
       "city": "Москва",
       "phone": "",
       "email": "",
@@ -5967,17 +6112,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.004Z"
+      "createdAt": "2026-05-21T18:43:44.339Z"
     },
     {
-      "id": 200,
-      "name": "АО «Вагонмаш»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 205,
+      "name": "АО «Вагонмаш»",
       "city": "Екатеринбург",
       "phone": "",
       "email": "",
@@ -5997,17 +6139,14 @@
       "verificationStatus": "Требует проверки",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.004Z"
+      "createdAt": "2026-05-21T18:43:44.340Z"
     },
     {
-      "id": 201,
-      "name": "АО «Новочеркасский электровозостроительный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 206,
+      "name": "АО «Новочеркасский электровозостроительный завод»",
       "city": "Ростов-на-Дону",
       "phone": "",
       "email": "",
@@ -6027,17 +6166,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.004Z"
+      "createdAt": "2026-05-21T18:43:44.340Z"
     },
     {
-      "id": 202,
-      "name": "АО «Синара – Транспортные машины»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 207,
+      "name": "АО «Синара – Транспортные машины»",
       "city": "Екатеринбург",
       "phone": "",
       "email": "",
@@ -6057,17 +6193,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.005Z"
+      "createdAt": "2026-05-21T18:43:44.340Z"
     },
     {
-      "id": 203,
-      "name": "АО «Уральские локомотивы»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 208,
+      "name": "АО «Уральские локомотивы»",
       "city": "Екатеринбург",
       "phone": "",
       "email": "",
@@ -6087,17 +6220,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.005Z"
+      "createdAt": "2026-05-21T18:43:44.340Z"
     },
     {
-      "id": 204,
-      "name": "АО «РЖД-Локомотивы»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 209,
+      "name": "АО «РЖД-Локомотивы»",
       "city": "Москва",
       "phone": "",
       "email": "",
@@ -6117,17 +6247,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.005Z"
+      "createdAt": "2026-05-21T18:43:44.341Z"
     },
     {
-      "id": 205,
-      "name": "АО «Красный Октябрь – вагонное производство»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 210,
+      "name": "АО «Красный Октябрь – вагонное производство»",
       "city": "Волгоград",
       "phone": "",
       "email": "",
@@ -6147,17 +6274,14 @@
       "verificationStatus": "Требует проверки",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.006Z"
+      "createdAt": "2026-05-21T18:43:44.341Z"
     },
     {
-      "id": 206,
-      "name": "АО «Крюковский вагоностроительный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 211,
+      "name": "АО «Крюковский вагоностроительный завод»",
       "city": "Кременчуг",
       "phone": "",
       "email": "",
@@ -6177,17 +6301,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.006Z"
+      "createdAt": "2026-05-21T18:43:44.341Z"
     },
     {
-      "id": 207,
-      "name": "АО «Северсталь-Локомотивы»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 212,
+      "name": "АО «Северсталь-Локомотивы»",
       "city": "Череповец",
       "phone": "",
       "email": "",
@@ -6207,17 +6328,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.006Z"
+      "createdAt": "2026-05-21T18:43:44.341Z"
     },
     {
-      "id": 208,
-      "name": "АО «Тверской вагоностроительный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 213,
+      "name": "АО «Тверской вагоностроительный завод»",
       "city": "Тверь",
       "phone": "",
       "email": "",
@@ -6237,17 +6355,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.007Z"
+      "createdAt": "2026-05-21T18:43:44.342Z"
     },
     {
-      "id": 209,
-      "name": "АО «Пермский локомотивный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 214,
+      "name": "АО «Пермский локомотивный завод»",
       "city": "Пермь",
       "phone": "",
       "email": "",
@@ -6267,17 +6382,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.007Z"
+      "createdAt": "2026-05-21T18:43:44.342Z"
     },
     {
-      "id": 210,
-      "name": "АО «Коломенский завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 215,
+      "name": "АО «Коломенский завод»",
       "city": "Коломна",
       "phone": "",
       "email": "",
@@ -6297,17 +6409,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.007Z"
+      "createdAt": "2026-05-21T18:43:44.342Z"
     },
     {
-      "id": 211,
-      "name": "АО «БелАЗ-Трансмаш»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 216,
+      "name": "АО «БелАЗ-Трансмаш»",
       "city": "Минск",
       "phone": "",
       "email": "",
@@ -6327,17 +6436,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.007Z"
+      "createdAt": "2026-05-21T18:43:44.343Z"
     },
     {
-      "id": 212,
-      "name": "АО «Тамбовский локомотивный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 217,
+      "name": "АО «Тамбовский локомотивный завод»",
       "city": "Тамбов",
       "phone": "",
       "email": "",
@@ -6357,17 +6463,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.008Z"
+      "createdAt": "2026-05-21T18:43:44.343Z"
     },
     {
-      "id": 213,
-      "name": "АО «Курский вагоностроительный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 218,
+      "name": "АО «Курский вагоностроительный завод»",
       "city": "Курск",
       "phone": "",
       "email": "",
@@ -6387,17 +6490,14 @@
       "verificationStatus": "",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.008Z"
+      "createdAt": "2026-05-21T18:43:44.343Z"
     },
     {
-      "id": 214,
-      "name": "АО «Нижегородский локомотиворемонтный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 219,
+      "name": "АО «Нижегородский локомотиворемонтный завод»",
       "city": "Нижний Новгород",
       "phone": "",
       "email": "",
@@ -6417,17 +6517,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.008Z"
+      "createdAt": "2026-05-21T18:43:44.344Z"
     },
     {
-      "id": 215,
-      "name": "АО «Воронежский вагоностроительный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 220,
+      "name": "АО «Воронежский вагоностроительный завод»",
       "city": "Воронеж",
       "phone": "",
       "email": "",
@@ -6447,17 +6544,14 @@
       "verificationStatus": "",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.008Z"
+      "createdAt": "2026-05-21T18:43:44.345Z"
     },
     {
-      "id": 216,
-      "name": "АО «Липецкий локомотивный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 221,
+      "name": "АО «Липецкий локомотивный завод»",
       "city": "Липецк",
       "phone": "",
       "email": "",
@@ -6477,17 +6571,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.009Z"
+      "createdAt": "2026-05-21T18:43:44.345Z"
     },
     {
-      "id": 217,
-      "name": "АО «Ярославский локомотивный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 222,
+      "name": "АО «Ярославский локомотивный завод»",
       "city": "Ярославль",
       "phone": "",
       "email": "",
@@ -6507,17 +6598,14 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.009Z"
+      "createdAt": "2026-05-21T18:43:44.346Z"
     },
     {
-      "id": 218,
-      "name": "АО «Владимирский локомотивный завод»",
       "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 223,
+      "name": "АО «Владимирский локомотивный завод»",
       "city": "Владимир",
       "phone": "",
       "email": "",
@@ -6537,21 +6625,217 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "industries": [
-        "ЖД"
-      ],
-      "industry": "ЖД",
-      "tags": [],
-      "createdAt": "2026-05-21T20:12:12.009Z"
+      "createdAt": "2026-05-21T18:43:44.346Z"
     }
   ],
-  "contacts": [],
+  "contacts": [
+    {
+      "id": 8,
+      "companyIds": [
+        200
+      ],
+      "name": "Валентин Сергеевич Сергеичев",
+      "position": "ОМТС",
+      "phones": [
+        "+79219982665"
+      ],
+      "emails": [
+        "vsergeichev@tvsz.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T11:29:13.480Z"
+    },
+    {
+      "id": 7,
+      "companyIds": [
+        199
+      ],
+      "name": "Кабальнов Александр Кирилович",
+      "position": "конструкторский отдел",
+      "phones": [
+        "+7 (495) 228-83-38"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T10:26:32.833Z"
+    },
+    {
+      "id": 6,
+      "companyIds": [
+        199
+      ],
+      "name": "Драндалуш Илья Александрович",
+      "position": "директор по инжинерингу",
+      "phones": [
+        "+7 (495) 228-83-38"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T10:26:17.337Z"
+    },
+    {
+      "id": 5,
+      "companyIds": [
+        198
+      ],
+      "name": "Маюков Иван Юрьевич",
+      "position": "Главный инженер-технолог",
+      "phones": [
+        "+7 960 070 57 47"
+      ],
+      "emails": [
+        "mayukoviyu@kamaz.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T10:08:19.560Z"
+    },
+    {
+      "id": 4,
+      "companyIds": [
+        198
+      ],
+      "name": "Михаил Толокнов",
+      "position": "больше не работает ",
+      "phones": [
+        "+79274503922"
+      ],
+      "emails": [
+        "toloknovme@kamaz.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T10:06:14.111Z"
+    },
+    {
+      "id": 3,
+      "companyIds": [
+        198
+      ],
+      "name": "Айрат Намятов",
+      "position": "ОМТС",
+      "phones": [
+        "+79600829999"
+      ],
+      "emails": [
+        "namyatov.ar@kamaz.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T10:05:38.820Z"
+    },
+    {
+      "id": 2,
+      "companyIds": [
+        198
+      ],
+      "name": "Мария Нагорнюк",
+      "position": "ОМТС",
+      "phones": [
+        "+ 7 960 077 28 07"
+      ],
+      "emails": [
+        "nagornyukmd@kamaz.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T10:05:11.183Z"
+    },
+    {
+      "id": 1,
+      "companyIds": [
+        1
+      ],
+      "name": "МИША",
+      "position": "",
+      "phones": [],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-05-21T09:54:13.931Z"
+    }
+  ],
   "deals": [],
   "projects": [],
   "tasks": [],
-  "actions": [],
-  "tags": [],
-  "customIndustries": [
-    "ЖД"
-  ]
+  "actions": [
+    {
+      "id": 6,
+      "companyId": 200,
+      "contactId": 8,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "по MUR пообщаться. Там роботы",
+      "planned": true,
+      "plannedDate": "2026-05-28T01:00:00.000Z",
+      "date": null,
+      "createdAt": "2026-05-21T11:29:43.439Z"
+    },
+    {
+      "id": 5,
+      "companyId": 198,
+      "contactId": 4,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "не хочет называть где работает, ничего не хочет. ",
+      "planned": false,
+      "plannedDate": null,
+      "date": "2026-05-21T10:16:01.455Z",
+      "createdAt": "2026-05-21T10:16:01.455Z"
+    },
+    {
+      "id": 4,
+      "companyId": 198,
+      "contactId": 5,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "узнать про адаптер Langan",
+      "planned": true,
+      "plannedDate": "2026-06-01T03:02:00.000Z",
+      "date": null,
+      "createdAt": "2026-05-21T10:11:28.164Z"
+    },
+    {
+      "id": 2,
+      "companyId": 198,
+      "contactId": 5,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "Узнать про адаптер LANGAN ",
+      "planned": false,
+      "plannedDate": null,
+      "date": "2026-05-21T10:09:10.739Z",
+      "createdAt": "2026-05-21T10:09:10.739Z"
+    },
+    {
+      "id": 1,
+      "companyId": 1,
+      "contactId": 1,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "ыфв\n\n[Отчет]\nывыва",
+      "planned": false,
+      "plannedDate": "2026-05-10T01:00:00.000Z",
+      "date": "2026-05-21T09:54:51.722Z",
+      "createdAt": "2026-05-21T09:54:32.578Z"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "vip"
+    }
+  ],
+  "customIndustries": []
 }

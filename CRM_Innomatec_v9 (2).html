@@ -892,17 +892,17 @@ function App() {
 
 
 
-    {selCo   && <CoPanel    key={selCo.id}   co={selCo}    data={data} upd={upd} bang={bang} onClose={()=>setOpenCo(null)} onContact={id=>setOpenCont(id)} onDeal={id=>setOpenDeal(id)} onProject={id=>setOpenProj(id)}/>}
+    {selCo   && <CoPanel    key={selCo.id}   co={selCo}    data={data} upd={upd} bang={bang} onClose={()=>setOpenCo(null)} onContact={id=>setOpenCont(id)} onDeal={id=>setOpenDeal(id)} onProject={id=>setOpenProj(id)} onOpenAction={id=>{setOpenCo(null);setOpenAction(id);}}/>}
 
     {selDeal && <DealPanel  key={selDeal.id} deal={selDeal} data={data} upd={upd} bang={bang} onClose={()=>setOpenDeal(null)}/>}
 
     {selProj && <ProjPanel  key={selProj.id} proj={selProj} data={data} upd={upd} bang={bang} onClose={()=>setOpenProj(null)} onContact={id=>setOpenCont(id)}/>}
 
-    {selTask && <TaskPanel  key={selTask.id} task={selTask} data={data} upd={upd} bang={bang} onClose={()=>setOpenTask(null)}/>}
+    {selTask && <TaskPanel  key={selTask.id} task={selTask} data={data} upd={upd} bang={bang} onClose={()=>setOpenTask(null)} onSelCo={id=>{setOpenTask(null);setOpenCo(id);}}/>}
 
-    {selCont && <ContPanel  key={selCont.id} contact={selCont} data={data} upd={upd} bang={bang} onClose={()=>setOpenCont(null)}/>}
+    {selCont && <ContPanel  key={selCont.id} contact={selCont} data={data} upd={upd} bang={bang} onClose={()=>setOpenCont(null)} onOpenAction={id=>{setOpenCont(null);setOpenAction(id);}}/>}
 
-    {selAction && <ActionPanel key={selAction.id} action={selAction} data={data} upd={upd} bang={bang} onClose={()=>setOpenAction(null)}/>}
+    {selAction && <ActionPanel key={selAction.id} action={selAction} data={data} upd={upd} bang={bang} onClose={()=>setOpenAction(null)} onSelCo={id=>{setOpenAction(null);setOpenCo(id);}} onSelCont={id=>{setOpenAction(null);setOpenCont(id);}}/>}
 
     {showTagsFilter && <TagFilterPanel data={data} upd={upd} onClose={()=>setShowTagsFilter(false)} onSelect={id=>{if(id==='__clear__'){setActiveTagIds([]);}else{setActiveTagIds(prev=>prev.includes(id)?prev.filter(x=>x!==id):[...prev,id]);}setTab('companies');}} bang={bang} selectedTagIds={activeTagIds}/>}
 
@@ -922,29 +922,43 @@ function App() {
 
 function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
-  // Объединяем задачи и запланированные действия для единого вывода!
+  // ЗАДАЧИ: и открытые (запланированные), и закрытые (выполненные). Всё показываем здесь.
 
-  const openTasks = data.tasks.filter(t=>!t.completed).map(t=>({...t, _isTask:true}));
+  const openTasks = data.tasks.filter(t=>!t.completed).map(t=>({...t, _isTask:true, _closed:false}));
 
-  const plannedActions = data.actions.filter(a=>a.planned).map(a=>({...a, _isAction:true}));
+  const closedTasks = data.tasks.filter(t=>t.completed).map(t=>({...t, _isTask:true, _closed:true}));
+
+  const openActions = data.actions.filter(a=>a.planned).map(a=>({...a, _isAction:true, _closed:false}));
+
+  const closedActions = data.actions.filter(a=>!a.planned).map(a=>({...a, _isAction:true, _closed:true}));
 
   
 
-  const allUpcoming = [...openTasks, ...plannedActions].sort((a,b)=>{
+  // Сначала открытые (по дате возрастания), потом закрытые (свежие сверху)
 
-    const dA = a._isTask ? (a.deadline||'') : (a.plannedDate||'');
+  const sortDate=item=>item._isTask?(item.deadline||''):(item.plannedDate||item.date||'');
 
-    const dB = b._isTask ? (b.deadline||'') : (b.plannedDate||'');
+  const opens=[...openTasks, ...openActions].sort((a,b)=>{
 
-    if(!dA&&!dB) return 0;
+    const dA=sortDate(a), dB=sortDate(b);
 
-    if(!dA) return 1;
-
-    if(!dB) return -1;
+    if(!dA&&!dB)return 0; if(!dA)return 1; if(!dB)return -1;
 
     return dA.localeCompare(dB);
 
   });
+
+  const closeds=[...closedTasks, ...closedActions].sort((a,b)=>{
+
+    const dA=a._isTask?(a.deadline||a.createdAt||''):(a.date||a.createdAt||'');
+
+    const dB=b._isTask?(b.deadline||b.createdAt||''):(b.date||b.createdAt||'');
+
+    return dB.localeCompare(dA);
+
+  });
+
+  const allUpcoming = [...opens, ...closeds];
 
 
 
@@ -958,11 +972,11 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
     aPr: data.projects.filter(p=>p.stage!=='Завершён').length,
 
-    oTk: allUpcoming.length, // Теперь счетчик учитывает всё
+    oTk: opens.length,
 
     inds: Object.entries(data.companies.reduce((m,c)=>{(c.industries||[c.industry].filter(Boolean)).forEach(ind=>{m[ind||'Не указана']=(m[ind||'Не указана']||0)+1;});return m},{})).sort((a,b)=>b[1]-a[1]).slice(0,6),
 
-  }),[data, allUpcoming.length]);
+  }),[data, opens.length]);
 
 
 
@@ -988,45 +1002,53 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
     {allUpcoming.length > 0 && <div style={{padding:'0 26px 18px'}}>
 
-      <div style={{fontFamily:'Instrument Serif,serif',fontSize:18,marginBottom:10,display:'flex',alignItems:'center',gap:10}}>📋 Задачи и действия<span style={{fontSize:13,color:'var(--mu)',fontFamily:'Geist,sans-serif'}}>({allUpcoming.length})</span></div>
+      <div style={{fontFamily:'Instrument Serif,serif',fontSize:18,marginBottom:10,display:'flex',alignItems:'center',gap:10}}>📋 Задачи<span style={{fontSize:13,color:'var(--mu)',fontFamily:'Geist,sans-serif'}}>(открытых {opens.length}, всего {allUpcoming.length})</span></div>
 
       <div style={{display:'flex',gap:8,overflowX:'auto',paddingBottom:6}}>
 
-        {allUpcoming.slice(0,20).map(item=>{
+        {allUpcoming.slice(0,30).map(item=>{
 
           const isTask = item._isTask;
 
-          const overdue = isTask ? (item.deadline&&isPast(item.deadline)) : (item.plannedDate&&isPast(item.plannedDate));
+          const closed = item._closed;
+
+          const overdue = !closed && (isTask ? (item.deadline&&isPast(item.deadline)) : (item.plannedDate&&isPast(item.plannedDate)));
 
           const co = item.companyId ? coName(item.companyId) : '';
 
           const contact = item.contactId ? data.contacts.find(c=>c.id===item.contactId)?.name : '';
 
-          const dateStr = isTask ? (item.deadline?fmtDate(item.deadline):'Без срока') : (item.plannedDate?fmtDate(item.plannedDate):'Без срока');
+          const dateStr = isTask 
+
+            ? (item.deadline?fmtDate(item.deadline):'Без срока') 
+
+            : (item.plannedDate?fmtDate(item.plannedDate):(item.date?fmtDate(item.date):'Без даты'));
 
           const title = isTask ? (item.title||'Без названия') : (`${item.type}${contact?` с ${contact}`:''}`);
 
-          const sub = isTask ? item.type : item.content?.split('\n')[0];
+          const borderColor = closed?'var(--green,#16a34a)':(overdue?'var(--red)':'var(--blue)');
+
+          const dateColor = closed?'var(--mu)':(overdue?'var(--red)':'var(--blue)');
 
 
 
-          return <div key={(isTask?'t-':'a-')+item.id} style={{minWidth:280,maxWidth:300,padding:'10px 12px',background:'var(--bg-card)',border:'1px solid var(--border)',borderRadius:'var(--r)',cursor:'pointer',borderLeft:overdue?'3px solid var(--red)':'3px solid var(--blue)'}} onClick={()=>isTask ? onSelTask(item.id) : onOpenAction(item.id)}>
+          return <div key={(isTask?'t-':'a-')+item.id} style={{minWidth:280,maxWidth:300,padding:'10px 12px',background:'var(--bg-card)',border:'1px solid var(--border)',borderRadius:'var(--r)',cursor:'pointer',borderLeft:`3px solid ${borderColor}`,opacity:closed?0.75:1}} onClick={()=>isTask ? onSelTask(item.id) : onOpenAction(item.id)}>
 
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:4}}>
 
-              <span style={{fontSize:12,fontFamily:'Geist Mono,monospace',color:overdue?'var(--red)':'var(--blue)',fontWeight:500}}>
+              <span style={{fontSize:12,fontFamily:'Geist Mono,monospace',color:dateColor,fontWeight:500}}>
 
                 {dateStr}
 
               </span>
 
-              <span style={{fontSize:11,fontFamily:'Geist Mono,monospace',padding:'2px 6px',borderRadius:4,background:'var(--bg-a)',color:'var(--mu)'}}>{isTask?'Задача':'Действие'}</span>
+              <span style={{fontSize:11,fontFamily:'Geist Mono,monospace',padding:'2px 6px',borderRadius:4,background:'var(--bg-a)',color:closed?'var(--green,#16a34a)':'var(--mu)'}}>{closed?'✓ Закрыта':'Открыта'}</span>
 
             </div>
 
-            <div style={{fontSize:14,fontWeight:500,marginBottom:4}}>{title}</div>
+            <div style={{fontSize:14,fontWeight:500,marginBottom:4,textDecoration:closed?'line-through':'none'}}>{title}</div>
 
-            {(co||sub)&&<div style={{fontSize:12,color:'var(--mu)'}}>{co}{co&&sub?' · ':''}{sub}</div>}
+            {(co||contact)&&<div style={{fontSize:12,color:'var(--mu)'}}>{co}{co&&contact?' · ':''}{contact}</div>}
 
           </div>;
 
@@ -1039,20 +1061,6 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
     
 
     <div style={{padding:'0 26px 26px'}}>
-
-      <div style={{fontFamily:'Instrument Serif,serif',fontSize:18,marginBottom:10}}>Топ отраслей</div>
-
-      <table className="tbl"><thead><tr><th>Отрасль</th><th style={{textAlign:'right',width:80}}>Кол-во</th><th style={{width:'38%'}}>Доля</th></tr></thead>
-
-        <tbody>{s.inds.map(([ind,cnt])=>(
-
-          <tr key={ind}><td>{ind}</td><td style={{textAlign:'right',fontFamily:'Geist Mono,monospace'}}>{cnt}</td>
-
-          <td><div className="pbar-w"><div className="pbar" style={{width:`${cnt/s.cos*100}%`}}/></div></td></tr>
-
-        ))}</tbody>
-
-      </table>
 
     </div>
 
@@ -1134,7 +1142,7 @@ function loadWidths() {
 
 
 
-function CoCell({colId, c, tags, colWidths}) {
+function CoCell({colId, c, tags, colWidths, onCityClick}) {
 
   const w = colWidths[colId];
 
@@ -1168,7 +1176,7 @@ function CoCell({colId, c, tags, colWidths}) {
 
   if(colId==='applicability') return <td className="cd" style={style}>{c.applicability||'—'}</td>;
 
-  if(colId==='city')    return <td className="cd" style={style}>{c.city||'—'}</td>;
+  if(colId==='city')    return <td className="cd" style={{...style,cursor:c.city?'pointer':undefined}} onClick={()=>c.city&&onCityClick&&onCityClick(c.city)} title={c.city?'Фильтр по городу: '+c.city:''}>{c.city||'—'}</td>;
 
   if(colId==='priority') return <td style={style}><PBadge v={c.priority}/></td>;
 
@@ -1250,6 +1258,8 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
   const [fSt,setFSt]       = useState('');
 
+  const [fCity,setFCity]   = useState('');
+
   const [showNew,setShowNew]= useState(false);
 
   const [visibleCols,setVisibleCols] = useState(loadCols);
@@ -1324,6 +1334,8 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
       if(fSt   && String(c.status||'Лид')!==fSt)  return false;
 
+      if(fCity && String(c.city||'')!==fCity) return false;
+
       if(activeTagIds&&activeTagIds.length>0){
 
         const ct=c.tags||[];
@@ -1336,7 +1348,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
     });
 
-  },[data.companies,q,fInd,fPrio,fSt,activeTagIds]);
+  },[data.companies,q,fInd,fPrio,fSt,fCity,activeTagIds]);
 
 
 
@@ -1424,6 +1436,8 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
         </button>}
 
+      {fCity&&<button className="btn btn-sm btn-d" onClick={()=>setFCity('')}>× {fCity}</button>}
+
     </div>
 
 
@@ -1478,7 +1492,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
                   {activeCols.map(col=>(
 
-                    <CoCell key={col.id} colId={col.id} c={c} tags={data.tags} colWidths={colWidths}/>
+                    <CoCell key={col.id} colId={col.id} c={c} tags={data.tags} colWidths={colWidths} onCityClick={city=>{setFCity(city);setQ('');}} />
 
                   ))}
 
@@ -1650,7 +1664,7 @@ function NewCoForm({onClose,onSave,data,upd}) {
 
         <F l="ИНН"><input className="inp" value={f.inn} onChange={e=>setF({...f,inn:e.target.value})} placeholder="1234567890"/></F>
 
-        <F l="Город"><input className="inp" value={f.city} onChange={e=>setF({...f,city:e.target.value})} placeholder="Москва"/></F>
+        <F l="Город"><CityInput value={f.city} onChange={v=>setF({...f,city:v})} cities={[...new Set(data.companies.map(c=>c.city).filter(Boolean))].sort()}/></F>
 
       </div>
 
@@ -1694,7 +1708,7 @@ function NewCoForm({onClose,onSave,data,upd}) {
 
 /* ══ Company Panel ══ */
 
-function CoPanel({co,data,upd,bang,onClose,onContact,onDeal,onProject}) {
+function CoPanel({co,data,upd,bang,onClose,onContact,onDeal,onProject,onOpenAction}) {
 
   const [editing,setEditing]=useState(false);
 
@@ -1832,7 +1846,7 @@ function CoPanel({co,data,upd,bang,onClose,onContact,onDeal,onProject}) {
 
       {tab==='projects' && <CoProjsTab    projects={projects} onOpen={onProject} co={co} data={data} upd={upd} bang={bang}/>}
 
-      {tab==='history'  && <CoHistoryTab  history={history} contacts={contacts} co={co} data={data} upd={upd} bang={bang}/>}
+      {tab==='history'  && <CoHistoryTab  history={history} contacts={contacts} co={co} data={data} upd={upd} bang={bang} onOpenAction={onOpenAction}/>}
 
     </div>
 
@@ -1843,6 +1857,21 @@ function CoPanel({co,data,upd,bang,onClose,onContact,onDeal,onProject}) {
 
 
 /* ── CoFv: stable field renderer (defined OUTSIDE CoInfoTab to prevent input remounting on every keystroke) ── */
+
+function CityInput({value,onChange,cities=[]}){
+  const [open,setOpen]=React.useState(false);
+  const [q,setQ]=React.useState(value||'');
+  React.useEffect(()=>setQ(value||''),[value]);
+  const filtered=q?cities.filter(c=>c.toLowerCase().includes(q.toLowerCase())&&c!==q):[];
+  return <div style={{position:'relative'}}>
+    <input className="inp" value={q} placeholder="Москва"
+      onChange={e=>{setQ(e.target.value);onChange(e.target.value);setOpen(true);}}
+      onFocus={()=>setOpen(true)} onBlur={()=>setTimeout(()=>setOpen(false),150)}/>
+    {open&&filtered.length>0&&<div style={{position:'absolute',top:'100%',left:0,right:0,background:'var(--bg-card)',border:'1px solid var(--border-s)',borderRadius:'var(--r)',boxShadow:'var(--shm)',zIndex:200,maxHeight:180,overflowY:'auto'}}>
+      {filtered.slice(0,10).map(c=><div key={c} style={{padding:'6px 10px',fontSize:13,cursor:'pointer',borderBottom:'1px solid var(--border)'}} onMouseDown={()=>{setQ(c);onChange(c);setOpen(false);}} className="row">{c}</div>)}
+    </div>}
+  </div>;
+}
 
 function CoFv({co,form,setForm,editing,k,label,multi=false}){
 
@@ -1904,7 +1933,7 @@ function CoInfoTab({co,form,setForm,editing,data,upd}) {
 
     <div className="frow">
 
-      <CoFv co={co} form={form} setForm={setForm} editing={editing} k="inn" label="ИНН"/><CoFv co={co} form={form} setForm={setForm} editing={editing} k="city" label="Город"/>
+      <CoFv co={co} form={form} setForm={setForm} editing={editing} k="inn" label="ИНН"/>{editing?<F l="Город"><CityInput value={form.city||''} onChange={v=>setForm({...form,city:v})} cities={[...new Set(data.companies.filter(x=>x.id!==co.id).map(c=>c.city).filter(Boolean))].sort()}/></F>:<CoFv co={co} form={form} setForm={setForm} editing={editing} k="city" label="Город"/>}
 
     </div>
 
@@ -2052,7 +2081,7 @@ function CoProjsTab({projects,onOpen,co,data,upd,bang}) {
 
 /* ── CoHistoryTab (история + планирование) ── */
 
-function CoHistoryTab({history,contacts,co,data,upd,bang}) {
+function CoHistoryTab({history,contacts,co,data,upd,bang,onOpenAction}) {
 
   const [showF,setShowF]=useState(false);
 
@@ -2062,9 +2091,13 @@ function CoHistoryTab({history,contacts,co,data,upd,bang}) {
 
 
 
-  const planned = history.filter(a=>a.planned&&isFuture(a.plannedDate)).sort((a,b)=>(a.plannedDate||'').localeCompare(b.plannedDate||''));
+  // Открытые: все запланированные действия (planned=true). 
 
-  const past    = history.filter(a=>!a.planned||(a.planned&&isPast(a.plannedDate))).sort((a,b)=>(b.date||b.plannedDate||'').localeCompare(a.date||a.plannedDate||''));
+  // Закрытые: записанные «история» (planned=false).
+
+  const planned = history.filter(a=>a.planned).sort((a,b)=>(a.plannedDate||'').localeCompare(b.plannedDate||''));
+
+  const past    = history.filter(a=>!a.planned).sort((a,b)=>(b.date||b.plannedDate||'').localeCompare(a.date||a.plannedDate||''));
 
 
 
@@ -2072,7 +2105,7 @@ function CoHistoryTab({history,contacts,co,data,upd,bang}) {
 
     <div className="stitle">
 
-      <span>Действия</span>
+      <span>Задачи</span>
 
       <button className="btn btn-p btn-sm" onClick={()=>setShowF(true)}><I n="plus" s={12}/> Добавить</button>
 
@@ -2082,11 +2115,11 @@ function CoHistoryTab({history,contacts,co,data,upd,bang}) {
 
     {planned.length>0&&<>
 
-      <div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--blue)',marginBottom:6,marginTop:4}}>📅 Запланировано</div>
+      <div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--blue)',marginBottom:6,marginTop:4}}>📅 ОТКРЫТЫЕ ({planned.length})</div>
 
       {planned.map(a=>{const ct=a.contactId?ctById(a.contactId):null;const pr=a.projectId?prById(a.projectId):null;return(
 
-        <div key={a.id} className="card planned">
+        <div key={a.id} className="card planned" style={{cursor:'pointer'}} onClick={()=>onOpenAction&&onOpenAction(a.id)}>
 
           <div className="ch">
 
@@ -2106,6 +2139,8 @@ function CoHistoryTab({history,contacts,co,data,upd,bang}) {
 
           <div className="cs2" style={{whiteSpace:'pre-wrap'}}>{a.content}</div>
 
+          {a.files&&a.files.length>0&&<div style={{marginTop:6,fontSize:11,color:'var(--mu)'}}>📎 {a.files.length} файл(ов)</div>}
+
         </div>);})}
 
     </>}
@@ -2114,11 +2149,13 @@ function CoHistoryTab({history,contacts,co,data,upd,bang}) {
 
     {past.length>0&&<>
 
-      {planned.length>0&&<div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--mu)',marginBottom:6,marginTop:12}}>История</div>}
+      {planned.length>0&&<div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--mu)',marginBottom:6,marginTop:12}}>✓ ЗАКРЫТЫЕ ({past.length})</div>}
+
+      {past.length>0&&planned.length===0&&<div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--mu)',marginBottom:6,marginTop:4}}>✓ ЗАКРЫТЫЕ ({past.length})</div>}
 
       {past.map(a=>{const ct=a.contactId?ctById(a.contactId):null;const pr=a.projectId?prById(a.projectId):null;return(
 
-        <div key={a.id} className="card">
+        <div key={a.id} className="card" style={{cursor:'pointer'}} onClick={()=>onOpenAction&&onOpenAction(a.id)}>
 
           <div className="ch">
 
@@ -2138,19 +2175,21 @@ function CoHistoryTab({history,contacts,co,data,upd,bang}) {
 
           <div className="cs2" style={{whiteSpace:'pre-wrap'}}>{a.content}</div>
 
+          {a.files&&a.files.length>0&&<div style={{marginTop:6,fontSize:11,color:'var(--mu)'}}>📎 {a.files.length} файл(ов)</div>}
+
         </div>);})}
 
     </>}
 
 
 
-    {history.length===0&&<div className="empty" style={{padding:'36px 0'}}><div className="et" style={{fontSize:17}}>Записей нет</div><div className="es">Добавьте запись или запланируйте действие</div></div>}
+    {history.length===0&&<div className="empty" style={{padding:'36px 0'}}><div className="et" style={{fontSize:17}}>Задач нет</div><div className="es">Добавьте задачу — звонок, встречу или письмо</div></div>}
 
 
 
     {showF&&<NewActionForm contacts={contacts} projects={data.projects.filter(p=>p.companyId===co.id)} data={data} onClose={()=>setShowF(false)}
 
-      onSave={ad=>{const id=nid(data.actions);upd(p=>({...p,actions:[{id,companyId:co.id,contactId:ad.contactId||null,projectId:ad.projectId||null,type:ad.type,content:ad.content,planned:ad.planned||false,plannedDate:ad.plannedDate||null,date:ad.planned?null:now(),createdAt:now()},...p.actions]}));setShowF(false);bang('Добавлено');}}/>}
+      onSave={ad=>{const id=nid(data.actions);upd(p=>({...p,actions:[{id,companyId:co.id,contactId:ad.contactId||null,projectId:ad.projectId||null,type:ad.type,content:ad.content,planned:ad.planned||false,plannedDate:ad.plannedDate||null,date:ad.planned?null:now(),files:ad.files||[],createdAt:now()},...p.actions]}));setShowF(false);bang('Добавлено');}}/>}
 
   </>;
 
@@ -2220,7 +2259,7 @@ function ContactsSearch({data,onSel,upd,bang}) {
 
 /* ══ Contact Panel ══ */
 
-function ContPanel({contact,data,upd,bang,onClose}) {
+function ContPanel({contact,data,upd,bang,onClose,onOpenAction}) {
 
   const [editing,setEditing]=useState(false);
 
@@ -2262,7 +2301,7 @@ function ContPanel({contact,data,upd,bang,onClose}) {
 
       <button className={`ptab${tab==='info'?' active':''}`} onClick={()=>setTab('info')}>Информация</button>
 
-      <button className={`ptab${tab==='actions'?' active':''}`} onClick={()=>setTab('actions')}>Действия<span className="c">{actions.length}</span></button>
+      <button className={`ptab${tab==='actions'?' active':''}`} onClick={()=>setTab('actions')}>Задачи<span className="c">{actions.length}</span></button>
 
     </div>
 
@@ -2310,31 +2349,55 @@ function ContPanel({contact,data,upd,bang,onClose}) {
 
       {tab==='actions'&&<>
 
-        <div className="stitle">Действия <button className="btn btn-p btn-sm" onClick={()=>setShowAct(true)}><I n="plus" s={12}/> Добавить</button></div>
+        <div className="stitle">Задачи <button className="btn btn-p btn-sm" onClick={()=>setShowAct(true)}><I n="plus" s={12}/> Добавить</button></div>
 
-        {actions.length===0?<div className="empty" style={{padding:'36px 0'}}><div className="et" style={{fontSize:17}}>Пусто</div></div>
+        {actions.length===0?<div className="empty" style={{padding:'36px 0'}}><div className="et" style={{fontSize:17}}>Пусто</div><div className="es">Добавьте задачу — звонок, встречу или письмо</div></div>
 
-        :actions.map(a=><div key={a.id} className={`card${a.planned&&isFuture(a.plannedDate)?' planned':''}`}>
+        :<>
 
-          <div className="ch">
+          {actions.filter(a=>a.planned).length>0&&<div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--blue)',marginBottom:6,marginTop:4}}>📅 ОТКРЫТЫЕ ({actions.filter(a=>a.planned).length})</div>}
 
-            <span className={`atype at-${a.type}`}>{a.type}</span>
+          {actions.filter(a=>a.planned).map(a=><div key={a.id} className="card planned" style={{cursor:'pointer'}} onClick={()=>{onClose();onOpenAction&&onOpenAction(a.id);}}>
 
-            {a.planned&&<span className={`plan-badge${isPast(a.plannedDate)?' past':''}`}><I n="cal" s={11}/> {fmtDate(a.plannedDate)}</span>}
+            <div className="ch">
 
-            {!a.planned&&<span className="cm">{fmtDate(a.date)}</span>}
+              <span className={`atype at-${a.type}`}>{a.type}</span>
 
-          </div>
+              <span className={`plan-badge${isPast(a.plannedDate)?' past':''}`}><I n="cal" s={11}/> {fmtDate(a.plannedDate)}</span>
 
-          <div className="cs2" style={{whiteSpace:'pre-wrap'}}>{a.content}</div>
+            </div>
 
-          {a.createdAt&&<div className="date-stamp">Записано: {fmtDate(a.createdAt)}</div>}
+            <div className="cs2" style={{whiteSpace:'pre-wrap'}}>{a.content}</div>
 
-        </div>)}
+            {a.files&&a.files.length>0&&<div style={{marginTop:6,fontSize:11,color:'var(--mu)'}}>📎 {a.files.length} файл(ов)</div>}
+
+          </div>)}
+
+          {actions.filter(a=>!a.planned).length>0&&<div style={{fontFamily:'Geist Mono,monospace',fontSize:10,textTransform:'uppercase',letterSpacing:'.07em',color:'var(--mu)',marginBottom:6,marginTop:12}}>✓ ЗАКРЫТЫЕ ({actions.filter(a=>!a.planned).length})</div>}
+
+          {actions.filter(a=>!a.planned).map(a=><div key={a.id} className="card" style={{cursor:'pointer'}} onClick={()=>{onClose();onOpenAction&&onOpenAction(a.id);}}>
+
+            <div className="ch">
+
+              <span className={`atype at-${a.type}`}>{a.type}</span>
+
+              <span className="cm">{fmtDate(a.date)}</span>
+
+            </div>
+
+            <div className="cs2" style={{whiteSpace:'pre-wrap'}}>{a.content}</div>
+
+            {a.files&&a.files.length>0&&<div style={{marginTop:6,fontSize:11,color:'var(--mu)'}}>📎 {a.files.length} файл(ов)</div>}
+
+            {a.createdAt&&<div className="date-stamp">Записано: {fmtDate(a.createdAt)}</div>}
+
+          </div>)}
+
+        </>}
 
         {showAct&&<NewActionForm contacts={[contact]} defaultContactId={contact.id} data={data} onClose={()=>setShowAct(false)}
 
-          onSave={ad=>{const id=nid(data.actions);const cid=(form.companyIds||[])[0]||null;upd(p=>({...p,actions:[{id,companyId:cid,contactId:contact.id,projectId:ad.projectId||null,type:ad.type,content:ad.content,planned:ad.planned||false,plannedDate:ad.plannedDate||null,date:ad.planned?null:now(),createdAt:now()},...p.actions]}));setShowAct(false);bang('Добавлено');}}/>}
+          onSave={ad=>{const id=nid(data.actions);const cid=(form.companyIds||[])[0]||null;upd(p=>({...p,actions:[{id,companyId:cid,contactId:contact.id,projectId:ad.projectId||null,type:ad.type,content:ad.content,planned:ad.planned||false,plannedDate:ad.plannedDate||null,date:ad.planned?null:now(),files:ad.files||[],createdAt:now()},...p.actions]}));setShowAct(false);bang('Добавлено');}}/>}
 
       </>}
 
@@ -2660,65 +2723,73 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
   const [flt,setFlt]=useState('open');
 
-  const [type,setType]=useState('all'); 
-
   
 
   const list=useMemo(()=>{
 
-    let items = [];
+    // Tasks (data.tasks): открытые = !completed, закрытые = completed
 
-    
+    const tasks = data.tasks.map(t=>({
 
-    if(type==='all'||type==='tasks') {
+      ...t,
 
-      const tasks = data.tasks.map(t=>({...t,itemType:'task'}));
+      itemType:'task',
 
-      items = [...items, ...tasks];
+      _isOpen: !t.completed,
 
-    }
+      _displayDate: t.deadline||'',
 
-    
+      _displayTitle: t.title||'Без названия',
 
-    if(type==='all'||type==='actions') {
+    }));
 
-      const plannedActions = data.actions
+    // Actions (data.actions): открытые = planned, закрытые = !planned (история)
 
-        .filter(a=>a.planned)
+    const actions = data.actions.map(a=>{
 
-        .map(a=>({...a,itemType:'action',completed:false}));
+      const contactName = a.contactId ? (data.contacts.find(c=>c.id===a.contactId)?.name||'') : '';
 
-      items = [...items, ...plannedActions];
+      return {
 
-    }
+        ...a,
 
-    
+        itemType:'action',
 
-    if(flt==='open') items=items.filter(t=>!t.completed);
+        _isOpen: !!a.planned,
 
-    if(flt==='done') items=items.filter(t=>t.completed);
+        _displayDate: a.planned ? (a.plannedDate||'') : (a.date||''),
 
-    
+        _displayTitle: `${a.type}${contactName?' с '+contactName:''}`,
 
-    return items.sort((a,b)=>{
-
-      if(a.completed!==b.completed) return a.completed?1:-1;
-
-      const dateA = a.itemType==='task'?(a.deadline||''):(a.plannedDate||'');
-
-      const dateB = b.itemType==='task'?(b.deadline||''):(b.plannedDate||'');
-
-      if(!dateA&&!dateB) return 0;
-
-      if(!dateA) return 1;
-
-      if(!dateB) return -1;
-
-      return dateA.localeCompare(dateB);
+      };
 
     });
 
-  },[data.tasks,data.actions,flt,type]);
+    let items = [...tasks, ...actions];
+
+    if(flt==='open') items = items.filter(x=>x._isOpen);
+
+    if(flt==='done') items = items.filter(x=>!x._isOpen);
+
+    return items.sort((a,b)=>{
+
+      if(a._isOpen !== b._isOpen) return a._isOpen?-1:1; // открытые наверх
+
+      const dA = a._displayDate||'', dB = b._displayDate||'';
+
+      if(!dA&&!dB) return 0;
+
+      if(!dA) return 1;
+
+      if(!dB) return -1;
+
+      // открытые — по возрастанию даты, закрытые — по убыванию
+
+      return a._isOpen ? dA.localeCompare(dB) : dB.localeCompare(dA);
+
+    });
+
+  },[data.tasks,data.actions,data.contacts,flt]);
 
   
 
@@ -2726,17 +2797,33 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
   const prN=id=>data.projects.find(p=>p.id===id)?.title;
 
-  const contN=id=>data.contacts.find(c=>c.id===id)?.name;
-
   
 
   const add=()=>{const t=prompt('Задача:');if(!t)return;const id=nid(data.tasks);upd(p=>({...p,tasks:[{id,title:t,companyId:null,projectId:null,deadline:'',priority:'Средний',completed:false,description:'',createdAt:now()},...p.tasks]}));onSel(id);};
+
+  
 
   const tog=item=>{
 
     if(item.itemType==='task') {
 
       upd(p=>({...p,tasks:p.tasks.map(x=>x.id===item.id?{...x,completed:!x.completed}:x)}));
+
+    } else if(item.itemType==='action') {
+
+      // Открытое действие (planned) → закрыть (planned=false, дата=сейчас)
+
+      // Закрытое (история) → открыть (planned=true, плановая дата = старая дата)
+
+      upd(p=>({...p,actions:p.actions.map(x=>{
+
+        if(x.id!==item.id) return x;
+
+        if(x.planned) return {...x,planned:false,date:now()};
+
+        return {...x,planned:true,plannedDate:x.date||now(),date:null};
+
+      })}));
 
     }
 
@@ -2762,7 +2849,7 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
         <div className="pt">Задачи</div>
 
-        <div className="pm">{list.length} {flt==='open'?'открытых':flt==='done'?'завершённых':'всего'}</div>
+        <div className="pm">{list.length} {flt==='open'?'открытых':flt==='done'?'закрытых':'всего'}</div>
 
       </div>
 
@@ -2772,21 +2859,11 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
     <div className="filters">
 
-      <select className="flt" value={type} onChange={e=>setType(e.target.value)}>
-
-        <option value="all">Всё (Задачи + Действия)</option>
-
-        <option value="tasks">Только Задачи</option>
-
-        <option value="actions">Только Планы (звонки/встречи)</option>
-
-      </select>
-
       <select className="flt" value={flt} onChange={e=>setFlt(e.target.value)}>
 
         <option value="open">Открытые</option>
 
-        <option value="done">Выполненные</option>
+        <option value="done">Закрытые (выполненные)</option>
 
         <option value="all">Все</option>
 
@@ -2796,73 +2873,45 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
     <div className="tw">
 
-      {list.length===0?<div className="empty"><div className="et">Ничего нет</div><div className="es">Создайте задачу или запланируйте действие</div></div>
+      {list.length===0?<div className="empty"><div className="et">Нет задач</div><div className="es">{flt==='open'?'Все задачи закрыты':'Создайте задачу'}</div></div>
 
-      :list.map(item=><div key={`${item.itemType}-${item.id}`} className="tr">
+      :list.map(item=>{
 
-        {item.itemType==='task' ? (
+        const closed = !item._isOpen;
 
-          <div className={`tck${item.completed?' done':''}`} onClick={e=>{e.stopPropagation();tog(item);}}>
+        return <div key={`${item.itemType}-${item.id}`} className="tr">
 
-            {item.completed&&<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>}
+          <div className={`tck${closed?' done':''}`} onClick={e=>{e.stopPropagation();tog(item);}}>
 
-          </div>
-
-        ) : (
-
-          <div style={{width:18,height:18,flexShrink:0,display:'flex',alignItems:'center',justifyContent:'center',marginTop:1}}>
-
-            <span className={`atype at-${item.type}`} style={{fontSize:9,padding:'1px 4px'}}>{item.type[0]}</span>
+            {closed&&<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>}
 
           </div>
 
-        )}
+          <div className="tc3" onClick={()=>handleItemClick(item)} style={{cursor:'pointer'}}>
 
-        <div className="tc3" onClick={()=>handleItemClick(item)} style={{cursor:'pointer'}}>
+            <div className={`tt${closed?' done':''}`}>{item._displayTitle}</div>
 
-          <div className={`tt${item.completed?' done':''}`}>
+            <div className="tm">
 
-            {item.itemType==='task' ? item.title : item.content.split('\n')[0]}
+              {item._displayDate&&<span>📅 {fmtDate(item._displayDate)}</span>}
 
-          </div>
+              {item.itemType==='task'&&item.priority&&<span>⚡ {item.priority}</span>}
 
-          <div className="tm">
+              {item.itemType==='action'&&<span style={{padding:'1px 6px',background:'var(--bg-a)',borderRadius:4,fontSize:11}}>{item.type}</span>}
 
-            {item.itemType==='task' ? (
+              {item.companyId&&coN(item.companyId)&&<span>🏢 {coN(item.companyId)}</span>}
 
-              <>
+              {item.projectId&&prN(item.projectId)&&<span>📁 {prN(item.projectId)}</span>}
 
-                {item.deadline&&<span>📅 {fmtDate(item.deadline)}</span>}
+              {closed&&<span style={{color:'var(--green)'}}>✓ Закрыта</span>}
 
-                {item.priority&&<span>⚡ {item.priority}</span>}
-
-                {item.companyId&&coN(item.companyId)&&<span>🏢 {coN(item.companyId)}</span>}
-
-                {item.projectId&&prN(item.projectId)&&<span>📁 {prN(item.projectId)}</span>}
-
-              </>
-
-            ) : (
-
-              <>
-
-                <span className={`atype at-${item.type}`}>{item.type}</span>
-
-                {item.plannedDate&&<span>📅 {fmtDate(item.plannedDate)}</span>}
-
-                {item.companyId&&coN(item.companyId)&&<span>🏢 {coN(item.companyId)}</span>}
-
-                {item.contactId&&contN(item.contactId)&&<span>👤 {contN(item.contactId)}</span>}
-
-              </>
-
-            )}
+            </div>
 
           </div>
 
-        </div>
+        </div>;
 
-      </div>)}
+      })}
 
     </div>
 
@@ -2870,13 +2919,11 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
 }
 
+function TaskPanel({task,data,upd,bang,onClose,onSelCo}) {
 
+  const [form,setForm]=useState({...task,files:task.files||[]});
 
-function TaskPanel({task,data,upd,bang,onClose}) {
-
-  const [form,setForm]=useState({...task});
-
-  useEffect(()=>setForm({...task}),[task.id]);
+  useEffect(()=>setForm({...task,files:task.files||[]}),[task.id]);
 
   
 
@@ -2954,7 +3001,7 @@ function TaskPanel({task,data,upd,bang,onClose}) {
 
       <div className="frow">
 
-        <F l="Тип задачи"><select className="sel" value={form.type||'Связаться'} onChange={e=>setForm({...form,type:e.target.value})}><option>Связаться</option><option>Встреча</option><option>Письмо</option><option>Презентация</option><option>Документы</option><option>Другое</option></select></F>
+        <F l="Тип задачи"><select className="sel" value={form.type||'Связаться'} onChange={e=>setForm({...form,type:e.target.value})}><option>Звонок</option><option>Встреча</option><option>Письмо</option><option>WhatsApp</option><option>Telegram</option><option>Другое</option></select></F>
 
         <F l="Приоритет"><select className="sel" value={form.priority||'Средний'} onChange={e=>setForm({...form,priority:e.target.value})}><option>Высокий</option><option>Средний</option><option>Низкий</option></select></F>
 
@@ -2970,7 +3017,7 @@ function TaskPanel({task,data,upd,bang,onClose}) {
 
 
 
-      {company && <F l="Компания"><div className="fv">{company.name}</div></F>}
+      {company && <F l="Компания"><div className="fv" style={{cursor:'pointer',color:'var(--blue)'}} onClick={()=>{if(onSelCo){onClose();onSelCo(company.id);}}}>{company.name} →</div></F>}
 
       {contact && <F l="Контакт"><div className="fv">{contact.name}{contact.position?' · '+contact.position:''}</div></F>}
 
@@ -2992,6 +3039,10 @@ function TaskPanel({task,data,upd,bang,onClose}) {
 
       
 
+      <div className="sdiv"><div className="stitle">Файлы</div><FilesSection files={form.files||[]} onChange={files=>setForm({...form,files})}/></div>
+
+      
+
       {task.createdAt&&<div className="date-stamp" style={{marginTop:12}}>Создана: {fmtDate(task.createdAt)}</div>}
 
     </div>
@@ -3004,7 +3055,7 @@ function TaskPanel({task,data,upd,bang,onClose}) {
 
 /* ══ Action Panel ══ */
 
-function ActionPanel({action,data,upd,bang,onClose}) {
+function ActionPanel({action,data,upd,bang,onClose,onSelCo,onSelCont}) {
 
   const [form,setForm]=useState({...action});
 
@@ -3126,13 +3177,15 @@ function ActionPanel({action,data,upd,bang,onClose}) {
 
         </F>
 
-        {company && <F l="Компания"><div className="fv">{company.name}</div></F>}
+        {company && <F l="Компания"><div className="fv" style={{cursor:'pointer',color:'var(--blue)'}} onClick={()=>{onClose();onSelCo&&onSelCo(company.id);}}>→ {company.name}</div></F>}
 
-        {contact && <F l="Контакт"><div className="fv">{contact.name}{contact.position?' · '+contact.position:''}</div></F>}
+        {contact && <F l="Контакт"><div className="fv" style={{cursor:'pointer',color:'var(--blue)'}} onClick={()=>{onClose();onSelCont&&onSelCont(contact.id);}}>→ {contact.name}{contact.position?' · '+contact.position:''}</div></F>}
 
         {project && <F l="Проект"><div className="fv">{project.title}</div></F>}
 
         <F l="Содержание"><textarea className="txa" value={form.content} onChange={e=>setForm({...form,content:e.target.value})} style={{minHeight:120}}/></F>
+
+        <div className="sdiv"><div className="stitle">Файлы</div><FilesSection files={form.files||[]} onChange={files=>setForm({...form,files})}/></div>
 
         {action.createdAt&&<div className="date-stamp">Создано: {fmtDate(action.createdAt)}</div>}
 
@@ -3536,7 +3589,7 @@ function CalendarPicker({value,onChange,actions}) {
 
   const daysInMonth=lastDay.getDate();
 
-  const startDay=firstDay.getDay();
+  const startDay=(firstDay.getDay()+6)%7;
 
   const prevMonthDays=new Date(year,month,0).getDate();
 
@@ -3696,9 +3749,9 @@ function CalendarPicker({value,onChange,actions}) {
 
 function NewActionForm({contacts,projects,onClose,onSave,defaultContactId,data}){
 
-  const [f,setF]=useState({type:'Звонок',contactId:defaultContactId||contacts?.[0]?.id||'',projectId:'',content:'',planned:false,plannedDate:'',date:new Date().toISOString().slice(0,16)});
+  const [f,setF]=useState({type:'Звонок',contactId:defaultContactId||contacts?.[0]?.id||'',projectId:'',content:'',planned:false,plannedDate:'',date:new Date().toISOString().slice(0,16),files:[]});
 
-  const ok=()=>{if(!f.content.trim()){alert('Опишите событие');return;}onSave({...f,contactId:f.contactId?parseInt(f.contactId):null,projectId:f.projectId?parseInt(f.projectId):null,plannedDate:f.planned&&f.plannedDate?new Date(f.plannedDate).toISOString():null,date:f.planned?null:new Date(f.date).toISOString()});};
+  const ok=()=>{if(!f.content.trim()){alert('Опишите событие');return;}onSave({...f,contactId:f.contactId?parseInt(f.contactId):null,projectId:f.projectId?parseInt(f.projectId):null,plannedDate:f.planned&&f.plannedDate?new Date(f.plannedDate).toISOString():null,date:f.planned?null:new Date(f.date).toISOString(),files:f.files||[]});};
 
   return <Dlg onClose={onClose} title={f.planned?'Запланировать событие':'Записать событие'} wide={f.planned}>
 
@@ -3743,6 +3796,8 @@ function NewActionForm({contacts,projects,onClose,onSave,defaultContactId,data})
     {projects&&projects.length>0&&<F l="Проект (если обсуждается)"><select className="sel" value={f.projectId||''} onChange={e=>setF({...f,projectId:e.target.value})}><option value="">— без проекта —</option>{projects.map(p=><option key={p.id} value={p.id}>{p.title}</option>)}</select></F>}
 
     <F l={f.planned?'Цель / повестка *':'Итог / заметка *'}><textarea className="txa" autoFocus value={f.content} onChange={e=>setF({...f,content:e.target.value})} placeholder={f.planned?'Что планируете обсудить, цель встречи…':'Что обсудили, договорились, следующие шаги…'} style={{minHeight:90}}/></F>
+
+    <div className="sdiv"><div className="stitle">Файлы</div><FilesSection files={f.files||[]} onChange={files=>setF({...f,files})}/></div>
 
     <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> {f.planned?'Запланировать':'Записать'}</button></div>
 

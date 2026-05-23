@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CRM · Innomatec / LangAn</title>
+<title>CRM · Innomatec / LangAn v15</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
 
@@ -251,6 +251,7 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 .cal-day.has-event::after{content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--blue);border-radius:50%}
 
 .cal-day.selected.has-event::after{background:#fff}
+.cal-day.original{background:var(--abg);color:var(--amber);border:1px solid var(--amber);font-weight:500}
 
 .cal-time-selector{padding:12px;border-top:1px solid var(--border);background:var(--bg)}
 
@@ -822,7 +823,7 @@ function App() {
 
     <div className="tb">
 
-      <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v6</span></div>
+      <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v15</span></div>
 
       <div className="sep"/>
 
@@ -934,31 +935,24 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
   
 
-  // Сначала открытые (по дате возрастания), потом закрытые (свежие сверху)
-
+  // Дашборд: открытые = только сегодня и просроченные; закрытые = все
   const sortDate=item=>item._isTask?(item.deadline||''):(item.plannedDate||item.date||'');
-
-  const opens=[...openTasks, ...openActions].sort((a,b)=>{
-
-    const dA=sortDate(a), dB=sortDate(b);
-
-    if(!dA&&!dB)return 0; if(!dA)return 1; if(!dB)return -1;
-
+  const todayEnd = new Date(); todayEnd.setHours(23,59,59,999);
+  const opens=[...openTasks,...openActions].filter(item=>{
+    const d=sortDate(item);
+    if(!d) return true;
+    return new Date(d)<=todayEnd;
+  }).sort((a,b)=>{
+    const dA=sortDate(a),dB=sortDate(b);
+    if(!dA&&!dB)return 0;if(!dA)return 1;if(!dB)return -1;
     return dA.localeCompare(dB);
-
   });
-
-  const closeds=[...closedTasks, ...closedActions].sort((a,b)=>{
-
+  const closeds=[...closedTasks,...closedActions].sort((a,b)=>{
     const dA=a._isTask?(a.deadline||a.createdAt||''):(a.date||a.createdAt||'');
-
     const dB=b._isTask?(b.deadline||b.createdAt||''):(b.date||b.createdAt||'');
-
     return dB.localeCompare(dA);
-
   });
-
-  const allUpcoming = [...opens, ...closeds];
+  const allUpcoming=[...opens]; // дашборд: только открытые (сегодня + просрочено)
 
 
 
@@ -3063,6 +3057,11 @@ function ActionPanel({action,data,upd,bang,onClose,onSelCo,onSelCont}) {
 
   const [report,setReport]=useState('');
 
+  const [showDatePicker,setShowDatePicker]=useState(false);
+
+  // Исходная дата задачи (для выделения в календаре)
+  const originalDate = action.planned ? action.plannedDate : action.date;
+
   
 
   useEffect(()=>setForm({...action}),[action.id]);
@@ -3172,9 +3171,34 @@ function ActionPanel({action,data,upd,bang,onClose,onSelCo,onSelCont}) {
         <F l="Тип"><select className="sel" value={form.type} onChange={e=>setForm({...form,type:e.target.value})}>{ACT_T.map(t=><option key={t} value={t}>{t}</option>)}</select></F>
 
         <F l={action.planned?'Запланировано на':'Дата'}>
-
-          <input className="inp" type="datetime-local" value={(action.planned?action.plannedDate:action.date||'').slice(0,16)} onChange={e=>setForm(action.planned?{...form,plannedDate:new Date(e.target.value).toISOString()}:{...form,date:new Date(e.target.value).toISOString()})}/>
-
+          <div style={{position:'relative'}}>
+            <div style={{display:'flex',alignItems:'center',gap:8}}>
+              <div className="inp" style={{flex:1,fontFamily:'Geist Mono,monospace',fontSize:13,color:'var(--text)'}}>
+                {(()=>{const d=action.planned?form.plannedDate:form.date;if(!d)return '—';const dt=new Date(d);const pad=n=>String(n).padStart(2,'0');return `${pad(dt.getDate())}.${pad(dt.getMonth()+1)}.${dt.getFullYear()} ${pad(dt.getHours())}:${pad(dt.getMinutes())}`;})()}
+              </div>
+              <button className="btn btn-g btn-ic" title="Изменить дату" onClick={()=>setShowDatePicker(v=>!v)} style={{flexShrink:0}}>
+                <I n="cal" s={15}/>
+              </button>
+            </div>
+            {showDatePicker && <>
+              <div style={{position:'fixed',inset:0,zIndex:199}} onClick={()=>setShowDatePicker(false)}/>
+              <div style={{position:'absolute',top:'100%',right:0,zIndex:200,marginTop:4,background:'var(--bg-card)',border:'1px solid var(--border)',borderRadius:'var(--rm)',boxShadow:'var(--shm)',minWidth:380}} onClick={e=>e.stopPropagation()}>
+                <CalendarPicker
+                  value={action.planned?(form.plannedDate||''):(form.date||'')}
+                  originalValue={originalDate||''}
+                  onChange={v=>{
+                    // v = "YYYY-MM-DDTHH:MM" локальное время, сохраняем как есть
+                    if(action.planned) setForm(f=>({...f,plannedDate:v}));
+                    else setForm(f=>({...f,date:v}));
+                  }}
+                  actions={data.actions}
+                />
+                <div style={{padding:'8px 12px',borderTop:'1px solid var(--border)',display:'flex',justifyContent:'flex-end'}}>
+                  <button className="btn btn-p btn-sm" onClick={()=>setShowDatePicker(false)}>Применить</button>
+                </div>
+              </div>
+            </>}
+          </div>
         </F>
 
         {company && <F l="Компания"><div className="fv" style={{cursor:'pointer',color:'var(--blue)'}} onClick={()=>{onClose();onSelCo&&onSelCo(company.id);}}>→ {company.name}</div></F>}
@@ -3487,319 +3511,179 @@ function NewContactForm({companyName,onClose,onSave}){const [f,setF]=useState({n
 
 /* ══ Calendar Picker для планирования действий ══ */
 
-function CalendarPicker({value,onChange,actions}) {
+function CalendarPicker({value,onChange,actions,originalValue}) {
+  // Полностью controlled — весь стейт живёт снаружи через value/onChange
+  // value: строка ISO или "YYYY-MM-DDTHH:MM"
+  // Парсим как локальное время (без UTC-сдвига)
+  const parseLocal = s => {
+    if(!s) return new Date();
+    // Если формат YYYY-MM-DDTHH:MM или YYYY-MM-DDTHH:MM:SS — парсим локально
+    const m = s.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if(m) return new Date(+m[1],+m[2]-1,+m[3],+m[4],+m[5],0,0);
+    return new Date(s);
+  };
+  const parsed   = value ? parseLocal(value) : new Date();
+  const selDay   = value ? new Date(parsed.getFullYear(), parsed.getMonth(), parsed.getDate()) : null;
+  const timeStr  = value
+    ? `${String(parsed.getHours()).padStart(2,'0')}:${String(parsed.getMinutes()).padStart(2,'0')}`
+    : '09:00';
 
-  const [viewDate,setViewDate]=useState(()=>{
+  const [viewDate, setViewDate] = useState(() => value ? new Date(value) : new Date());
 
-    if(value) return new Date(value);
+  const today = new Date(); today.setHours(0,0,0,0);
 
-    return new Date();
-
-  });
-
-  const [selectedDate,setSelectedDate]=useState(()=>value?new Date(value):null);
-
-  const [time,setTime]=useState(()=>{
-
-    if(value) {
-
-      const d=new Date(value);
-
-      return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
-
-    }
-
-    return '09:00';
-
-  });
-
-  const [quickFilter,setQuickFilter]=useState(null);
-
-  
-
-  const today=new Date();
-
-  today.setHours(0,0,0,0);
-
-  
-
-  const handleQuickSelect=(days)=>{
-
-    const d=new Date();
-
-    d.setDate(d.getDate()+days);
-
-    d.setHours(0,0,0,0);
-
+  // При клике на дату — объединяем с текущим временем
+  const pickDay = (day) => {
+    const [h,m] = timeStr.split(':').map(Number);
+    const d = new Date(day);
+    d.setHours(isNaN(h)?9:h, isNaN(m)?0:m, 0, 0);
+    // Возвращаем локальное время, не UTC
+    const pad=n=>String(n).padStart(2,'0');
+    onChange(`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`);
     setViewDate(new Date(d));
-
-    setSelectedDate(d);
-
-    setQuickFilter(days);
-
   };
 
-  
-
-  const handleDateClick=(day)=>{
-
-    setSelectedDate(day);
-
-    setQuickFilter(null);
-
-    const [h,m]=time.split(':');
-
-    const newDate=new Date(day);
-
-    newDate.setHours(parseInt(h),parseInt(m),0,0);
-
-    onChange(newDate.toISOString().slice(0,16));
-
+  // При изменении времени — объединяем с выбранным днём
+  const pickTime = (raw) => {
+    const v = raw.replace(/[^0-9:]/g,'').slice(0,5);
+    const [h,m] = v.split(':').map(Number);
+    const base = selDay ? new Date(selDay) : new Date();
+    base.setHours(isNaN(h)?9:h, isNaN(m)?0:m, 0, 0);
+    const pad=n=>String(n).padStart(2,'0');
+    onChange(`${base.getFullYear()}-${pad(base.getMonth()+1)}-${pad(base.getDate())}T${pad(base.getHours())}:${pad(base.getMinutes())}`);
   };
 
-  
-
-  const handleTimeChange=(newTime)=>{
-
-    setTime(newTime);
-
-    if(selectedDate) {
-
-      const [h,m]=newTime.split(':');
-
-      const newDate=new Date(selectedDate);
-
-      newDate.setHours(parseInt(h),parseInt(m),0,0);
-
-      onChange(newDate.toISOString().slice(0,16));
-
-    }
-
+  const quickSelect = (amount, unit) => {
+    const d = new Date();
+    if(unit==='min') { d.setMinutes(d.getMinutes()+amount); }
+    else { d.setDate(d.getDate()+amount); d.setHours(9,0,0,0); }
+    setViewDate(new Date(d));
+    const pad=n=>String(n).padStart(2,'0');
+    onChange(`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`);
   };
 
-  
+  const year  = viewDate.getFullYear();
+  const month = viewDate.getMonth();
+  const firstDay = new Date(year,month,1);
+  const daysInMonth = new Date(year,month+1,0).getDate();
+  const startDay = (firstDay.getDay()+6)%7;
+  const prevMonthDays = new Date(year,month,0).getDate();
 
-  const year=viewDate.getFullYear();
+  const days = [];
+  for(let i=startDay-1;i>=0;i--) days.push({date:new Date(year,month-1,prevMonthDays-i),isOther:true});
+  for(let i=1;i<=daysInMonth;i++)  days.push({date:new Date(year,month,i),isOther:false});
+  const rem = 42-days.length;
+  for(let i=1;i<=rem;i++) days.push({date:new Date(year,month+1,i),isOther:true});
 
-  const month=viewDate.getMonth();
+  const monthName = viewDate.toLocaleString('ru-RU',{month:'long',year:'numeric'});
 
-  const firstDay=new Date(year,month,1);
-
-  const lastDay=new Date(year,month+1,0);
-
-  const daysInMonth=lastDay.getDate();
-
-  const startDay=(firstDay.getDay()+6)%7;
-
-  const prevMonthDays=new Date(year,month,0).getDate();
-
-  
-
-  const days=[];
-
-  for(let i=startDay-1;i>=0;i--){
-
-    const d=new Date(year,month-1,prevMonthDays-i);
-
-    days.push({date:d,isOther:true});
-
-  }
-
-  for(let i=1;i<=daysInMonth;i++){
-
-    const d=new Date(year,month,i);
-
-    days.push({date:d,isOther:false});
-
-  }
-
-  const remaining=42-days.length;
-
-  for(let i=1;i<=remaining;i++){
-
-    const d=new Date(year,month+1,i);
-
-    days.push({date:d,isOther:true});
-
-  }
-
-  
-
-  const monthName=viewDate.toLocaleString('ru-RU',{month:'long',year:'numeric'});
-
-  
-
-  const hasEvent=(day)=>{
-
+  const isToday    = d => d.getTime()===today.getTime();
+  const isSelected = d => selDay && d.getTime()===selDay.getTime();
+  const isOriginal = d => {
+    if(!originalValue) return false;
+    const o=new Date(originalValue); o.setHours(0,0,0,0);
+    return d.getTime()===o.getTime();
+  };
+  const hasEvent = d => {
     if(!actions) return false;
-
-    const dayStr=day.toISOString().slice(0,10);
-
-    return actions.some(a=>a.plannedDate&&a.plannedDate.slice(0,10)===dayStr);
-
+    const s=d.toISOString().slice(0,10);
+    return actions.some(a=>a.plannedDate&&a.plannedDate.slice(0,10)===s);
   };
-
-  
-
-  const isToday=(day)=>{
-
-    return day.getTime()===today.getTime();
-
-  };
-
-  
-
-  const isSelected=(day)=>{
-
-    return selectedDate&&day.getTime()===selectedDate.getTime();
-
-  };
-
-  
 
   return <div className="calendar-picker">
-
     <div className="cal-sidebar">
-
-      <div className={`cal-quick${quickFilter===0?' active':''}`} onClick={()=>handleQuickSelect(0)}>Сегодня</div>
-
-      <div className={`cal-quick${quickFilter===1?' active':''}`} onClick={()=>handleQuickSelect(1)}>Через 15 минут</div>
-
-      <div className={`cal-quick${quickFilter===1?' active':''}`} onClick={()=>handleQuickSelect(1)}>Через 30 минут</div>
-
-      <div className={`cal-quick${quickFilter===1?' active':''}`} onClick={()=>handleQuickSelect(1)}>Через час</div>
-
-      <div className={`cal-quick${quickFilter===1?' active':''}`} onClick={()=>handleQuickSelect(1)}>Завтра</div>
-
-      <div className={`cal-quick${quickFilter===7?' active':''}`} onClick={()=>handleQuickSelect(7)}>Через неделю</div>
-
-      <div className={`cal-quick${quickFilter===30?' active':''}`} onClick={()=>handleQuickSelect(30)}>Через месяц</div>
-
-      <div className={`cal-quick${quickFilter===365?' active':''}`} onClick={()=>handleQuickSelect(365)}>Через год</div>
-
+      {[
+        ['Сегодня',       ()=>quickSelect(0,'day')],
+        ['Через 15 минут',()=>quickSelect(15,'min')],
+        ['Через 30 минут',()=>quickSelect(30,'min')],
+        ['Через час',     ()=>quickSelect(60,'min')],
+        ['Завтра',        ()=>quickSelect(1,'day')],
+        ['Через неделю',  ()=>quickSelect(7,'day')],
+        ['Через месяц',   ()=>quickSelect(30,'day')],
+        ['Через год',     ()=>quickSelect(365,'day')],
+      ].map(([label,fn])=>(
+        <div key={label} className="cal-quick" onClick={fn}>{label}</div>
+      ))}
     </div>
-
     <div className="cal-main">
-
       <div className="cal-header">
-
         <div className="cal-month">{monthName}</div>
-
         <div className="cal-nav">
-
           <button onClick={()=>setViewDate(new Date(year,month-1,1))}><I n="chevLeft" s={14}/></button>
-
           <button onClick={()=>setViewDate(new Date())}><I n="clock" s={14}/></button>
-
           <button onClick={()=>setViewDate(new Date(year,month+1,1))}><I n="chevRight" s={14}/></button>
-
         </div>
-
       </div>
-
       <div className="cal-grid">
-
         {['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(d=><div key={d} className="cal-dow">{d}</div>)}
-
         {days.map((item,i)=>(
-
-          <div 
-
-            key={i} 
-
-            className={`cal-day${item.isOther?' inactive':''}${isToday(item.date)?' today':''}${isSelected(item.date)?' selected':''}${hasEvent(item.date)?' has-event':''}`}
-
-            onClick={()=>!item.isOther&&handleDateClick(item.date)}
-
-          >
-
-            {item.date.getDate()}
-
-          </div>
-
+          <div
+            key={i}
+            className={[
+              'cal-day',
+              item.isOther?'inactive':'',
+              isToday(item.date)?'today':'',
+              isSelected(item.date)?'selected':'',
+              (!isSelected(item.date)&&isOriginal(item.date))?'original':'',
+              hasEvent(item.date)?'has-event':'',
+            ].filter(Boolean).join(' ')}
+            onClick={()=>!item.isOther&&pickDay(item.date)}
+          >{item.date.getDate()}</div>
         ))}
-
       </div>
-
       <div className="cal-time-selector">
-
         <div className="cal-time-label">Время</div>
-
-        <input 
-
-          type="time" 
-
-          className="cal-time-input" 
-
-          value={time} 
-
-          onChange={e=>handleTimeChange(e.target.value)}
-
+        <input
+          type="text"
+          className="cal-time-input"
+          key={timeStr}
+          defaultValue={timeStr}
+          onBlur={e=>pickTime(e.target.value)}
+          onKeyDown={e=>{if(e.key==='Enter'){e.preventDefault();pickTime(e.target.value);}}}
+          placeholder="18:00"
+          maxLength={5}
         />
-
       </div>
-
     </div>
-
   </div>;
-
 }
-
 
 
 function NewActionForm({contacts,projects,onClose,onSave,defaultContactId,data}){
 
-  const [f,setF]=useState({type:'Звонок',contactId:defaultContactId||contacts?.[0]?.id||'',projectId:'',content:'',planned:false,plannedDate:'',date:new Date().toISOString().slice(0,16),files:[]});
+  const [f,setF]=useState({type:'Звонок',contactId:defaultContactId||contacts?.[0]?.id||'',projectId:'',content:'',planned:true,plannedDate:'',date:new Date().toISOString().slice(0,16),files:[]});
 
   const ok=()=>{if(!f.content.trim()){alert('Опишите событие');return;}onSave({...f,contactId:f.contactId?parseInt(f.contactId):null,projectId:f.projectId?parseInt(f.projectId):null,plannedDate:f.planned&&f.plannedDate?new Date(f.plannedDate).toISOString():null,date:f.planned?null:new Date(f.date).toISOString(),files:f.files||[]});};
 
-  return <Dlg onClose={onClose} title={f.planned?'Запланировать событие':'Записать событие'} wide={f.planned}>
+  return <Dlg onClose={onClose} title='Запланировать событие' wide>
 
-    <div style={{display:'flex',gap:8,marginBottom:12}}>
 
-      <button className={`btn btn-sm${!f.planned?' btn-p':' btn-g'}`} onClick={()=>setF({...f,planned:false})}>Было (история)</button>
-
-      <button className={`btn btn-sm${f.planned?' btn-p':' btn-g'}`} onClick={()=>setF({...f,planned:true})}>Планирую</button>
-
-    </div>
 
     <F l="Тип"><select className="sel" value={f.type} onChange={e=>setF({...f,type:e.target.value})}>{ACT_T.map(t=><option key={t} value={t}>{t}</option>)}</select></F>
 
-    {f.planned ? (
+    <F l="Дата и время события">
 
-      <F l="Дата и время события">
+      <CalendarPicker 
 
-        <CalendarPicker 
+        value={f.plannedDate} 
 
-          value={f.plannedDate} 
+        onChange={v=>setF({...f,plannedDate:v})}
 
-          onChange={v=>setF({...f,plannedDate:v})}
+        actions={data?.actions||[]}
 
-          actions={data?.actions||[]}
+      />
 
-        />
-
-      </F>
-
-    ) : (
-
-      <F l="Когда было">
-
-        <input className="inp" type="datetime-local" value={f.date} onChange={e=>setF({...f,date:e.target.value})}/>
-
-      </F>
-
-    )}
+    </F>
 
     {contacts&&contacts.length>0&&<F l="Контакт"><select className="sel" value={f.contactId||''} onChange={e=>setF({...f,contactId:e.target.value})}><option value="">— без контакта —</option>{contacts.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></F>}
 
     {projects&&projects.length>0&&<F l="Проект (если обсуждается)"><select className="sel" value={f.projectId||''} onChange={e=>setF({...f,projectId:e.target.value})}><option value="">— без проекта —</option>{projects.map(p=><option key={p.id} value={p.id}>{p.title}</option>)}</select></F>}
 
-    <F l={f.planned?'Цель / повестка *':'Итог / заметка *'}><textarea className="txa" autoFocus value={f.content} onChange={e=>setF({...f,content:e.target.value})} placeholder={f.planned?'Что планируете обсудить, цель встречи…':'Что обсудили, договорились, следующие шаги…'} style={{minHeight:90}}/></F>
+    <F l={'Цель / повестка *'}><textarea className="txa" autoFocus value={f.content} onChange={e=>setF({...f,content:e.target.value})} placeholder='Что планируете обсудить, цель встречи…' style={{minHeight:90}}/></F>
 
     <div className="sdiv"><div className="stitle">Файлы</div><FilesSection files={f.files||[]} onChange={files=>setF({...f,files})}/></div>
 
-    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> {f.planned?'Запланировать':'Записать'}</button></div>
+    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> {'Запланировать'}</button></div>
 
   </Dlg>;}
 

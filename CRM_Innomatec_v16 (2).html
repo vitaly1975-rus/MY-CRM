@@ -2847,8 +2847,6 @@ function Tasks({data,upd,onSel,bang,onOpenAction}) {
 
       </div>
 
-      <button className="btn btn-p" onClick={add}><I n="plus" s={14}/> Новая задача</button>
-
     </div>
 
     <div className="filters">
@@ -3604,6 +3602,15 @@ function CalendarPicker({value,onChange,actions,originalValue}) {
       ].map(([label,fn])=>(
         <div key={label} className="cal-quick" onClick={fn}>{label}</div>
       ))}
+      <div style={{height:1,background:'var(--border)',margin:'6px 4px'}}/>
+      {[
+        ['Вчера',()=>quickSelect(-1,'day')],
+        ['Неделю назад',()=>quickSelect(-7,'day')],
+        ['Месяц назад',()=>quickSelect(-30,'day')],
+        ['Год назад',()=>quickSelect(-365,'day')],
+      ].map(([label,fn])=>(
+        <div key={label} className="cal-quick" style={{color:'var(--mu)'}} onClick={fn}>{label}</div>
+      ))}
     </div>
     <div className="cal-main">
       <div className="cal-header">
@@ -3650,27 +3657,28 @@ function CalendarPicker({value,onChange,actions,originalValue}) {
 
 
 function NewActionForm({contacts,projects,onClose,onSave,defaultContactId,data}){
+  const initDt=()=>{const d=new Date(),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;};
+  const [mode,setMode]=useState('plan');
+  const [f,setF]=useState({type:'Звонок',contactId:defaultContactId||contacts?.[0]?.id||'',projectId:'',content:'',planned:true,plannedDate:'',date:initDt(),files:[]});
 
-  const [f,setF]=useState({type:'Звонок',contactId:defaultContactId||contacts?.[0]?.id||'',projectId:'',content:'',planned:true,plannedDate:'',date:new Date().toISOString().slice(0,16),files:[]});
+  const ok=()=>{
+    if(!f.content.trim()){alert('Опишите событие');return;}
+    if(mode==='past'){onSave({...f,contactId:f.contactId?parseInt(f.contactId):null,projectId:f.projectId?parseInt(f.projectId):null,planned:false,plannedDate:null,date:new Date(f.date||initDt()).toISOString(),files:f.files||[]});}
+    else{onSave({...f,contactId:f.contactId?parseInt(f.contactId):null,projectId:f.projectId?parseInt(f.projectId):null,plannedDate:f.planned&&f.plannedDate?new Date(f.plannedDate).toISOString():null,date:f.planned?null:new Date(f.date||initDt()).toISOString(),files:f.files||[]});}
+  };
 
-  const ok=()=>{if(!f.content.trim()){alert('Опишите событие');return;}onSave({...f,contactId:f.contactId?parseInt(f.contactId):null,projectId:f.projectId?parseInt(f.projectId):null,plannedDate:f.planned&&f.plannedDate?new Date(f.plannedDate).toISOString():null,date:f.planned?null:new Date(f.date).toISOString(),files:f.files||[]});};
+  return <Dlg onClose={onClose} title={mode==='past'?'Записать прошлое':'Запланировать событие'} wide>
 
-  return <Dlg onClose={onClose} title='Запланировать событие' wide>
-
-
+    <div style={{display:'flex',gap:4,padding:'4px',background:'var(--bg)',borderRadius:'var(--r)',marginBottom:16,border:'1px solid var(--border)'}}><button onClick={()=>setMode('plan')} style={{flex:1,padding:'7px 10px',fontSize:13,fontFamily:'inherit',fontWeight:mode==='plan'?500:400,border:'none',borderRadius:'calc(var(--r) - 2px)',background:mode==='plan'?'var(--bg-card)':'transparent',color:mode==='plan'?'var(--text)':'var(--mu)',cursor:'pointer',boxShadow:mode==='plan'?'var(--sh)':'none'}}>⏰ Запланировать</button><button onClick={()=>setMode('past')} style={{flex:1,padding:'7px 10px',fontSize:13,fontFamily:'inherit',fontWeight:mode==='past'?500:400,border:'none',borderRadius:'calc(var(--r) - 2px)',background:mode==='past'?'var(--bg-card)':'transparent',color:mode==='past'?'var(--text)':'var(--mu)',cursor:'pointer',boxShadow:mode==='past'?'var(--sh)':'none'}}>Уже произошло</button></div>
 
     <F l="Тип"><select className="sel" value={f.type} onChange={e=>setF({...f,type:e.target.value})}>{ACT_T.map(t=><option key={t} value={t}>{t}</option>)}</select></F>
 
     <F l="Дата и время события">
 
-      <CalendarPicker 
-
-        value={f.plannedDate} 
-
-        onChange={v=>setF({...f,plannedDate:v})}
-
+      <CalendarPicker
+        value={mode==='past'?f.date:f.plannedDate}
+        onChange={v=>mode==='past'?setF({...f,date:v}):setF({...f,plannedDate:v})}
         actions={data?.actions||[]}
-
       />
 
     </F>
@@ -3683,7 +3691,7 @@ function NewActionForm({contacts,projects,onClose,onSave,defaultContactId,data})
 
     <div className="sdiv"><div className="stitle">Файлы</div><FilesSection files={f.files||[]} onChange={files=>setF({...f,files})}/></div>
 
-    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> {'Запланировать'}</button></div>
+    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> {mode==='past'?'✓ Сохранить в историю':'Запланировать'}</button></div>
 
   </Dlg>;}
 

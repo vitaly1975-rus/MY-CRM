@@ -3366,6 +3366,7 @@ function XlsxImport({data,upd,onClose,bang}) {
     let added=0,dupes=0;
 
     const newCos=[...data.companies];
+    const newConts=[...data.contacts];
 
     const newCustom=[...(data.customIndustries||[])];
 
@@ -3411,17 +3412,27 @@ function XlsxImport({data,upd,onClose,bang}) {
 
       const priority=get('priority')||'B';
 
-      newCos.push({id:nid(newCos),name,inn,city:get('city'),phone:get('phone'),email:get('email'),website:get('website'),role:get('role'),description:get('description'),whyRelevant:get('whyRelevant'),processes:get('processes'),applicationPoints:get('applicationPoints'),solutionInnomatec:get('solutionInnomatec'),solutionLangAn:get('solutionLangAn'),priority:['A','B','C'].includes(priority)?priority:'B',applicability:'',searchTheme:get('searchTheme'),inclusionBasis:get('inclusionBasis'),source:get('source'),verificationStatus:get('verificationStatus'),comment:get('comment'),status:'Лид',industries:inds,industry:inds[0]||'',tags:[],createdAt:now()});
-
+      const newCoId=nid(newCos);
+      newCos.push({id:newCoId,name,inn,city:get('city'),phone:get('phone'),email:get('email'),website:get('website'),role:get('role'),description:get('description'),whyRelevant:get('whyRelevant'),processes:get('processes'),applicationPoints:get('applicationPoints'),solutionInnomatec:get('solutionInnomatec'),solutionLangAn:get('solutionLangAn'),priority:['A','B','C'].includes(priority)?priority:'B',applicability:'',searchTheme:get('searchTheme'),inclusionBasis:get('inclusionBasis'),source:get('source'),verificationStatus:get('verificationStatus'),comment:get('comment'),status:'Лид',industries:inds,industry:inds[0]||'',tags:[],createdAt:now()});
+      // Импорт контактов (3 слота)
+      for(let ci=1;ci<=3;ci++){
+        const cName=safe(row[headers.indexOf('Контакт '+ci+' Имя')]);
+        if(!cName) continue;
+        const cPos=safe(row[headers.indexOf('Контакт '+ci+' Должность')]);
+        const cPhone=safe(row[headers.indexOf('Контакт '+ci+' Телефон')]);
+        const cEmail=safe(row[headers.indexOf('Контакт '+ci+' Email')]);
+        newConts.push({id:nid([...data.contacts,...newConts]),name:cName,position:cPos||'',companyIds:[newCoId],phones:cPhone?[cPhone]:[],emails:cEmail?[cEmail]:[],telegram:'',whatsapp:'',notes:'',createdAt:now()});
+      }
       added++;
 
     });
 
-    upd(p=>({...p,companies:newCos,customIndustries:newCustom}));
+    upd(p=>({...p,companies:newCos,contacts:newConts,customIndustries:newCustom}));
 
     onClose();
 
-    bang(`Импортировано: ${added}, пропущено дублей: ${dupes}`);
+    const addedConts=newConts.length-data.contacts.length;
+    bang(`Импортировано: ${added} компаний, ${addedConts} контактов. Пропущено дублей: ${dupes}`);
 
   };
 

@@ -7429,6 +7429,22 @@
       "whatsapp": "",
       "notes": "",
       "createdAt": "2026-06-01T13:55:18.375Z"
+    },
+    {
+      "id": 25,
+      "name": "Буравов Дмитрий Николаевич",
+      "position": "Генеральный директор",
+      "companyIds": [],
+      "phones": [
+        "+7 (917) 398-31-07"
+      ],
+      "emails": [
+        "blikchelny@mail.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-02T04:23:07.258Z"
     }
   ],
   "deals": [],

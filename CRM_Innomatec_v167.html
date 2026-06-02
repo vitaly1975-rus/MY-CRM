@@ -998,9 +998,9 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
       <div style={{fontFamily:'Instrument Serif,serif',fontSize:18,marginBottom:10,display:'flex',alignItems:'center',gap:10}}>📋 Задачи<span style={{fontSize:13,color:'var(--mu)',fontFamily:'Geist,sans-serif'}}>(открытых {opens.length}, всего {allUpcoming.length})</span></div>
 
-      <div style={{display:'flex',gap:8,overflowX:'auto',paddingBottom:6}}>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:8,maxHeight:'60vh',overflowY:'auto',overflowX:'hidden',paddingRight:4}}>
 
-        {allUpcoming.slice(0,30).map(item=>{
+        {allUpcoming.slice(0,60).map(item=>{
 
           const isTask = item._isTask;
 
@@ -1026,7 +1026,7 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
 
 
-          return <div key={(isTask?'t-':'a-')+item.id} style={{minWidth:280,maxWidth:300,padding:'10px 12px',background:'var(--bg-card)',border:'1px solid var(--border)',borderRadius:'var(--r)',cursor:'pointer',borderLeft:`3px solid ${borderColor}`,opacity:closed?0.75:1}} onClick={()=>isTask ? onSelTask(item.id) : onOpenAction(item.id)}>
+          return <div key={(isTask?'t-':'a-')+item.id} style={{padding:'10px 12px',background:'var(--bg-card)',border:'1px solid var(--border)',borderRadius:'var(--r)',cursor:'pointer',borderLeft:`3px solid ${borderColor}`,opacity:closed?0.75:1}} onClick={()=>isTask ? onSelTask(item.id) : onOpenAction(item.id)}>
 
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:4}}>
 
@@ -3347,100 +3347,197 @@ function TagFilterPanel({data,upd,onSelect,onClose,bang,selectedTagIds}) {
 function XlsxImport({data,upd,onClose,bang}) {
 
   const [preview,setPreview]=useState(null);
-
   const [mapping,setMapping]=useState({});
-
   const [rawRows,setRawRows]=useState([]);
-
   const [headers,setHeaders]=useState([]);
-
+  // Дубли: список {row, dupType:'inn'|'name_city', existing, newObj, contacts:[]}
+  const [dupQueue,setDupQueue]=useState(null); // null=не начали, []= пусто (всё решено)
+  const [dupIdx,setDupIdx]=useState(0);
+  const [pendingState,setPendingState]=useState(null); // {newCos,newConts,newCustom,added,skipped}
   const ref=useRef();
 
   const FIELDS=[{k:'name',l:'Компания *',req:true},{k:'inn',l:'ИНН'},{k:'city',l:'Город'},{k:'phone',l:'Телефон'},{k:'email',l:'Email'},{k:'website',l:'Сайт'},{k:'role',l:'Роль компании'},{k:'industry',l:'Отрасль'},{k:'description',l:'Что делает компания'},{k:'whyRelevant',l:'Почему релевантна теме'},{k:'processes',l:'Вероятные процессы'},{k:'applicationPoints',l:'Точки применения'},{k:'solutionInnomatec',l:'Решение Innomatec'},{k:'solutionLangAn',l:'Решение LangAn'},{k:'priority',l:'Приоритет'},{k:'inclusionBasis',l:'Основание включения'},{k:'source',l:'Источник'},{k:'verificationStatus',l:'Статус верификации'},{k:'comment',l:'Комментарий'},{k:'searchTheme',l:'Поисковая тема'}];
 
   const autoMap=hdrs=>{const m={};if(hdrs.includes('Компания'))m.name='Компания';if(hdrs.includes('Роль компании'))m.role='Роль компании';if(hdrs.includes('Что делает компания'))m.description='Что делает компания';if(hdrs.includes('Почему релевантна теме'))m.whyRelevant='Почему релевантна теме';if(hdrs.includes('Вероятные процессы'))m.processes='Вероятные процессы';if(hdrs.includes('Вероятные точки применения решений'))m.applicationPoints='Вероятные точки применения решений';if(hdrs.includes('Подходящее решение (Компания 1)'))m.solutionInnomatec='Подходящее решение (Компания 1)';if(hdrs.includes('Подходящее решение (Компания 2)'))m.solutionLangAn='Подходящее решение (Компания 2)';if(hdrs.includes('Основание включения'))m.inclusionBasis='Основание включения';if(hdrs.includes('Поисковый запрос / тема'))m.searchTheme='Поисковый запрос / тема';if(hdrs.includes('Телефон'))m.phone='Телефон';if(hdrs.includes('Сайт'))m.website='Сайт';if(hdrs.includes('Город'))m.city='Город';if(hdrs.includes('Приоритет'))m.priority='Приоритет';if(hdrs.includes('Комментарий'))m.comment='Комментарий';if(hdrs.includes('Источник'))m.source='Источник';if(hdrs.includes('Статус проверки'))m.verificationStatus='Статус проверки';if(hdrs.includes('Электронная почта'))m.email='Электронная почта';if(hdrs.includes('Отрасль'))m.industry='Отрасль';else if(hdrs.includes('Отрасли'))m.industry='Отрасли';return m;};
 
-  const readFile=f=>{const r=new FileReader();r.onload=e=>{try{const text=e.target.result;const lines=text.split('\n').filter(l=>l.trim());if(lines.length<2){alert('Файл пустой');return;}const sep=lines[0].includes('\t')?'\t':',';const parseRow=row=>{const res=[];let cur='';let inQ=false;for(let i=0;i<row.length;i++){if(row[i]==='"'&&!inQ){inQ=true;}else if(row[i]==='"'&&inQ&&row[i+1]==='"'){cur+='"';i++;}else if(row[i]==='"'&&inQ){inQ=false;}else if(row[i]===sep&&!inQ){res.push(cur.trim());cur='';}else{cur+=row[i];}}res.push(cur.trim());return res;};const hdrs=parseRow(lines[0]);const rows=lines.slice(1).map(l=>parseRow(l));setHeaders(hdrs);setRawRows(rows);setMapping(autoMap(hdrs));setPreview(rows.slice(0,3).map(r=>{const o={};hdrs.forEach((h,i)=>o[h]=r[i]||'');return o;}));}catch(err){alert('Ошибка: '+err.message);}};r.readAsText(f,'utf-8');};
+  const readFile=f=>{const r=new FileReader();r.onload=e=>{try{const text=e.target.result;const lines=text.split('\n').filter(l=>l.trim());if(lines.length<2){alert('Файл пустой');return;}const sep=lines[0].includes('\t')?'\t':',';const parseRow=row=>{const res=[];let cur='';let inQ=false;for(let i=0;i<row.length;i++){if(row[i]==='"'&&!inQ){inQ=true;}else if(row[i]==='"'&&inQ&&row[i+1]==='"'){cur+='"';i++;}else if(row[i]==='"'&&inQ){inQ=false;}else if(row[i]===sep&&!inQ){res.push(cur.trim());cur='';}else{cur+=row[i];}}res.push(cur.trim());return res;};const hdrs=parseRow(lines[0]);const rows=lines.slice(1).map(l=>parseRow(l));setHeaders(hdrs);setRawRows(rows);setMapping(autoMap(hdrs));setDupQueue(null);setDupIdx(0);setPendingState(null);setPreview(rows.slice(0,3).map(r=>{const o={};hdrs.forEach((h,i)=>o[h]=r[i]||'');return o;}));}catch(err){alert('Ошибка: '+err.message);}};r.readAsText(f,'utf-8');};
+
+  // Строим newObj из строки CSV
+  const buildNewObj=(row,get,newCos)=>{
+    const name=get('name');
+    const inn=get('inn');
+    const city=get('city');
+    const indRaw=get('industry');
+    const inds=indRaw?indRaw.split(/[;|]|,(?=\s*[А-ЯA-Z])/).map(s=>s.trim()).filter(Boolean):[];
+    const priority=get('priority')||'B';
+    const id=nid(newCos);
+    return {id,name,inn,city,phone:get('phone'),email:get('email'),website:get('website'),role:get('role'),description:get('description'),whyRelevant:get('whyRelevant'),processes:get('processes'),applicationPoints:get('applicationPoints'),solutionInnomatec:get('solutionInnomatec'),solutionLangAn:get('solutionLangAn'),priority:['A','B','C'].includes(priority)?priority:'B',applicability:'',searchTheme:get('searchTheme'),inclusionBasis:get('inclusionBasis'),source:get('source'),verificationStatus:get('verificationStatus'),comment:get('comment'),status:'Лид',industries:inds,industry:inds[0]||'',tags:[],createdAt:now()};
+  };
+
+  const buildContacts=(row,newCoId,existingConts)=>{
+    const res=[];
+    for(let ci=1;ci<=3;ci++){
+      const cName=safe(row[headers.indexOf('Контакт '+ci+' Имя')]);
+      if(!cName) continue;
+      const cPos=safe(row[headers.indexOf('Контакт '+ci+' Должность')]);
+      const cPhone=safe(row[headers.indexOf('Контакт '+ci+' Телефон')]);
+      const cEmail=safe(row[headers.indexOf('Контакт '+ci+' Email')]);
+      res.push({id:nid([...existingConts,...res]),name:cName,position:cPos||'',companyIds:[newCoId],phones:cPhone?[cPhone]:[],emails:cEmail?[cEmail]:[],telegram:'',whatsapp:'',notes:'',createdAt:now()});
+    }
+    return res;
+  };
 
   const doImport=()=>{
-
     if(!mapping.name){alert('Не выбрана колонка "Компания"');return;}
-
-    let added=0,dupes=0;
 
     const newCos=[...data.companies];
     const newConts=[...data.contacts];
-
     const newCustom=[...(data.customIndustries||[])];
-
-    const knownLC = new Set([...BASE_INDS, ...newCustom].map(s=>s.toLowerCase()));
+    const knownLC=new Set([...BASE_INDS,...newCustom].map(s=>s.toLowerCase()));
+    const dupeItems=[];
+    let added=0;
 
     rawRows.forEach(row=>{
-
       const get=k=>mapping[k]?safe(row[headers.indexOf(mapping[k])]):'';
-
-      const name=get('name');
-
-      if(!name)return;
-
+      const name=get('name'); if(!name)return;
       const inn=get('inn');
+      const city=(get('city')||'').trim().toLowerCase();
 
-      const dup=newCos.find(c=>(inn&&c.inn&&c.inn===inn)||normName(c.name)===normName(name));
-
-      if(dup){dupes++;return;}
-
-      // парсим отрасли (поддерживаем разделители ; , |)
-
-      const indRaw=get('industry');
-
-      const inds=indRaw
-
-        ? indRaw.split(/[;|]|,(?=\s*[А-ЯA-Z])/).map(s=>s.trim()).filter(Boolean)
-
-        : [];
-
-      // регистрируем новые в customIndustries
-
-      inds.forEach(i=>{
-
-        if(!knownLC.has(i.toLowerCase())){
-
-          newCustom.push(i);
-
-          knownLC.add(i.toLowerCase());
-
-        }
-
-      });
-
-      const priority=get('priority')||'B';
-
-      const newCoId=nid(newCos);
-      newCos.push({id:newCoId,name,inn,city:get('city'),phone:get('phone'),email:get('email'),website:get('website'),role:get('role'),description:get('description'),whyRelevant:get('whyRelevant'),processes:get('processes'),applicationPoints:get('applicationPoints'),solutionInnomatec:get('solutionInnomatec'),solutionLangAn:get('solutionLangAn'),priority:['A','B','C'].includes(priority)?priority:'B',applicability:'',searchTheme:get('searchTheme'),inclusionBasis:get('inclusionBasis'),source:get('source'),verificationStatus:get('verificationStatus'),comment:get('comment'),status:'Лид',industries:inds,industry:inds[0]||'',tags:[],createdAt:now()});
-      // Импорт контактов (3 слота)
-      for(let ci=1;ci<=3;ci++){
-        const cName=safe(row[headers.indexOf('Контакт '+ci+' Имя')]);
-        if(!cName) continue;
-        const cPos=safe(row[headers.indexOf('Контакт '+ci+' Должность')]);
-        const cPhone=safe(row[headers.indexOf('Контакт '+ci+' Телефон')]);
-        const cEmail=safe(row[headers.indexOf('Контакт '+ci+' Email')]);
-        newConts.push({id:nid([...data.contacts,...newConts]),name:cName,position:cPos||'',companyIds:[newCoId],phones:cPhone?[cPhone]:[],emails:cEmail?[cEmail]:[],telegram:'',whatsapp:'',notes:'',createdAt:now()});
+      // Проверка по ИНН (приоритет 1)
+      let dup=null, dupType='';
+      if(inn) dup=newCos.find(c=>c.inn&&c.inn===inn);
+      if(dup){dupType='inn';}
+      // Проверка по НАЗВАНИЕ + ГОРОД (приоритет 2)
+      if(!dup&&city){
+        dup=newCos.find(c=>normName(c.name)===normName(name)&&(c.city||'').trim().toLowerCase()===city);
+        if(dup) dupType='name_city';
       }
-      added++;
 
+      if(dup){
+        const newObj=buildNewObj(row,get,newCos);
+        const contacts=buildContacts(row,newObj.id,newConts);
+        dupeItems.push({row,name,inn,city:get('city'),dupType,existing:dup,newObj,contacts});
+        return;
+      }
+
+      // Нет дублей — добавляем сразу
+      const newObj=buildNewObj(row,get,newCos);
+      newObj.industries.forEach(i=>{if(!knownLC.has(i.toLowerCase())){newCustom.push(i);knownLC.add(i.toLowerCase());}});
+      newCos.push(newObj);
+      const contacts=buildContacts(row,newObj.id,newConts);
+      contacts.forEach(c=>newConts.push(c));
+      added++;
     });
 
+    if(dupeItems.length>0){
+      // Переходим в режим решения дублей
+      setDupQueue(dupeItems);
+      setDupIdx(0);
+      setPendingState({newCos,newConts,newCustom,added,skipped:0});
+    } else {
+      // Нет дублей — финализируем
+      finalizeImport(newCos,newConts,newCustom,added,0);
+    }
+  };
+
+  const finalizeImport=(newCos,newConts,newCustom,added,skipped)=>{
     const origLen=data.companies.length;
     const addedNew=newCos.slice(origLen);
     const finalCos=[...addedNew,...data.companies];
     upd(p=>({...p,companies:finalCos,contacts:newConts,customIndustries:newCustom}));
-
     onClose();
-
     const addedConts=newConts.length-data.contacts.length;
-    bang(`Импортировано: ${added} компаний, ${addedConts} контактов. Пропущено дублей: ${dupes}`);
-
+    bang(`Импортировано: ${added} компаний, ${addedConts} контактов. Пропущено: ${skipped}`);
   };
+
+  // Обработка решения по дублю
+  const resolveDup=(action)=>{
+    // action: 'skip' | 'add_contacts' | 'add_new'
+    const {newCos,newConts,newCustom,added,skipped}=pendingState;
+    const item=dupQueue[dupIdx];
+    const knownLC=new Set([...BASE_INDS,...newCustom].map(s=>s.toLowerCase()));
+
+    let newAdded=added, newSkipped=skipped;
+    const cos=[...newCos], conts=[...newConts], custom=[...newCustom];
+
+    if(action==='skip'){
+      newSkipped++;
+    } else if(action==='add_contacts'){
+      // Добавляем только контакты к существующей компании
+      const contacts=buildContacts(item.row,item.existing.id,conts);
+      contacts.forEach(c=>{
+        // не добавляем контакт если уже есть с таким именем у этой компании
+        const exists=conts.find(x=>normName(x.name)===normName(c.name)&&(x.companyIds||[]).includes(item.existing.id));
+        if(!exists) conts.push(c);
+      });
+      newSkipped++;
+    } else if(action==='add_new'){
+      // Добавляем как новую компанию (несмотря на дубль)
+      item.newObj.industries.forEach(i=>{if(!knownLC.has(i.toLowerCase())){custom.push(i);knownLC.add(i.toLowerCase());}});
+      cos.push(item.newObj);
+      item.contacts.forEach(c=>conts.push(c));
+      newAdded++;
+    }
+
+    const nextIdx=dupIdx+1;
+    if(nextIdx>=dupQueue.length){
+      // Все дубли решены
+      finalizeImport(cos,conts,custom,newAdded,newSkipped);
+    } else {
+      setPendingState({newCos:cos,newConts:conts,newCustom:custom,added:newAdded,skipped:newSkipped});
+      setDupIdx(nextIdx);
+    }
+  };
+
+  // --- Диалог решения дубля ---
+  if(dupQueue&&dupIdx<dupQueue.length){
+    const item=dupQueue[dupIdx];
+    const ex=item.existing;
+    const isInn=item.dupType==='inn';
+    const total=dupQueue.length;
+    const hasContacts=item.contacts.length>0;
+    return <div className="dlg-ov" onClick={e=>e.stopPropagation()}><div className="dlg" style={{maxWidth:560,width:'94vw'}} onClick={e=>e.stopPropagation()}>
+      <div className="dh"><div style={{fontFamily:'Instrument Serif,serif',fontSize:19}}>⚠️ Дубль найден <span style={{fontSize:13,fontFamily:'Geist Mono,monospace',color:'var(--so)'}}>{dupIdx+1}/{total}</span></div></div>
+      <div className="db">
+        <div style={{marginBottom:12,padding:'8px 12px',background:'var(--abg)',borderRadius:'var(--r)',fontSize:12,color:'var(--amber)',fontWeight:500}}>
+          {isInn?`🔢 Совпадение по ИНН: ${item.inn}`:`📍 Совпадение по названию + городу`}
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginBottom:16}}>
+          <div style={{padding:'10px 12px',background:'var(--bg)',borderRadius:'var(--r)',border:'1px solid var(--border)'}}>
+            <div style={{fontSize:10,fontFamily:'Geist Mono,monospace',color:'var(--so)',textTransform:'uppercase',marginBottom:6}}>В базе (существующая)</div>
+            <div style={{fontWeight:600,fontSize:14,marginBottom:2}}>{ex.name}</div>
+            {ex.inn&&<div style={{fontSize:12,color:'var(--mu)'}}>ИНН: {ex.inn}</div>}
+            {ex.city&&<div style={{fontSize:12,color:'var(--mu)'}}>📍 {ex.city}</div>}
+            {ex.phone&&<div style={{fontSize:12,color:'var(--mu)'}}>📞 {ex.phone}</div>}
+            <div style={{fontSize:11,marginTop:4,padding:'2px 6px',borderRadius:4,background:'var(--bg-a)',display:'inline-block',color:'var(--mu)'}}>{ex.priority||'B'} · {ex.status||'Лид'}</div>
+          </div>
+          <div style={{padding:'10px 12px',background:'var(--bg)',borderRadius:'var(--r)',border:'1px solid var(--border-s)'}}>
+            <div style={{fontSize:10,fontFamily:'Geist Mono,monospace',color:'var(--so)',textTransform:'uppercase',marginBottom:6}}>Из CSV (новая)</div>
+            <div style={{fontWeight:600,fontSize:14,marginBottom:2}}>{item.name}</div>
+            {item.inn&&<div style={{fontSize:12,color:'var(--mu)'}}>ИНН: {item.inn}</div>}
+            {item.city&&<div style={{fontSize:12,color:'var(--mu)'}}>📍 {item.city}</div>}
+            {item.newObj.phone&&<div style={{fontSize:12,color:'var(--mu)'}}>📞 {item.newObj.phone}</div>}
+          </div>
+        </div>
+        {hasContacts&&<div style={{marginBottom:12,padding:'8px 12px',background:'var(--bbg)',borderRadius:'var(--r)',fontSize:12,color:'var(--blue)'}}>
+          👤 В CSV есть {item.contacts.length} контакт(а): {item.contacts.map(c=>c.name).join(', ')}
+        </div>}
+        <div style={{display:'flex',flexDirection:'column',gap:6}}>
+          <button className="btn" style={{justifyContent:'flex-start',textAlign:'left',padding:'10px 14px'}} onClick={()=>resolveDup('skip')}>
+            <span style={{fontSize:16,marginRight:8}}>🚫</span><span><strong>Пропустить</strong> — ничего не делать, оставить базу как есть</span>
+          </button>
+          {hasContacts&&<button className="btn" style={{justifyContent:'flex-start',textAlign:'left',padding:'10px 14px',background:'var(--bbg)',borderColor:'var(--blue)',color:'var(--blue)'}} onClick={()=>resolveDup('add_contacts')}>
+            <span style={{fontSize:16,marginRight:8}}>➕</span><span><strong>Добавить контакты</strong> к существующей компании, данные компании не трогать</span>
+          </button>}
+          <button className="btn" style={{justifyContent:'flex-start',textAlign:'left',padding:'10px 14px'}} onClick={()=>resolveDup('add_new')}>
+            <span style={{fontSize:16,marginRight:8}}>📄</span><span><strong>Добавить как новую</strong> (возможно это разные юрлица с одним названием)</span>
+          </button>
+        </div>
+      </div>
+    </div></div>;
+  }
+
+  const doImportFn=doImport;
 
   return <div className="dlg-ov" onClick={onClose}><div className="dlg" style={{maxWidth:580,width:'94vw'}} onClick={e=>e.stopPropagation()}>
 
@@ -3484,7 +3581,7 @@ function XlsxImport({data,upd,onClose,bang}) {
 
     </div>
 
-    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button>{preview&&<button className="btn btn-p" onClick={doImport}><I n="ul" s={13}/> Импортировать</button>}</div>
+    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button>{preview&&<button className="btn btn-p" onClick={doImportFn}><I n="ul" s={13}/> Импортировать</button>}</div>
 
   </div></div>;
 

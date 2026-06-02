@@ -1253,6 +1253,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
   const [fSt,setFSt]       = useState('');
 
   const [fCity,setFCity]   = useState('');
+  const [fAppl,setFAppl]   = useState('');
 
   const [showNew,setShowNew]= useState(false);
 
@@ -1328,7 +1329,8 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
       if(fSt   && String(c.status||'Лид')!==fSt)  return false;
 
-      if(fCity && String(c.city||'')!==fCity) return false;
+      if(fCity && String(c.city||'').toLowerCase()!==fCity.toLowerCase()) return false;
+      if(fAppl && !String(c.applicability||'').toLowerCase().includes(fAppl.toLowerCase())) return false;
 
       if(activeTagIds&&activeTagIds.length>0){
 
@@ -1342,7 +1344,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
     });
 
-  },[data.companies,q,fInd,fPrio,fSt,fCity,activeTagIds]);
+  },[data.companies,q,fInd,fPrio,fSt,fCity,fAppl,activeTagIds]);
 
 
 
@@ -1431,6 +1433,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
         </button>}
 
       {fCity&&<button className="btn btn-sm btn-d" onClick={()=>setFCity('')}>× {fCity}</button>}
+      <input className="inp" style={{width:160,fontSize:12}} value={fAppl} onChange={e=>setFAppl(e.target.value)} placeholder="Применяемость…"/>{fAppl&&<button className="btn btn-sm btn-d" onClick={()=>setFAppl('')}>×</button>}
 
     </div>
 
@@ -3427,7 +3430,10 @@ function XlsxImport({data,upd,onClose,bang}) {
 
     });
 
-    upd(p=>({...p,companies:newCos,contacts:newConts,customIndustries:newCustom}));
+    const origLen=data.companies.length;
+    const addedNew=newCos.slice(origLen);
+    const finalCos=[...addedNew,...data.companies];
+    upd(p=>({...p,companies:finalCos,contacts:newConts,customIndustries:newCustom}));
 
     onClose();
 

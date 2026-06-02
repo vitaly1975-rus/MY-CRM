@@ -1076,6 +1076,8 @@ const ALL_COLS = [
 
   {id:'city',       label:'Город',            always:false},
 
+  {id:'region',     label:'Регион',           always:false},
+
   {id:'priority',   label:'Приоритет',        always:false},
 
   {id:'status',     label:'Статус',           always:false},
@@ -1172,6 +1174,8 @@ function CoCell({colId, c, tags, colWidths, onCityClick}) {
 
   if(colId==='city')    return <td className="cd" style={{...style,cursor:c.city?'pointer':undefined}} onClick={()=>c.city&&onCityClick&&onCityClick(c.city)} title={c.city?'Фильтр по городу: '+c.city:''}>{c.city||'—'}</td>;
 
+  if(colId==='region')  return <td className="cd" style={style}>{c.region||cityToRegion(c.city)||'—'}</td>;
+
   if(colId==='priority') return <td style={style}><PBadge v={c.priority}/></td>;
 
   if(colId==='status')  return <td style={style}><SBadge v={c.status||'Лид'}/></td>;
@@ -1253,6 +1257,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
   const [fSt,setFSt]       = useState('');
 
   const [fCity,setFCity]   = useState('');
+  const [fReg,setFReg]     = useState('');
   const [fAppl,setFAppl]   = useState('');
 
   const [showNew,setShowNew]= useState(false);
@@ -1330,6 +1335,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
       if(fSt   && String(c.status||'Лид')!==fSt)  return false;
 
       if(fCity && String(c.city||'').toLowerCase()!==fCity.toLowerCase()) return false;
+      if(fReg && (c.region||cityToRegion(c.city)||'').toLowerCase()!==fReg.toLowerCase()) return false;
       if(fAppl && !String(c.applicability||'').toLowerCase().includes(fAppl.toLowerCase())) return false;
 
       if(activeTagIds&&activeTagIds.length>0){
@@ -1344,7 +1350,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
     });
 
-  },[data.companies,q,fInd,fPrio,fSt,fCity,fAppl,activeTagIds]);
+  },[data.companies,q,fInd,fPrio,fSt,fCity,fReg,fAppl,activeTagIds]);
 
 
 
@@ -1422,6 +1428,11 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
         {CO_ST.map(s=><option key={s} value={s}>{s}</option>)}
 
+      </select>
+
+      <select className="flt" value={fReg} onChange={e=>setFReg(e.target.value)}>
+        <option value="">Все регионы</option>
+        {[...new Set(data.companies.map(c=>c.region||cityToRegion(c.city)).filter(Boolean))].sort().map(r=><option key={r} value={r}>{r}</option>)}
       </select>
 
       {activeTagIds&&activeTagIds.length>0 &&
@@ -1601,7 +1612,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
 function NewCoForm({onClose,onSave,data,upd}) {
 
-  const [f,setF] = useState({name:'',inn:'',industries:[],applicability:'',role:'',city:'',phone:'',email:'',website:'',description:'',whyRelevant:'',processes:'',applicationPoints:'',solutionInnomatec:'',solutionLangAn:'',inclusionBasis:'',searchTheme:'',source:'',verificationStatus:'',comment:'',priority:'B',status:'Лид'});
+  const [f,setF] = useState({name:'',inn:'',industries:[],applicability:'',role:'',city:'',region:'',phone:'',email:'',website:'',description:'',whyRelevant:'',processes:'',applicationPoints:'',solutionInnomatec:'',solutionLangAn:'',inclusionBasis:'',searchTheme:'',source:'',verificationStatus:'',comment:'',priority:'B',status:'Лид'});
 
   const [dups,setDups] = useState([]);
 
@@ -1661,7 +1672,7 @@ function NewCoForm({onClose,onSave,data,upd}) {
 
         <F l="ИНН"><input className="inp" value={f.inn} onChange={e=>setF({...f,inn:e.target.value})} placeholder="1234567890"/></F>
 
-        <F l="Город"><CityInput value={f.city} onChange={v=>setF({...f,city:v})} cities={[...new Set(data.companies.map(c=>c.city).filter(Boolean))].sort()}/></F>
+        <F l="Город"><CityInput value={f.city} onChange={v=>setF({...f,city:v,region:cityToRegion(v)})} cities={[...new Set(data.companies.map(c=>c.city).filter(Boolean))].sort()}/></F><F l="Регион"><div style={{padding:"6px 8px",background:"var(--bg)",borderRadius:"var(--r)",fontSize:13,color:"var(--mu)",minHeight:28}}>{f.region||cityToRegion(f.city)||"— (введите город)"}</div></F>
 
       </div>
 
@@ -1930,7 +1941,7 @@ function CoInfoTab({co,form,setForm,editing,data,upd}) {
 
     <div className="frow">
 
-      <CoFv co={co} form={form} setForm={setForm} editing={editing} k="inn" label="ИНН"/>{editing?<F l="Город"><CityInput value={form.city||''} onChange={v=>setForm({...form,city:v})} cities={[...new Set(data.companies.filter(x=>x.id!==co.id).map(c=>c.city).filter(Boolean))].sort()}/></F>:<CoFv co={co} form={form} setForm={setForm} editing={editing} k="city" label="Город"/>}
+      <CoFv co={co} form={form} setForm={setForm} editing={editing} k="inn" label="ИНН"/>{editing?<F l="Город"><CityInput value={form.city||''} onChange={v=>setForm({...form,city:v,region:cityToRegion(v)})} cities={[...new Set(data.companies.filter(x=>x.id!==co.id).map(c=>c.city).filter(Boolean))].sort()}/></F>:<CoFv co={co} form={form} setForm={setForm} editing={editing} k="city" label="Город"/>}<CoFv co={{...co,region:co.region||cityToRegion(co.city)}} form={{...form,region:form.region||cityToRegion(form.city)}} setForm={setForm} editing={false} k="region" label="Регион"/>
 
     </div>
 
@@ -3344,6 +3355,85 @@ function TagFilterPanel({data,upd,onSelect,onClose,bang,selectedTagIds}) {
 
 /* ══ Excel CSV Import ══ */
 
+
+const CITY_TO_REGION={
+'Армавир':'Краснодарский край','Астрахань':'Астраханская область',
+'Барнаул':'Алтайский край','Белгород':'Белгородская область',
+'Бийск':'Алтайский край','Брянск':'Брянская область',
+'Владивосток':'Приморский край','Владимир':'Владимирская область',
+'Волгоград':'Волгоградская область','Волжский':'Волгоградская область',
+'Вологда':'Вологодская область','Воронеж':'Воронежская область',
+'Выборг':'Ленинградская область','Выкса':'Нижегородская область',
+'Гатчина':'Ленинградская область','Геленджик':'Краснодарский край',
+'Димитровград':'Ульяновская область','Дмитров':'Московская область',
+'Дубна':'Московская область','Елец':'Липецкая область',
+'Екатеринбург':'Свердловская область',
+'Ессентуки':'Ставропольский край',
+'Железногорск':'Курская область','Жуковский':'Московская область',
+'Зеленодольск':'Республика Татарстан','Златоуст':'Челябинская область',
+'Иваново':'Ивановская облать','Ижевск':'Удмуртская Республика',
+'Изевск':'Пензенская область','Иркутск':'Иркутская облать',
+'Истра':'Московская область','Йошкар-Ола':'Республика Марий Эл',
+'Калининград':'Калининградская область',
+'Калуга':'Калужская область','Каменск-Уральский':'Свердловская область',
+'Камышин':'Волгоградская область','Казань':'Республика Татарстан',
+'Кемерово':'Кемеровская область','Кинель':'Самарская область',
+'Киров':'Кировская область','Коломна':'Московская область',
+'Комсомольск-на-Амуре':'Хабаровский край',
+'Краснодар':'Краснодарский край','Красноярск':'Красноярский край',
+'Кузнецк':'Пензенская область','Курган':'Курганская облашть',
+'Курск':'Курская область','Липецк':'Липецкая область',
+'Ливны':'Орловская область','Люберцы':'Московская область',
+'Львов':'Львовская область',
+'Магнитогорск':'Челябинская область',
+'Миасс':'Челябинская облаять','Москва':'Москва',
+'Мурманск':'Мурманская облахть','Мытищи':'Московская область',
+'Набережные Челны':'Республика Татарстан',
+'Нижний Новгород':'Нижегородская область',
+'Нижний Тагил':'Свердловская область','Нижнекамск':'Ханты-Мансийский АО',
+'Новополоцк':'Московская область','Новоуральск':'Свердловская облахть',
+'Новосибирск':'Новосибирская область','Ногинск':'Московская облахть',
+'Обнинск':'Калужская область','Одинцово':'Московская область',
+'Омск':'Омская область','Орел':'Орловская облахть','Орёл':'Орловская область',
+'Оренбург':'Оренбургская область','Орск':'Оренбургская облахть',
+'Пенза':'Пензенская область','Пермь':'Пермский край',
+'Первоуральск':'Свердловская область',
+'Петропавловск-Камчатский':'Камчатский край',
+'Питер':'Санкт-Петербург','Пиятигорск':'Ставропольский край',
+'Подольск':'Московская область','Протвино':'Московская облахть',
+'Псков':'Псковская облашть',
+'Раменское':'Московская облахть','Ростов-на-Дону':'Ростовская облахть',
+'Рыбинск':'Ярославская облахть','Рязань':'Рязанская облахть',
+'Самара':'Самарская облахть','Санкт-Петербург':'Санкт-Петербург',
+'Саранск':'Энзельская облахть','Саратов':'Саратовская облахть',
+'Севастополь':'Севастополь','Сергиев Посад':'Московская облахть',
+'Смоленск':'Смоленская облахть',
+'Сочи':'Краснодарский край','Старый Оскол':'Белгородская облахть',
+'Ставрополь':'Ставропольский край','Ступино':'Московская облахть',
+'Сыктывкар':'Республика Коми',
+'Таганрог':'Ростовская облахть','Тамбов':'Тамбовская облахть',
+'Тверь':'Тверская облахть','Тихвин':'Ленинградская облахть',
+'Тольятти':'Самарская облашть','Томск':'Томская облахть',
+'Тула':'Тульская облахть','Тюмень':'Тюменская облашть',
+'Уфа':'Республика Башкортостан','Ульяновск':'Ульяновская облашть',
+'Хабаровск':'Хабаровский край',
+'Челябинск':'Челябинская облашть','Череповец':'Вологодская облашть',
+'Чита':'Забайкальский край',
+'Энгельс':'Саратовская облашть',
+'Ярославль':'Ярославская облашть',
+};
+
+// Функция: вычислить регион по городу
+const cityToRegion=(city)=>{
+  if(!city) return '';
+  const c=city.trim();
+  if(CITY_TO_REGION[c]) return CITY_TO_REGION[c];
+  // Попытка извлечь город из строк вида "Владимир, Владимирская область"
+  const firstPart=c.split(/[,;(]/)[0].trim();
+  if(firstPart!==c&&CITY_TO_REGION[firstPart]) return CITY_TO_REGION[firstPart];
+  return '';
+};
+
 function XlsxImport({data,upd,onClose,bang}) {
 
   const [preview,setPreview]=useState(null);
@@ -3356,13 +3446,14 @@ function XlsxImport({data,upd,onClose,bang}) {
   const [pendingState,setPendingState]=useState(null); // {newCos,newConts,newCustom,added,skipped}
   const ref=useRef();
 
-  const FIELDS=[{k:'name',l:'Компания *',req:true},{k:'inn',l:'ИНН'},{k:'city',l:'Город'},{k:'phone',l:'Телефон'},{k:'email',l:'Email'},{k:'website',l:'Сайт'},{k:'role',l:'Роль компании'},{k:'industry',l:'Отрасль'},{k:'description',l:'Что делает компания'},{k:'whyRelevant',l:'Почему релевантна теме'},{k:'processes',l:'Вероятные процессы'},{k:'applicationPoints',l:'Точки применения'},{k:'solutionInnomatec',l:'Решение Innomatec'},{k:'solutionLangAn',l:'Решение LangAn'},{k:'priority',l:'Приоритет'},{k:'inclusionBasis',l:'Основание включения'},{k:'source',l:'Источник'},{k:'verificationStatus',l:'Статус верификации'},{k:'comment',l:'Комментарий'},{k:'searchTheme',l:'Поисковая тема'}];
+  const FIELDS=[{k:'name',l:'Компания *',req:true},{k:'inn',l:'ИНН'},{k:'city',l:'Город'},{k:'region',l:'Регион',ro:true},{k:'phone',l:'Телефон'},{k:'email',l:'Email'},{k:'website',l:'Сайт'},{k:'role',l:'Роль компании'},{k:'industry',l:'Отрасль'},{k:'description',l:'Что делает компания'},{k:'whyRelevant',l:'Почему релевантна теме'},{k:'processes',l:'Вероятные процессы'},{k:'applicationPoints',l:'Точки применения'},{k:'solutionInnomatec',l:'Решение Innomatec'},{k:'solutionLangAn',l:'Решение LangAn'},{k:'priority',l:'Приоритет'},{k:'inclusionBasis',l:'Основание включения'},{k:'source',l:'Источник'},{k:'verificationStatus',l:'Статус верификации'},{k:'comment',l:'Комментарий'},{k:'searchTheme',l:'Поисковая тема'}];
 
   const autoMap=hdrs=>{const m={};if(hdrs.includes('Компания'))m.name='Компания';if(hdrs.includes('Роль компании'))m.role='Роль компании';if(hdrs.includes('Что делает компания'))m.description='Что делает компания';if(hdrs.includes('Почему релевантна теме'))m.whyRelevant='Почему релевантна теме';if(hdrs.includes('Вероятные процессы'))m.processes='Вероятные процессы';if(hdrs.includes('Вероятные точки применения решений'))m.applicationPoints='Вероятные точки применения решений';if(hdrs.includes('Подходящее решение (Компания 1)'))m.solutionInnomatec='Подходящее решение (Компания 1)';if(hdrs.includes('Подходящее решение (Компания 2)'))m.solutionLangAn='Подходящее решение (Компания 2)';if(hdrs.includes('Основание включения'))m.inclusionBasis='Основание включения';if(hdrs.includes('Поисковый запрос / тема'))m.searchTheme='Поисковый запрос / тема';if(hdrs.includes('Телефон'))m.phone='Телефон';if(hdrs.includes('Сайт'))m.website='Сайт';if(hdrs.includes('Город'))m.city='Город';if(hdrs.includes('Приоритет'))m.priority='Приоритет';if(hdrs.includes('Комментарий'))m.comment='Комментарий';if(hdrs.includes('Источник'))m.source='Источник';if(hdrs.includes('Статус проверки'))m.verificationStatus='Статус проверки';if(hdrs.includes('Электронная почта'))m.email='Электронная почта';if(hdrs.includes('Отрасль'))m.industry='Отрасль';else if(hdrs.includes('Отрасли'))m.industry='Отрасли';return m;};
 
   const readFile=f=>{const r=new FileReader();r.onload=e=>{try{const text=e.target.result;const lines=text.split('\n').filter(l=>l.trim());if(lines.length<2){alert('Файл пустой');return;}const sep=lines[0].includes('\t')?'\t':',';const parseRow=row=>{const res=[];let cur='';let inQ=false;for(let i=0;i<row.length;i++){if(row[i]==='"'&&!inQ){inQ=true;}else if(row[i]==='"'&&inQ&&row[i+1]==='"'){cur+='"';i++;}else if(row[i]==='"'&&inQ){inQ=false;}else if(row[i]===sep&&!inQ){res.push(cur.trim());cur='';}else{cur+=row[i];}}res.push(cur.trim());return res;};const hdrs=parseRow(lines[0]);const rows=lines.slice(1).map(l=>parseRow(l));setHeaders(hdrs);setRawRows(rows);setMapping(autoMap(hdrs));setDupQueue(null);setDupIdx(0);setPendingState(null);setPreview(rows.slice(0,3).map(r=>{const o={};hdrs.forEach((h,i)=>o[h]=r[i]||'');return o;}));}catch(err){alert('Ошибка: '+err.message);}};r.readAsText(f,'utf-8');};
 
   // Строим newObj из строки CSV
+
   const buildNewObj=(row,get,newCos)=>{
     const name=get('name');
     const inn=get('inn');
@@ -3371,7 +3462,7 @@ function XlsxImport({data,upd,onClose,bang}) {
     const inds=indRaw?indRaw.split(/[;|]|,(?=\s*[А-ЯA-Z])/).map(s=>s.trim()).filter(Boolean):[];
     const priority=get('priority')||'B';
     const id=nid(newCos);
-    return {id,name,inn,city,phone:get('phone'),email:get('email'),website:get('website'),role:get('role'),description:get('description'),whyRelevant:get('whyRelevant'),processes:get('processes'),applicationPoints:get('applicationPoints'),solutionInnomatec:get('solutionInnomatec'),solutionLangAn:get('solutionLangAn'),priority:['A','B','C'].includes(priority)?priority:'B',applicability:'',searchTheme:get('searchTheme'),inclusionBasis:get('inclusionBasis'),source:get('source'),verificationStatus:get('verificationStatus'),comment:get('comment'),status:'Лид',industries:inds,industry:inds[0]||'',tags:[],createdAt:now()};
+    return {id,name,inn,city,phone:get('phone'),email:get('email'),website:get('website'),role:get('role'),description:get('description'),whyRelevant:get('whyRelevant'),processes:get('processes'),applicationPoints:get('applicationPoints'),solutionInnomatec:get('solutionInnomatec'),solutionLangAn:get('solutionLangAn'),priority:['A','B','C'].includes(priority)?priority:'B',applicability:'',searchTheme:get('searchTheme'),inclusionBasis:get('inclusionBasis'),source:get('source'),verificationStatus:get('verificationStatus'),comment:get('comment'),status:'Лид',industries:inds,industry:inds[0]||'',tags:[],region:cityToRegion(city),createdAt:now()};
   };
 
   const buildContacts=(row,newCoId,existingConts)=>{
@@ -3591,13 +3682,13 @@ function XlsxImport({data,upd,onClose,bang}) {
 
 /* ══ Word export ══ */
 
-function exportDealWord(deal,data){const co=data.companies.find(c=>c.id===deal.companyId);const sm={'Запрос':'Request','Счёт':'Invoice','Оплата':'Payment','Закрыт':'Closed','Отказ':'Rejected'};const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Arial,sans-serif;margin:40px;font-size:13px}h1{font-size:20px;margin-bottom:4px}h2{font-size:14px;margin-top:20px;border-bottom:1px solid #ccc;padding-bottom:3px}.r{display:flex;margin-bottom:5px}.l{width:180px;font-weight:bold;flex-shrink:0}.v{flex:1}</style></head><body><h1>Deal Card</h1><p style="color:#666;font-size:11px">Generated: ${new Date().toLocaleDateString('en-GB')} | Innomatec/LangAn CRM</p><h2>Deal</h2><div class="r"><div class="l">Title:</div><div class="v">${deal.title}</div></div><div class="r"><div class="l">Stage:</div><div class="v">${sm[deal.stage]||deal.stage}</div></div><div class="r"><div class="l">Amount (RUB):</div><div class="v">${deal.amount?deal.amount.toLocaleString('en-US')+' ₽':'—'}</div></div><div class="r"><div class="l">Start:</div><div class="v">${deal.startDate||'—'}</div></div><div class="r"><div class="l">Due:</div><div class="v">${deal.endDate||'—'}</div></div><div class="r"><div class="l">Description:</div><div class="v">${deal.description||'—'}</div></div>${co?`<h2>Company</h2><div class="r"><div class="l">Name:</div><div class="v">${co.name}</div></div>${co.inn?`<div class="r"><div class="l">INN:</div><div class="v">${co.inn}</div></div>`:''}<div class="r"><div class="l">City:</div><div class="v">${co.city||'—'}</div></div><div class="r"><div class="l">Phone:</div><div class="v">${co.phone||'—'}</div></div><div class="r"><div class="l">Industry:</div><div class="v">${(co.industries||[co.industry]).filter(Boolean).join(', ')||'—'}</div></div><div class="r"><div class="l">Activity:</div><div class="v">${co.description||'—'}</div></div><h2>Solutions</h2><div class="r"><div class="l">Innomatec:</div><div class="v">${co.solutionInnomatec||'—'}</div></div><div class="r"><div class="l">LangAn:</div><div class="v">${co.solutionLangAn||'—'}</div></div>`:''}`;
+function exportDealWord(deal,data){const co=data.companies.find(c=>c.id===deal.companyId);const sm={'Запрос':'Request','Счёт':'Invoice','Оплата':'Payment','Закрыт':'Closed','Отказ':'Rejected'};const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Arial,sans-serif;margin:40px;font-size:13px}h1{font-size:20px;margin-bottom:4px}h2{font-size:14px;margin-top:20px;border-bottom:1px solid #ccc;padding-bottom:3px}.r{display:flex;margin-bottom:5px}.l{width:180px;font-weight:bold;flex-shrink:0}.v{flex:1}</style></head><body><h1>Deal Card</h1><p style="color:#666;font-size:11px">Generated: ${new Date().toLocaleDateString('en-GB')} | Innomatec/LangAn CRM</p><h2>Deal</h2><div class="r"><div class="l">Title:</div><div class="v">${deal.title}</div></div><div class="r"><div class="l">Stage:</div><div class="v">${sm[deal.stage]||deal.stage}</div></div><div class="r"><div class="l">Amount (RUB):</div><div class="v">${deal.amount?deal.amount.toLocaleString('en-US')+' ₽':'—'}</div></div><div class="r"><div class="l">Start:</div><div class="v">${deal.startDate||'—'}</div></div><div class="r"><div class="l">Due:</div><div class="v">${deal.endDate||'—'}</div></div><div class="r"><div class="l">Description:</div><div class="v">${deal.description||'—'}</div></div>${co?`<h2>Company</h2><div class="r"><div class="l">Name:</div><div class="v">${co.name}</div></div>${co.inn?`<div class="r"><div class="l">INN:</div><div class="v">${co.inn}</div></div>`:''}<div class="r"><div class="l">City:</div><div class="v">${co.city||'—'}</div></div><div class="r"><div class="l">Region:</div><div class="v">${co.region||''}</div></div><div class="r"><div class="l">Phone:</div><div class="v">${co.phone||'—'}</div></div><div class="r"><div class="l">Industry:</div><div class="v">${(co.industries||[co.industry]).filter(Boolean).join(', ')||'—'}</div></div><div class="r"><div class="l">Activity:</div><div class="v">${co.description||'—'}</div></div><h2>Solutions</h2><div class="r"><div class="l">Innomatec:</div><div class="v">${co.solutionInnomatec||'—'}</div></div><div class="r"><div class="l">LangAn:</div><div class="v">${co.solutionLangAn||'—'}</div></div>`:''}`;
 
 const b=new Blob(['\ufeff'+h],{type:'application/msword'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`deal_${deal.title.replace(/\s+/g,'_')}_EN.doc`;a.click();}
 
 
 
-function exportProjWord(proj,data){const co=data.companies.find(c=>c.id===proj.companyId);const sm={'Новый':'New','В работе':'In Progress','На паузе':'On Hold','Завершён':'Completed'};const contacts=(proj.participantContactIds||[]).map(id=>data.contacts.find(c=>c.id===id)).filter(Boolean);const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Arial,sans-serif;margin:40px;font-size:13px}h1{font-size:20px;margin-bottom:4px}h2{font-size:14px;margin-top:20px;border-bottom:1px solid #ccc;padding-bottom:3px}.r{display:flex;margin-bottom:5px}.l{width:180px;font-weight:bold;flex-shrink:0}.v{flex:1}ul{margin:0;padding-left:18px}</style></head><body><h1>Project Brief</h1><p style="color:#666;font-size:11px">Generated: ${new Date().toLocaleDateString('en-GB')} | Innomatec/LangAn CRM</p><h2>Project</h2><div class="r"><div class="l">Title:</div><div class="v">${proj.title}</div></div><div class="r"><div class="l">Stage:</div><div class="v">${sm[proj.stage]||proj.stage||'New'}</div></div><div class="r"><div class="l">Budget (RUB):</div><div class="v">${proj.budget?proj.budget.toLocaleString('en-US')+' ₽':'—'}</div></div><div class="r"><div class="l">Start:</div><div class="v">${proj.startDate||'—'}</div></div><div class="r"><div class="l">Deadline:</div><div class="v">${proj.endDate||'—'}</div></div><div class="r"><div class="l">Description:</div><div class="v">${proj.description||'—'}</div></div>${(proj.milestones||[]).length>0?`<h2>Milestones</h2><ul>${proj.milestones.map(m=>`<li>${m.done?'[x]':'[ ]'} ${m.title}</li>`).join('')}</ul>`:''}${contacts.length>0?`<h2>Participants</h2><ul>${contacts.map(c=>`<li>${c.name}${c.position?' — '+c.position:''}${c.phones?.[0]?' · '+c.phones[0]:''}</li>`).join('')}</ul>`:''}${co?`<h2>Company</h2><div class="r"><div class="l">Name:</div><div class="v">${co.name}</div></div>${co.inn?`<div class="r"><div class="l">INN:</div><div class="v">${co.inn}</div></div>`:''}<div class="r"><div class="l">City:</div><div class="v">${co.city||'—'}</div></div><div class="r"><div class="l">Industry:</div><div class="v">${(co.industries||[co.industry]).filter(Boolean).join(', ')||'—'}</div></div><div class="r"><div class="l">Activity:</div><div class="v">${co.description||'—'}</div></div><h2>Applicable Solutions</h2><div class="r"><div class="l">Innomatec:</div><div class="v">${co.solutionInnomatec||'—'}</div></div><div class="r"><div class="l">LangAn:</div><div class="v">${co.solutionLangAn||'—'}</div></div><div class="r"><div class="l">Processes:</div><div class="v">${co.processes||'—'}</div></div><div class="r"><div class="l">Application points:</div><div class="v">${co.applicationPoints||'—'}</div></div>`:''}`;
+function exportProjWord(proj,data){const co=data.companies.find(c=>c.id===proj.companyId);const sm={'Новый':'New','В работе':'In Progress','На паузе':'On Hold','Завершён':'Completed'};const contacts=(proj.participantContactIds||[]).map(id=>data.contacts.find(c=>c.id===id)).filter(Boolean);const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Arial,sans-serif;margin:40px;font-size:13px}h1{font-size:20px;margin-bottom:4px}h2{font-size:14px;margin-top:20px;border-bottom:1px solid #ccc;padding-bottom:3px}.r{display:flex;margin-bottom:5px}.l{width:180px;font-weight:bold;flex-shrink:0}.v{flex:1}ul{margin:0;padding-left:18px}</style></head><body><h1>Project Brief</h1><p style="color:#666;font-size:11px">Generated: ${new Date().toLocaleDateString('en-GB')} | Innomatec/LangAn CRM</p><h2>Project</h2><div class="r"><div class="l">Title:</div><div class="v">${proj.title}</div></div><div class="r"><div class="l">Stage:</div><div class="v">${sm[proj.stage]||proj.stage||'New'}</div></div><div class="r"><div class="l">Budget (RUB):</div><div class="v">${proj.budget?proj.budget.toLocaleString('en-US')+' ₽':'—'}</div></div><div class="r"><div class="l">Start:</div><div class="v">${proj.startDate||'—'}</div></div><div class="r"><div class="l">Deadline:</div><div class="v">${proj.endDate||'—'}</div></div><div class="r"><div class="l">Description:</div><div class="v">${proj.description||'—'}</div></div>${(proj.milestones||[]).length>0?`<h2>Milestones</h2><ul>${proj.milestones.map(m=>`<li>${m.done?'[x]':'[ ]'} ${m.title}</li>`).join('')}</ul>`:''}${contacts.length>0?`<h2>Participants</h2><ul>${contacts.map(c=>`<li>${c.name}${c.position?' — '+c.position:''}${c.phones?.[0]?' · '+c.phones[0]:''}</li>`).join('')}</ul>`:''}${co?`<h2>Company</h2><div class="r"><div class="l">Name:</div><div class="v">${co.name}</div></div>${co.inn?`<div class="r"><div class="l">INN:</div><div class="v">${co.inn}</div></div>`:''}<div class="r"><div class="l">City:</div><div class="v">${co.city||'—'}</div></div><div class="r"><div class="l">Region:</div><div class="v">${co.region||''}</div></div><div class="r"><div class="l">Industry:</div><div class="v">${(co.industries||[co.industry]).filter(Boolean).join(', ')||'—'}</div></div><div class="r"><div class="l">Activity:</div><div class="v">${co.description||'—'}</div></div><h2>Applicable Solutions</h2><div class="r"><div class="l">Innomatec:</div><div class="v">${co.solutionInnomatec||'—'}</div></div><div class="r"><div class="l">LangAn:</div><div class="v">${co.solutionLangAn||'—'}</div></div><div class="r"><div class="l">Processes:</div><div class="v">${co.processes||'—'}</div></div><div class="r"><div class="l">Application points:</div><div class="v">${co.applicationPoints||'—'}</div></div>`:''}`;
 
 const b=new Blob(['\ufeff'+h],{type:'application/msword'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`project_${proj.title.replace(/\s+/g,'_')}_EN.doc`;a.click();}
 

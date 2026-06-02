@@ -1,6 +1,34 @@
 {
   "companies": [
     {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 235,
+      "name": "АО \"ТУРБОКОМПЛЕКТ\"",
+      "city": "Протвино",
+      "phone": "+7 (4967) 31-09-73; +7 (4967) 31-49-76",
+      "email": "",
+      "website": "https://www.kamturbo.ru",
+      "role": "",
+      "description": "Основная продукция:\n\nТурбокомпрессоры (турбонаддув) для дизельных и газовых двигателей.\nЖидкостно-масляные теплообменники.\nСистемы рециркуляции отработавших газов (EGR).\nСистемы шумоглушения и нейтрализации выхлопных газов.\nДругие агрегаты и компоненты двигателей.\n\nДополнительно предприятие выпускает:\n\nМоторные испытательные стенды.\nБезмоторные испытательные стенды для турбокомпрессоров.\nКонтрольно-исследовательское оборудование для испытаний двигателей и их узлов.\nВыполняет инжиниринговые и НИОКР-проекты по двигателестроению.\n\nДля оценки потенциального интереса к продукции «Дифлекс» наиболее перспективны направления:\n\nИспытательные стенды двигателей и турбокомпрессоров — БРС для воздуха, охлаждения, масла, топлива.\nПроизводство турбокомпрессоров — испытания на герметичность, гидравлические и пневматические подключения.\nРазработка систем охлаждения двигателей — быстроразъёмные соединения для контуров охлаждения и тестовых стендов.",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "Langan",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "Визитка",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "createdAt": "2026-06-02T03:48:24.745Z"
+    },
+    {
       "inn": "4501190550",
       "tags": [],
       "industries": [
@@ -8,7 +36,7 @@
       ],
       "id": 232,
       "name": "ООО \"ЗДТ \"РЕГИОН 45\"",
-      "applicability": "",
+      "applicability": "Langan",
       "role": "",
       "city": "Курган",
       "phone": "8 800 777 59 01",
@@ -27,7 +55,8 @@
       "comment": "",
       "priority": "B",
       "status": "Лид",
-      "createdAt": "2026-06-01T06:37:21.491Z"
+      "createdAt": "2026-06-01T06:37:21.491Z",
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "7415019467",
@@ -37,7 +66,7 @@
       ],
       "id": 231,
       "name": "ООО \"АМТ Н.В.\"",
-      "applicability": "",
+      "applicability": "RTC, Langan",
       "role": "",
       "city": "Миасс",
       "phone": "+7 (3513) 26-46-66,",
@@ -56,7 +85,8 @@
       "comment": "",
       "priority": "B",
       "status": "Лид",
-      "createdAt": "2026-06-01T06:28:30.662Z"
+      "createdAt": "2026-06-01T06:28:30.662Z",
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "7810925712",
@@ -66,7 +96,7 @@
       ],
       "id": 230,
       "name": "ООО \"АВТОБАКИ\"",
-      "applicability": "",
+      "applicability": "Langan, Rtc",
       "role": "",
       "city": "САНКТ-ПЕТЕРБУРГ",
       "phone": "",
@@ -85,7 +115,8 @@
       "comment": "Наша компания является одной из крупнейших в России, специализирующейся на производстве и импорте водяных радиаторов и интеркулеров для специальной тяжелой техники, грузовиков и автобусов европейских и американских брендов.\n\nВсегда в наличии на складе около 500 типоразмеров радиаторов европейского производства очень высокого качества, а так же агрегаты по более низкой цене из Китая и Индии.\n\nМы можем изготовить почти любой радиатор, интеркулер, маслоохладитель, из алюминия или меди, или предложим Вам новое изделие.",
       "priority": "B",
       "status": "Лид",
-      "createdAt": "2026-06-01T06:21:28.585Z"
+      "createdAt": "2026-06-01T06:21:28.585Z",
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "7718016666",
@@ -125,7 +156,7 @@
       ],
       "id": 225,
       "name": "ПОЗИС (ИЦМ)",
-      "applicability": "",
+      "applicability": "Langan",
       "role": "OEM",
       "city": "Зеленодольск",
       "phone": "+78437122158",
@@ -142,9 +173,10 @@
       "source": "",
       "verificationStatus": "",
       "comment": "",
-      "priority": "B",
+      "priority": "C",
       "status": "Лид",
-      "createdAt": "2026-05-22T08:03:18.844Z"
+      "createdAt": "2026-05-22T08:03:18.844Z",
+      "industry": "Промышленное производство"
     },
     {
       "inn": "",
@@ -214,7 +246,7 @@
       ],
       "id": 199,
       "name": "ГИПРОНИИАВИАПРОМ МОСКВА",
-      "applicability": "",
+      "applicability": "Langan, RTC",
       "role": "",
       "city": "",
       "phone": "+7 (495) 228-83-38",
@@ -244,7 +276,7 @@
       ],
       "id": 198,
       "name": "ООО \"ЦФ КАМА\"",
-      "applicability": "",
+      "applicability": "Langan",
       "role": "OEM",
       "city": "Набережные Челны",
       "phone": "",
@@ -262,8 +294,9 @@
       "verificationStatus": "",
       "comment": "",
       "priority": "A",
-      "status": "Лид",
-      "createdAt": "2026-05-21T10:04:44.114Z"
+      "status": "Договор",
+      "createdAt": "2026-05-21T10:04:44.114Z",
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "",
@@ -6182,7 +6215,9 @@
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 201,
       "name": "Уральский завод локомотивов",
       "city": "Екатеринбург",
@@ -6204,12 +6239,15 @@
       "verificationStatus": "Требует проверки",
       "comment": "Подтвердить наличие leak test в цехах",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:34:17.663Z"
+      "createdAt": "2026-05-21T18:34:17.663Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 202,
       "name": "Трансмашхолдинг, Нижегородский филиал",
       "city": "Нижний Новгород",
@@ -6231,12 +6269,15 @@
       "verificationStatus": "Требует проверки",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:34:17.663Z"
+      "createdAt": "2026-05-21T18:34:17.663Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 203,
       "name": "АО «Трансмашхолдинг»",
       "city": "Санкт-Петербург",
@@ -6258,12 +6299,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.339Z"
+      "createdAt": "2026-05-21T18:43:44.339Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 204,
       "name": "ООО «Локомотивы России»",
       "city": "Москва",
@@ -6285,12 +6329,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.339Z"
+      "createdAt": "2026-05-21T18:43:44.339Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 205,
       "name": "АО «Вагонмаш»",
       "city": "Екатеринбург",
@@ -6312,12 +6359,15 @@
       "verificationStatus": "Требует проверки",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.340Z"
+      "createdAt": "2026-05-21T18:43:44.340Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 206,
       "name": "АО «Новочеркасский электровозостроительный завод»",
       "city": "Ростов-на-Дону",
@@ -6339,12 +6389,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.340Z"
+      "createdAt": "2026-05-21T18:43:44.340Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 207,
       "name": "АО «Синара – Транспортные машины»",
       "city": "Екатеринбург",
@@ -6366,12 +6419,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.340Z"
+      "createdAt": "2026-05-21T18:43:44.340Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 208,
       "name": "АО «Уральские локомотивы»",
       "city": "Екатеринбург",
@@ -6393,12 +6449,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.340Z"
+      "createdAt": "2026-05-21T18:43:44.340Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 209,
       "name": "АО «РЖД-Локомотивы»",
       "city": "Москва",
@@ -6420,12 +6479,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.341Z"
+      "createdAt": "2026-05-21T18:43:44.341Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 210,
       "name": "АО «Красный Октябрь – вагонное производство»",
       "city": "Волгоград",
@@ -6447,12 +6509,15 @@
       "verificationStatus": "Требует проверки",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.341Z"
+      "createdAt": "2026-05-21T18:43:44.341Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 211,
       "name": "АО «Крюковский вагоностроительный завод»",
       "city": "Кременчуг",
@@ -6474,12 +6539,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.341Z"
+      "createdAt": "2026-05-21T18:43:44.341Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 212,
       "name": "АО «Северсталь-Локомотивы»",
       "city": "Череповец",
@@ -6501,12 +6569,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.341Z"
+      "createdAt": "2026-05-21T18:43:44.341Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 213,
       "name": "АО «Тверской вагоностроительный завод»",
       "city": "Тверь",
@@ -6528,12 +6599,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.342Z"
+      "createdAt": "2026-05-21T18:43:44.342Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 214,
       "name": "АО «Пермский локомотивный завод»",
       "city": "Пермь",
@@ -6555,12 +6629,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.342Z"
+      "createdAt": "2026-05-21T18:43:44.342Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 215,
       "name": "АО «Коломенский завод»",
       "city": "Коломна",
@@ -6582,12 +6659,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.342Z"
+      "createdAt": "2026-05-21T18:43:44.342Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 216,
       "name": "АО «БелАЗ-Трансмаш»",
       "city": "Минск",
@@ -6609,12 +6689,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.343Z"
+      "createdAt": "2026-05-21T18:43:44.343Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 217,
       "name": "АО «Тамбовский локомотивный завод»",
       "city": "Тамбов",
@@ -6636,12 +6719,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.343Z"
+      "createdAt": "2026-05-21T18:43:44.343Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 218,
       "name": "АО «Курский вагоностроительный завод»",
       "city": "Курск",
@@ -6663,12 +6749,15 @@
       "verificationStatus": "",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.343Z"
+      "createdAt": "2026-05-21T18:43:44.343Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 219,
       "name": "АО «Нижегородский локомотиворемонтный завод»",
       "city": "Нижний Новгород",
@@ -6690,12 +6779,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.344Z"
+      "createdAt": "2026-05-21T18:43:44.344Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 220,
       "name": "АО «Воронежский вагоностроительный завод»",
       "city": "Воронеж",
@@ -6717,12 +6809,15 @@
       "verificationStatus": "",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.345Z"
+      "createdAt": "2026-05-21T18:43:44.345Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 221,
       "name": "АО «Липецкий локомотивный завод»",
       "city": "Липецк",
@@ -6744,12 +6839,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.345Z"
+      "createdAt": "2026-05-21T18:43:44.345Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 222,
       "name": "АО «Ярославский локомотивный завод»",
       "city": "Ярославль",
@@ -6771,12 +6869,15 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.346Z"
+      "createdAt": "2026-05-21T18:43:44.346Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
       "tags": [],
-      "industries": [],
+      "industries": [
+        "ЖД"
+      ],
       "id": 223,
       "name": "АО «Владимирский локомотивный завод»",
       "city": "Владимир",
@@ -6798,7 +6899,8 @@
       "verificationStatus": "Предположительно",
       "comment": "",
       "status": "Лид",
-      "createdAt": "2026-05-21T18:43:44.346Z"
+      "createdAt": "2026-05-21T18:43:44.346Z",
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6855,6 +6957,62 @@
       "status": "Лид",
       "industry": "",
       "createdAt": "2026-05-31T10:06:00.685Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 233,
+      "name": "Нижегородский Завод ЭлектроТехнического Крепежа",
+      "city": "Нижний Новгород",
+      "phone": "8 (800) 707-99-52",
+      "email": "",
+      "website": "https://нзэтк.рф",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "createdAt": "2026-06-01T13:55:18.375Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 234,
+      "name": "АО \"МС Автомотив\" (бывш. Магна-Технопласт НН)",
+      "city": "Нижний Новгород",
+      "phone": "+7 (831) 233-54-44",
+      "email": "",
+      "website": "http://www.magna.com",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "createdAt": "2026-06-01T13:55:18.375Z"
     }
   ],
   "contacts": [
@@ -7217,6 +7375,60 @@
       "whatsapp": "",
       "notes": "",
       "createdAt": "2026-05-21T09:54:13.931Z"
+    },
+    {
+      "id": 22,
+      "name": "Вячеслав Николаевич Шабарин-Заславский",
+      "position": "Исполнительный директор Группы компаний",
+      "companyIds": [
+        233
+      ],
+      "phones": [
+        "+7-961-634-07-30; +7-831-224-88-52"
+      ],
+      "emails": [
+        "vshabarin@ci-g.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-01T13:55:18.375Z"
+    },
+    {
+      "id": 23,
+      "name": "Сергей Селихов",
+      "position": "Инженер-технолог проекта",
+      "companyIds": [
+        234
+      ],
+      "phones": [
+        "+7 962 518 36 12; +7 831 233 54 44"
+      ],
+      "emails": [
+        "sergey.selihov@msa.group"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-01T13:55:18.375Z"
+    },
+    {
+      "id": 24,
+      "name": "Олег Иванов",
+      "position": "",
+      "companyIds": [
+        234
+      ],
+      "phones": [
+        "+7 (831) 233-54-44"
+      ],
+      "emails": [
+        "oleg.ivanov@magna.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-01T13:55:18.375Z"
     }
   ],
   "deals": [],
@@ -7446,6 +7658,7 @@
   ],
   "tags": [],
   "customIndustries": [
-    "производство высоковольтного электротехнического оборудования"
+    "производство высоковольтного электротехнического оборудования",
+    "ЖД"
   ]
 }

@@ -18,7 +18,7 @@
       "solutionInnomatec": "",
       "solutionLangAn": "",
       "priority": "B",
-      "applicability": "Langan",
+      "applicability": "RTC",
       "searchTheme": "",
       "inclusionBasis": "",
       "source": "Визитка",
@@ -26,7 +26,8 @@
       "comment": "",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-06-02T03:48:24.745Z"
+      "createdAt": "2026-06-02T03:48:24.745Z",
+      "region": "Московская область"
     },
     {
       "inn": "4501190550",
@@ -36,7 +37,7 @@
       ],
       "id": 232,
       "name": "ООО \"ЗДТ \"РЕГИОН 45\"",
-      "applicability": "Langan",
+      "applicability": "LANGAN",
       "role": "",
       "city": "Курган",
       "phone": "8 800 777 59 01",
@@ -56,7 +57,8 @@
       "priority": "B",
       "status": "Лид",
       "createdAt": "2026-06-01T06:37:21.491Z",
-      "industry": "Автомобилестроение"
+      "industry": "Автомобилестроение",
+      "region": "Курганская область"
     },
     {
       "inn": "7415019467",
@@ -86,7 +88,8 @@
       "priority": "B",
       "status": "Лид",
       "createdAt": "2026-06-01T06:28:30.662Z",
-      "industry": "Автомобилестроение"
+      "industry": "Автомобилестроение",
+      "region": "Челябинская область"
     },
     {
       "inn": "7810925712",
@@ -116,7 +119,8 @@
       "priority": "B",
       "status": "Лид",
       "createdAt": "2026-06-01T06:21:28.585Z",
-      "industry": "Автомобилестроение"
+      "industry": "Автомобилестроение",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "7718016666",
@@ -146,7 +150,8 @@
       "priority": "A",
       "status": "Лид",
       "createdAt": "2026-05-22T08:52:54.965Z",
-      "industry": "Авиация и авиационные двигатели"
+      "industry": "Авиация и авиационные двигатели",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -176,7 +181,8 @@
       "priority": "C",
       "status": "Лид",
       "createdAt": "2026-05-22T08:03:18.844Z",
-      "industry": "Промышленное производство"
+      "industry": "Промышленное производство",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -205,7 +211,9 @@
       "comment": "",
       "priority": "A",
       "status": "Лид",
-      "createdAt": "2026-05-22T07:36:17.991Z"
+      "createdAt": "2026-05-22T07:36:17.991Z",
+      "region": "Санкт-Петербург",
+      "industry": "производство высоковольтного электротехнического оборудования"
     },
     {
       "inn": "4715019631",
@@ -235,7 +243,8 @@
       "priority": "A",
       "status": "Лид",
       "createdAt": "2026-05-21T11:28:51.576Z",
-      "industry": "Промышленное производство"
+      "industry": "Промышленное производство",
+      "region": "Ленинградская область"
     },
     {
       "inn": "7714013456",
@@ -296,7 +305,8 @@
       "priority": "A",
       "status": "Договор",
       "createdAt": "2026-05-21T10:04:44.114Z",
-      "industry": "Автомобилестроение"
+      "industry": "Автомобилестроение",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -307,7 +317,7 @@
       "id": 1,
       "name": "АО «АРМАТЭК»",
       "industry": "Производство арматуры",
-      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
+      "applicability": "INNOMATEC + LANGAN",
       "role": "Производитель продукции",
       "city": "Санкт-Петербург",
       "phone": "+7 (812) 611-06-18",
@@ -326,7 +336,8 @@
       "source": "https://armatek.ru/about/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить наличие собственного участка испытаний/контроля герметичности на сайте/в документации.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -337,7 +348,7 @@
       "id": 2,
       "name": "АО «АРМАТЭК» (контакты)",
       "industry": "Производство арматуры",
-      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
+      "applicability": "INNOMATEC + LANGAN",
       "role": "Производитель продукции",
       "city": "Санкт-Петербург",
       "phone": "+7 (812) 611-03-77",
@@ -356,7 +367,8 @@
       "source": "https://armatek.ru/kontakty/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон из официального раздела контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -367,7 +379,7 @@
       "id": 3,
       "name": "ООО ПФ «Челнинский арматурный завод» (ЧАЗ)",
       "industry": "Производство арматуры",
-      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
+      "applicability": "INNOMATEC + LANGAN",
       "role": "Производитель продукции",
       "city": "Набережные Челны",
       "phone": "8 (800) 707-01-41",
@@ -386,7 +398,8 @@
       "source": "https://chelaz.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон с главной страницы.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -397,7 +410,7 @@
       "id": 4,
       "name": "Группа компаний LD (Челябинск)",
       "industry": "Производство арматуры",
-      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
+      "applicability": "INNOMATEC + LANGAN",
       "role": "Производитель продукции",
       "city": "Челябинск",
       "phone": "+7 351 730-47-47",
@@ -416,7 +429,8 @@
       "source": "https://xn--d1an.xn--p1ai/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон с главной страницы.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Челябинская область"
     },
     {
       "inn": "",
@@ -446,7 +460,8 @@
       "source": "https://temper.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Курганская область"
     },
     {
       "inn": "",
@@ -476,7 +491,8 @@
       "source": "https://alsoarm.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Челябинская область"
     },
     {
       "inn": "",
@@ -506,7 +522,8 @@
       "source": "https://lztamarshal.ru/contacts/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить производственные площадки в РФ на официальном сайте/в разделе «О производстве».",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -536,7 +553,8 @@
       "source": "https://xn--b1al2b.xn--p1ai/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефоны/адрес завода указаны на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Липецкая область"
     },
     {
       "inn": "",
@@ -566,7 +584,8 @@
       "source": "https://uzpa.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ульяновская область"
     },
     {
       "inn": "",
@@ -596,7 +615,8 @@
       "source": "https://sibzta.ru/contacts/",
       "verificationStatus": "Требует проверки",
       "comment": "На сайте указан адрес в Москве; уточнить фактическую производственную площадку в РФ.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -626,7 +646,8 @@
       "source": "https://armatura-paz.ru/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пензенская область"
     },
     {
       "inn": "",
@@ -656,7 +677,8 @@
       "source": "https://armalit.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Сайт на реконструкции; уточнить номенклатуру и наличие собственных испытаний в доступных разделах.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -686,7 +708,8 @@
       "source": "https://medplant.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "Требуется уточнить: какие именно испытания герметичности применяются и где узкое место по такту.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -716,7 +739,8 @@
       "source": "https://axion-med.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Удмуртская Республика"
     },
     {
       "inn": "",
@@ -746,7 +770,8 @@
       "source": "https://ema.su/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -776,7 +801,8 @@
       "source": "https://medtechnics.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -806,7 +832,8 @@
       "source": "https://pascal-med.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -836,7 +863,8 @@
       "source": "https://mpk-elec.ru/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Липецкая область"
     },
     {
       "inn": "",
@@ -866,7 +894,8 @@
       "source": "https://www.sterin-mg.ru/contacts.html",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -896,7 +925,8 @@
       "source": "https://neurosoft.com/ru/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ивановская область"
     },
     {
       "inn": "",
@@ -926,7 +956,8 @@
       "source": "https://www.monitor-ltd.ru/kontaktyi",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ростовская область"
     },
     {
       "inn": "",
@@ -956,7 +987,8 @@
       "source": "https://electronxray.com/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -986,7 +1018,8 @@
       "source": "https://www.xn--g1ajft.xn--p1ai/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -1016,7 +1049,8 @@
       "source": "https://medp.spb.ru/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -1046,7 +1080,8 @@
       "source": "https://www.azri.ru/Home/Contact",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Краснодарский край"
     },
     {
       "inn": "",
@@ -1076,7 +1111,8 @@
       "source": "https://medsil.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -1106,7 +1142,8 @@
       "source": "https://n-vit.com/",
       "verificationStatus": "Предположительно",
       "comment": "Рекомендуется проверить наличие производственной площадки/участков контроля герметичности.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -1136,7 +1173,8 @@
       "source": "https://medizdelie.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -1196,7 +1234,8 @@
       "source": "https://pfsatellit.ru/ispytatelnye-stendy",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -1286,7 +1325,8 @@
       "source": "https://rosna-spb.ru/uslugi/ispytatelnye-stendy/",
       "verificationStatus": "Проверено",
       "comment": "Телефон не внесён — не извлечён из официальной страницы в источнике.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -1377,7 +1417,8 @@
       "source": "https://www.gidrostend.com/contacts.html; https://gidrostend.com/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -1407,7 +1448,8 @@
       "source": "https://skbarmatool.ru/catalog/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пензенская область"
     },
     {
       "inn": "",
@@ -1467,7 +1509,8 @@
       "source": "https://etrspb.ru/about",
       "verificationStatus": "Проверено",
       "comment": "Телефон не внесён — не извлечён из официальной страницы в источнике.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -1587,7 +1630,8 @@
       "source": "https://www.enerprom-spb.com/catalog/ispytatelnoe-oborudovanie/",
       "verificationStatus": "Проверено",
       "comment": "Проверить, что телефон относится именно к производителю на этой странице (официально указан).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -1767,7 +1811,8 @@
       "source": "https://www.kmpo.ru/; https://www.kmpo.ru/address/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон указан по официальной странице контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -1798,7 +1843,8 @@
       "source": "https://www.uecrus.com/products-and-services/products/gazoperekachivayushchie-ustanovki/gazoturbinnyy-dvigatel-nk-36st/; https://www.uecrus.com/about/structure/pao-odk-kuznetsov/kontakty-pao-odk-kuznetsov/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -1829,7 +1875,8 @@
       "source": "https://www.uecrus.com/about/structure/pao-odk-umpo/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен источник о конкретных операциях испытаний герметичности.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Башкортостан"
     },
     {
       "inn": "",
@@ -1860,7 +1907,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-aviadvigatel/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен источник о контроле герметичности/опрессовке в производстве.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -1890,7 +1938,8 @@
       "source": "https://www.uecrus.com/products-and-services/products/gazoperekachivayushchie-ustanovki/gazoturbinnaya-ustanovka-gtu-25p630/; https://www.uecrus.com/about/structure/ao-odk-pm/puc-ao-odk-pm-osnovnye-svedeniya/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -1920,7 +1969,8 @@
       "source": "https://www.uecrus.com/about/structure/pao-odk-saturn/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен источник о конкретных испытаниях контуров/теплообменников.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -1950,7 +2000,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-gt/",
       "verificationStatus": "Подтверждено",
       "comment": "Как «производитель испытательных стендов» — требуется уточнение роли в части собственных стендов (скорее производитель оборудования/интегратор).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -1961,7 +2012,7 @@
       "id": 56,
       "name": "АО «ОДК-Климов»",
       "industry": "Авиация и авиационные двигатели",
-      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
+      "applicability": "INNOMATEC + LANGAN",
       "role": "OEM",
       "city": "Санкт‑Петербург",
       "phone": "+7 (812) 647 00 38",
@@ -1980,7 +2031,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-klimov/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен официальный источник о стендовых/контрольных испытаниях герметичности (раздел производство/вакансии/технологии).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -2010,7 +2062,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-pm/puc-ao-odk-pm-osnovnye-svedeniya/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -2040,7 +2093,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-omo-im-p-i-baranova/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Омская область"
     },
     {
       "inn": "",
@@ -2070,7 +2124,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-pk-salyut/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2100,7 +2155,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-mmp-imeni-v-v-chernysheva/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2130,7 +2186,8 @@
       "source": "https://uwca.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "Телефон указан как многоканальный call-центр.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -2160,7 +2217,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-star/",
       "verificationStatus": "Проверено",
       "comment": "Компонентный производитель для авиационных/ГТД — высокая технологическая релевантность.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -2190,7 +2248,8 @@
       "source": "https://rhc.ru/structure/",
       "verificationStatus": "Требует проверки",
       "comment": "На источнике подтвержден профиль предприятия, но детали испытаний не указаны.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -2220,7 +2279,8 @@
       "source": "https://www.uecrus.com/about/structure/okb-im-a-m-lyulki/",
       "verificationStatus": "Проверено",
       "comment": "Не серийный завод, но релевантен как R&D/инжиниринг двигателей.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2250,7 +2310,8 @@
       "source": "https://aviatest.aero/test-stands/uav/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2280,7 +2341,8 @@
       "source": "https://www.prom-tex.org/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2310,7 +2372,8 @@
       "source": "https://teracont.ru/product/ispytatelnye-stendy-dlya-aviatsionnykh-agregatov-i-ikh-chastei2/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -2340,7 +2403,8 @@
       "source": "https://rosna-spb.ru/uslugi/ispytatelnye-stendy/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -2370,7 +2434,8 @@
       "source": "https://kb-78.ru/stands/",
       "verificationStatus": "Проверено",
       "comment": "Авиадвигатели не указаны явно — релевантность по компетенции стендов (в т.ч. вакуум/гидро).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ленинградская область"
     },
     {
       "inn": "",
@@ -2400,7 +2465,8 @@
       "source": "https://www.silver-wings.su/ispyitatelnyij-stend.html",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -2430,7 +2496,8 @@
       "source": "https://www.gap-rt.ru/napravleniya-deyatelnosti/opytno-konstruktorskie-razrabotki-ispytatelnye-stendy/",
       "verificationStatus": "Проверено",
       "comment": "Компания больше проектировщик/генпроектировщик стендов, не обязательно производитель «железа».",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -2460,7 +2527,8 @@
       "source": "https://www.elemer.ru/services/inzhiniring/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2490,7 +2558,8 @@
       "source": "https://el-scada.ru/services/ispytatelnye-stendy-pod-klyuch-dlya-aviatsionnykh-i-kosmicheskikh-dvigateley/",
       "verificationStatus": "Требует проверки",
       "comment": "Страница контактов не загрузилась через инструмент (timeout) — телефон/точный адрес нужно проверить вручную.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -2520,7 +2589,8 @@
       "source": "https://azpi.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "Релевантно для EOL-контроля и тестов узлов топливной аппаратуры.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Алтайский край"
     },
     {
       "inn": "",
@@ -2550,7 +2620,8 @@
       "source": "https://altzta.ru/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "Вероятна потребность в снижении времени подключения на стендах.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Алтайский край"
     },
     {
       "inn": "",
@@ -2580,7 +2651,8 @@
       "source": "https://www.dipoautomotive.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "Подходят решения для ускорения EOL теста и снижения ложного брака.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -2610,7 +2682,8 @@
       "source": "https://sedanfilter.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "Актуально для 100% контроля герметичности после сборки.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -2640,7 +2713,8 @@
       "source": "https://xn----7sbzkc4abkdr4gsa.xn--p1ai/contact/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -2670,7 +2744,8 @@
       "source": "https://bigfilter.com/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -2700,7 +2775,8 @@
       "source": "https://honex-filter.com/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Кировская область"
     },
     {
       "inn": "",
@@ -2730,7 +2806,8 @@
       "source": "https://topmodul.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "Требуется уточнить: какие испытания выполняют на производстве (опрессовка/герметичность).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2760,7 +2837,8 @@
       "source": "https://www.ena.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2790,7 +2868,8 @@
       "source": "https://www.npptemp.com/company",
       "verificationStatus": "Подтверждено",
       "comment": "Сильная ниша для гелиевых/вакуумных тестов и ускорения подключения.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -2820,7 +2899,8 @@
       "source": "https://aviaagregat.net/en/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "Требуется уточнить конкретные изделия по топливной системе на текущих программах.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -2850,7 +2930,8 @@
       "source": "https://agregatufa.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужно подтвердить наличие изделий топливной автоматики/гидроагрегатов; пока связь косвенная.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Башкортостан"
     },
     {
       "inn": "",
@@ -2880,7 +2961,8 @@
       "source": "https://ibprom.ru/yaroslavskiy-zavod-dizelnoy-apparatury",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон не внесен: официальный сайт недоступен при проверке; требуется подтвердить контакты с официального ресурса.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -2940,7 +3022,8 @@
       "source": "https://agatgidro.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Сайт может быть недоступен; телефон не добавлен (нет подтверждения с официального источника).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -2970,7 +3053,8 @@
       "source": "https://www.azpi.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Алтайский край"
     },
     {
       "inn": "",
@@ -3000,7 +3084,8 @@
       "source": "https://nzta.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -3030,7 +3115,8 @@
       "source": "https://topsys.spb.ru/company",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -3060,7 +3146,8 @@
       "source": "https://soate.ru/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%A4%D0%BE%D1%80%D1%81%D1%83%D0%BD%D0%BA%D0%B8/",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон заводских контактов на странице указан без городского кода; требуется уточнение единого номера приёмной/отдела продаж.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Белгородская область"
     },
     {
       "inn": "",
@@ -3090,7 +3177,8 @@
       "source": "https://www.oat-group.ru/predpriyatiyagruppydaaz/",
       "verificationStatus": "Требует проверки",
       "comment": "На странице указан e-mail и сайт; телефон для производственной площадки не указан — требуется проверка на www.daaz.ru.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ульяновская область"
     },
     {
       "inn": "",
@@ -3120,7 +3208,8 @@
       "source": "https://info.avtovaz.ru/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -3150,7 +3239,8 @@
       "source": "https://www.uaz.ru/company/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ульяновская область"
     },
     {
       "inn": "",
@@ -3180,7 +3270,8 @@
       "source": "https://kamaz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальная страница контактов недоступна в источниках — требуется проверка телефона/контактного подразделения.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -3210,7 +3301,8 @@
       "source": "https://www.gaz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальная страница контактов недоступна в источниках — требуется верификация телефона/цеха/дирекции качества.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -3240,7 +3332,8 @@
       "source": "https://bakor.pro/; https://bakor.site/kontakty",
       "verificationStatus": "Предположительно",
       "comment": "Контакты (телефон) видны на сайте; при необходимости уточнить юрлицо/заводскую площадку.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -3270,7 +3363,8 @@
       "source": "https://autobaki.ru/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -3300,7 +3394,8 @@
       "source": "https://www.td-oat.ru/production/brands/dzr",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон указан у АО «ОАТ» (торговый дом); для производственной площадки требуется отдельная верификация на daaz.ru.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область / Ульяновская область"
     },
     {
       "inn": "",
@@ -3330,7 +3425,8 @@
       "source": "https://www.autoglushitel.com/; https://www.autoglushitel.com/kontakty/",
       "verificationStatus": "ОК",
       "comment": "Телефоны/адрес указаны на официальном сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -3360,7 +3456,8 @@
       "source": "https://tehcom.org/; https://tehcom.org/contact/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ульяновская область"
     },
     {
       "inn": "",
@@ -3390,7 +3487,8 @@
       "source": "https://robola.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -3420,7 +3518,8 @@
       "source": "https://zavod-kd.ru/; https://zavod-kd.ru/about/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ростовская область"
     },
     {
       "inn": "",
@@ -3450,7 +3549,8 @@
       "source": "https://ecomash-kn.ru/gaz/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -3480,7 +3580,8 @@
       "source": "https://bioten.ru/company/requisites/; https://bioten.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -3510,7 +3611,8 @@
       "source": "https://mg-race.ru/contacts/; https://mg-race.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -3540,7 +3642,8 @@
       "source": "https://azg-nn.ru/; https://azg-nn.ru/contacts/",
       "verificationStatus": "Требует проверки",
       "comment": "На сайте контакт указан для официального дистрибьютора; прямые контакты производства могут отличаться.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -3570,7 +3673,8 @@
       "source": "https://bosal.ru/; https://bosal.ru/page/pd/; https://bosal.ru/distribution/",
       "verificationStatus": "Требует проверки",
       "comment": "На сайте не удалось подтвердить телефон (доступ к странице «Контакты» ограничен/таймаут).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -3600,7 +3704,8 @@
       "source": "https://eco-nu.ru/contacts/; https://www.eco-nu.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Страница контактов блокирует доступ (403/ошибка); телефон не подтвержден из официального источника в рамках текущей сессии.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -3630,7 +3735,8 @@
       "source": "https://crossgroup.su/; https://crossgroup.su/contacts.html",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Омская область"
     },
     {
       "inn": "",
@@ -3660,7 +3766,8 @@
       "source": "https://luzar.ru/about/ ; https://luzar.ru/contacts/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург / Московская область"
     },
     {
       "inn": "",
@@ -3690,7 +3797,8 @@
       "source": "https://lrzavod.ru/about ; https://lrzavod.ru/contacts",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Тверская область"
     },
     {
       "inn": "",
@@ -3720,7 +3828,8 @@
       "source": "https://teploobmennick.ru/ ; https://teploobmennick.ru/kontakty",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -3750,7 +3859,8 @@
       "source": "https://tza11.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужно подтвердить точный город/контакты с официального раздела «Контакты» (если есть).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -3780,7 +3890,8 @@
       "source": "https://www.thomson-auto.ru/contacts.html ; https://www.thomson-auto.ru/company.html",
       "verificationStatus": "Предположительно",
       "comment": "Сайт не открывается инструментом (ошибка кодировки); данные взяты из поискового сниппета официального домена — перепроверить вручную.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Владимирская область"
     },
     {
       "inn": "",
@@ -3810,7 +3921,8 @@
       "source": "https://www.eltra.ru/ ; https://www.eltra.ru/about/rzhev/ ; https://www.eltra.ru/contacts/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Тверская область"
     },
     {
       "inn": "",
@@ -3840,7 +3952,8 @@
       "source": "https://www.stron-parts.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -3960,7 +4073,8 @@
       "source": "https://industrial-kamaz.ru/products/produktsiya-i-uslugi/tormoznye-sistemy/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -3990,7 +4104,8 @@
       "source": "https://tolvo.llc/company/history/; https://tolvo.llc/company/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить юрлицо/площадку для конкретных тормозных продуктов и контакты производственной площадки (телефон/почта).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва / Нижегородская область"
     },
     {
       "inn": "",
@@ -4020,7 +4135,8 @@
       "source": "https://tiir.ru/rus/about/; https://tiir.ru/rus/contacts1/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -4050,7 +4166,8 @@
       "source": "https://lavs-bp.ru/proizvodstvo/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Смоленская область"
     },
     {
       "inn": "",
@@ -4080,7 +4197,8 @@
       "source": "https://www.balrt.ru/index.php/kontakty",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Саратовская область"
     },
     {
       "inn": "",
@@ -4110,7 +4228,8 @@
       "source": "https://www.bzakauto.ru/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Башкортостан"
     },
     {
       "inn": "",
@@ -4140,7 +4259,8 @@
       "source": "https://atikolodka.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -4170,7 +4290,8 @@
       "source": "https://www.uralati.ru/contacts/; https://uralati.ru/catalog/friktsionnye_izdeliya/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -4200,7 +4321,8 @@
       "source": "https://zavodkolodok.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить, что производство действительно на площадке в Тольятти (адрес производства указан как б-р Кулибина, 19).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -4230,7 +4352,8 @@
       "source": "https://info.avtovaz.ru/about; https://info.avtovaz.ru/contacts",
       "verificationStatus": "предположительно",
       "comment": "Нужна верификация конкретных методов испытаний (воздух/гелий/вакуум) на участке двигателей.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -4260,7 +4383,8 @@
       "source": "https://zmz.ru/products/zmz-engines/; https://zmz.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон взят из раздела «Контакты» ЗМЗ.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -4290,7 +4414,8 @@
       "source": "https://industrial-kamaz.ru/products/produktsiya-i-uslugi/zavod-dvigateley/; https://industrial-kamaz.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Нужна верификация используемых методов (гелий/вакуум) и конкретных узлов теста.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -4320,7 +4445,8 @@
       "source": "https://www.ymzmotor.ru/; https://www.ymzmotor.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон взят из раздела «Контакты и реквизиты».",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -4350,7 +4476,8 @@
       "source": "https://paotmz.ru/catalog/engines.html; https://paotmz.ru/contacts.html",
       "verificationStatus": "предположительно",
       "comment": "Нужна верификация участков leak test (воздух/вакуум/гелий).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -4380,7 +4507,8 @@
       "source": "https://www.kama-diesel.ru/; https://www.kama-diesel.ru/rus/contact/",
       "verificationStatus": "предположительно",
       "comment": "Уточнить номенклатуру изделий и типы испытаний на официальных страницах продукции.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -4410,7 +4538,8 @@
       "source": "https://www.flama-group.ru/contacts/; https://www.flama-group.ru/",
       "verificationStatus": "Проверено",
       "comment": "Телефон взят только с официальной страницы контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Краснодарский край"
     },
     {
       "inn": "",
@@ -4440,7 +4569,8 @@
       "source": "https://darina.su/contacts/; https://darina.su/",
       "verificationStatus": "Проверено",
       "comment": "Город/площадка подтверждены на странице контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -4470,7 +4600,8 @@
       "source": "https://lzbt.ru/; https://lzbt.ru/kontakti",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -4500,7 +4631,8 @@
       "source": "https://elta-spb.ru/about_company/; https://elta-spb.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -4530,7 +4662,8 @@
       "source": "https://deluxetm.com/contacts/; https://deluxetm.com/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Пензенская область"
     },
     {
       "inn": "",
@@ -4560,7 +4693,8 @@
       "source": "https://xn--80aaokoir0ad3c.xn--p1ai/about; https://xn--80aaokoir0ad3c.xn--p1ai/contacts",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие именно газовых/комбинированных моделей в актуальном каталоге.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Челябинская область"
     },
     {
       "inn": "",
@@ -4590,7 +4724,8 @@
       "source": "https://bs.gazprom.ru/about/holding/; https://bs.gazprom.ru/d/aboutcompanypost/02/2/statya-v-zhurnale-delovaya-rossiya.pdf",
       "verificationStatus": "Требует проверки",
       "comment": "Нет стабильной официальной страницы контактов предприятия (домен предприятия может быть недоступен). Телефон не заполнялся.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Волгоградская область"
     },
     {
       "inn": "",
@@ -4620,7 +4755,8 @@
       "source": "https://www.hms-livgidromash.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить конкретный адрес площадки/контакты на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Орловская область"
     },
     {
       "inn": "",
@@ -4650,7 +4786,8 @@
       "source": "https://knz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие упоминаний об испытаниях/ОТК и телефон в контактах.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Курганская область"
     },
     {
       "inn": "",
@@ -4680,7 +4817,8 @@
       "source": "https://www.mos-nasos.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город/площадку производства и контакты с официальной страницы.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -4710,7 +4848,8 @@
       "source": "https://teploobmennik.ridan.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить адрес производства и контакты в разделе «Контакты».",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -4740,7 +4879,8 @@
       "source": "https://nnzto.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить точный город площадки/контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -4770,7 +4910,8 @@
       "source": "https://www.teploobmennik.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить номенклатуру по «теплообменникам» и испытаниям.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -4800,7 +4941,8 @@
       "source": "https://roswep.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить площадку производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -4830,7 +4972,8 @@
       "source": "https://www.teplotex.ru/teploobmenniki/proizvodstvo-teploobmennikov",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты на официальном сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -4860,7 +5003,8 @@
       "source": "https://www.chkz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить контакты и производственные площадки на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -4890,7 +5034,8 @@
       "source": "https://dinskoy-kompressor.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить адрес/телефон на странице контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -4920,7 +5065,8 @@
       "source": "https://berg-air.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить, где расположено производство в РФ (город/адрес) на официальном сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -4950,7 +5096,8 @@
       "source": "https://enger-air.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить, есть ли собственное производство в РФ (не дилер).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Алтайский край"
     },
     {
       "inn": "",
@@ -4980,7 +5127,8 @@
       "source": "https://www.cooltech.ru/production/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить конкретные участки теста (вакуум/гелий) в описаниях.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5010,7 +5158,8 @@
       "source": "https://nsk-oem.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -5040,7 +5189,8 @@
       "source": "https://www.bzho.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие раздела с производством/ОТК и телефон.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Брянская область"
     },
     {
       "inn": "",
@@ -5070,7 +5220,8 @@
       "source": "https://xn--d1an.xn--p1ai/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город/площадки и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Челябинская область"
     },
     {
       "inn": "",
@@ -5100,7 +5251,8 @@
       "source": "https://dendor.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить раздел «Производство/Контакты» для города и телефона.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Новосибирская область"
     },
     {
       "inn": "",
@@ -5130,7 +5282,8 @@
       "source": "https://baz.group/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить контакты на официальной странице.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Тверская область"
     },
     {
       "inn": "",
@@ -5160,7 +5313,8 @@
       "source": "https://lztamarshal.ru/about/manufacture/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город производства/контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5190,7 +5344,8 @@
       "source": "https://alsoarm.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Челябинская область"
     },
     {
       "inn": "",
@@ -5220,7 +5375,8 @@
       "source": "https://lemax-kotel.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город (завод) и контакты на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ростовская область"
     },
     {
       "inn": "",
@@ -5250,7 +5406,8 @@
       "source": "https://signal-teplo.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "При проверке использовать доступ к разделу контактов/производства.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Саратовская область"
     },
     {
       "inn": "",
@@ -5280,7 +5437,8 @@
       "source": "https://laggartt.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить контакты и линейки продуктов, где нужны стенды.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Саратовская область"
     },
     {
       "inn": "",
@@ -5310,7 +5468,8 @@
       "source": "https://ruboiler.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город производства/контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5340,7 +5499,8 @@
       "source": "https://boiler.global/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить площадку и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5370,7 +5530,8 @@
       "source": "https://www.akom.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие производственной площадки/адреса в РФ и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -5400,7 +5561,8 @@
       "source": "https://tubor.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить адрес производства и подтверждение тестов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5430,7 +5592,8 @@
       "source": "https://sae.ooo/products/akkumulyatornye-batarei-dlya-elektromobilej/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить местоположение производственной площадки в РФ.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5460,7 +5623,8 @@
       "source": "https://belmy.ru/o-kompanii",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город/адрес производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5490,7 +5654,8 @@
       "source": "https://www.technofilter.ru/catalog/patronnye-filtry/membrannye-filtruyushchie-elementy/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Владимирская область"
     },
     {
       "inn": "",
@@ -5550,7 +5715,8 @@
       "source": "https://reatrack.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон есть на сайте, но нужно взять из раздела контактов (официально) при верификации.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Калужская область"
     },
     {
       "inn": "",
@@ -5580,7 +5746,8 @@
       "source": "https://grouphms.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить, какие площадки в РФ отвечают за тест/ОТК модулей.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5610,7 +5777,8 @@
       "source": "https://hms.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие собственной испытательной базы/стендов в РФ.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5640,7 +5808,8 @@
       "source": "https://hs-nauka.ru/catalog/aviatsionnye_teploobmenniki/; https://hs-nauka.ru/contact/; https://npo-nauka.ru/company/affiliated_companies/hs-nauka/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва / Тверская область"
     },
     {
       "inn": "",
@@ -5670,7 +5839,8 @@
       "source": "https://npo-nauka.ru/; https://npo-nauka.ru/company/history_and_achievements/; https://npo-nauka.ru/press-centre/news/2180/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5700,7 +5870,8 @@
       "source": "https://www.niip.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен отдельный источник о наличии жидкостного охлаждения/холодных плат в изделиях (вакансии/описание РЛС).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -5730,7 +5901,8 @@
       "source": "https://www.teploobmennik.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Сайт периодически не открывается из инструмента; телефон не подтвержден официально.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -5760,7 +5932,8 @@
       "source": "https://lira-s.com/services/cooler; https://lira-s.com/contact-us",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5790,7 +5963,8 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-servis/kontakty/",
       "verificationStatus": "Требует проверки",
       "comment": "На странице контактов указан телефон/факс подразделения, но нужно подтвердить, что это официальные контакты именно для производственной площадки; при необходимости — уточнить.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург / Ленинградская область"
     },
     {
       "inn": "",
@@ -5820,7 +5994,8 @@
       "source": "https://radar-mms.com/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон из официальной страницы контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5850,7 +6025,8 @@
       "source": "https://xn--80aaahiycas2ahds.xn--p1ai/",
       "verificationStatus": "предположительно",
       "comment": "Телефоны из официального раздела «Контакты».",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5880,7 +6056,8 @@
       "source": "https://dsol.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон и адрес из официальной страницы контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5910,7 +6087,8 @@
       "source": "https://nppame.com/",
       "verificationStatus": "предположительно",
       "comment": "Телефон из официального сайта.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -5940,7 +6118,8 @@
       "source": "https://www.phazotron.com/",
       "verificationStatus": "предположительно",
       "comment": "Телефон указан на официальном сайте в разделе контактов.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -5970,7 +6149,8 @@
       "source": "https://vniirt.ru/index.php?Itemid=12&id=28&option=com_content&view=article",
       "verificationStatus": "предположительно",
       "comment": "Телефон из официальной страницы «Контакты».",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -6000,7 +6180,8 @@
       "source": "https://www.kret.com/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт недоступен для извлечения телефона (timeout/robots).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -6030,7 +6211,8 @@
       "source": "http://electroavtomatica.kret.com/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт не открывается для извлечения телефона; номер не внесен.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -6060,7 +6242,8 @@
       "source": "http://www.ukbp.ru",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт недоступен для извлечения телефона (timeout).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Ульяновская область"
     },
     {
       "inn": "",
@@ -6090,7 +6273,8 @@
       "source": "http://www.rpkb.ru",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт недоступен (robots/timeout) — телефон не внесен.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -6120,7 +6304,8 @@
       "source": "http://www.aeropribor.ru/DKI.pdf",
       "verificationStatus": "предположительно",
       "comment": "Телефон взят из PDF на официальном сайте компании.",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -6150,7 +6335,8 @@
       "source": "https://radiotec.ru/ru/keywords?keywords=%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB",
       "verificationStatus": "Требует проверки",
       "comment": "Нужно подтвердить официальный сайт и контакты (по официальным страницам компании).",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Самарская область"
     },
     {
       "inn": "",
@@ -6180,7 +6366,8 @@
       "source": "https://npp-risal.ru/services/razrabotki-ispytatelnyh-stendov/ ; https://npp-risal.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -6210,7 +6397,8 @@
       "source": "https://compressormash.ru/contact/",
       "verificationStatus": "предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z"
+      "createdAt": "2025-01-15T10:00:00Z",
+      "region": "Республика Татарстан"
     },
     {
       "inn": "",
@@ -6232,7 +6420,7 @@
       "solutionInnomatec": "Innomatec LTC-802 / LTC-EV",
       "solutionLangAn": "LangAn Quick Connectors LA600/LA802",
       "priority": "A",
-      "applicability": "",
+      "applicability": "RTC + LANGAN + ROEMHELD + MUR + INNOMATEC",
       "searchTheme": "Железнодорожный сектор",
       "inclusionBasis": "Наличие производства двигателей и гидравлики",
       "source": "https://www.uzloco.ru",
@@ -6240,7 +6428,8 @@
       "comment": "Подтвердить наличие leak test в цехах",
       "status": "Лид",
       "createdAt": "2026-05-21T18:34:17.663Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -6270,7 +6459,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:34:17.663Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -6300,7 +6490,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.339Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Санкт-Петербург"
     },
     {
       "inn": "",
@@ -6330,7 +6521,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.339Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -6360,7 +6552,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -6390,7 +6583,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Ростовская область"
     },
     {
       "inn": "",
@@ -6420,7 +6614,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -6450,7 +6645,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Свердловская область"
     },
     {
       "inn": "",
@@ -6480,7 +6676,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.341Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -6510,7 +6707,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.341Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Волгоградская область"
     },
     {
       "inn": "",
@@ -6570,7 +6768,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.341Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Вологодская область"
     },
     {
       "inn": "",
@@ -6600,7 +6799,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.342Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Тверская область"
     },
     {
       "inn": "",
@@ -6630,7 +6830,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.342Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Пермский край"
     },
     {
       "inn": "",
@@ -6660,7 +6861,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.342Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Московская область"
     },
     {
       "inn": "",
@@ -6720,7 +6922,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.343Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Тамбовская область"
     },
     {
       "inn": "",
@@ -6750,7 +6953,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.343Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Курская область"
     },
     {
       "inn": "",
@@ -6780,7 +6984,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.344Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -6810,7 +7015,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.345Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Воронежская область"
     },
     {
       "inn": "",
@@ -6840,7 +7046,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.345Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Липецкая область"
     },
     {
       "inn": "",
@@ -6870,7 +7077,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.346Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Ярославская область"
     },
     {
       "inn": "",
@@ -6900,7 +7108,8 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.346Z",
-      "industry": "ЖД"
+      "industry": "ЖД",
+      "region": "Владимирская область"
     },
     {
       "inn": "",
@@ -6928,7 +7137,8 @@
       "comment": "Контакт со скрина CRM: Евгений, инженер, тел. 79835431055, email engineering@lossew.com. Адрес: 121205, г. Москва, ИЦ Сколково, б-р Большой, д. 42, стр. 1, этаж 4.",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-05-31T10:06:00.685Z"
+      "createdAt": "2026-05-31T10:06:00.685Z",
+      "region": "Москва"
     },
     {
       "inn": "",
@@ -6956,7 +7166,8 @@
       "comment": "Контакт со скрина CRM: Ананьев Александр Дмитриевич, инженер, тел. 79603269556, email ananev.a@pulsar-telecom.ru. Телефон компании со скрина: (8412) 23-47-11. Адрес: Пензенская область, г. Пенза, ул. Гагарина, стр. 11Ш, офис.",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-05-31T10:06:00.685Z"
+      "createdAt": "2026-05-31T10:06:00.685Z",
+      "region": "Пензенская область"
     },
     {
       "inn": "",
@@ -6984,7 +7195,8 @@
       "comment": "",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-06-01T13:55:18.375Z"
+      "createdAt": "2026-06-01T13:55:18.375Z",
+      "region": "Нижегородская область"
     },
     {
       "inn": "",
@@ -7012,7 +7224,8 @@
       "comment": "",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-06-01T13:55:18.375Z"
+      "createdAt": "2026-06-01T13:55:18.375Z",
+      "region": "Нижегородская область"
     }
   ],
   "contacts": [

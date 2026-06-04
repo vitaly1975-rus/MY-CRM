@@ -4,6 +4,93 @@
       "inn": "",
       "tags": [],
       "industries": [],
+      "id": 236,
+      "name": "ДКС, ЗАО",
+      "city": "Тверь",
+      "phone": "+7 (4822) 33-28-81",
+      "email": "",
+      "website": "http://www.dkc.ru",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "region": "Тверская облахть",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 237,
+      "name": "ОАО \"УРАЛТРУБПРОМ\"",
+      "city": "Первоуральск",
+      "phone": "+7 (3439) 29-75-02",
+      "email": "",
+      "website": "",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "region": "Свердловская область",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 238,
+      "name": "ООО \"АЙ-ПЛАСТ\"",
+      "city": "Нижнекамск",
+      "phone": "+7 (8555) 38-32-23",
+      "email": "",
+      "website": "http://iplast.com",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "region": "Ханты-Мансийский АО",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
       "id": 235,
       "name": "АО \"ТУРБОКОМПЛЕКТ\"",
       "city": "Протвино",
@@ -7658,6 +7745,438 @@
       "whatsapp": "",
       "notes": "",
       "createdAt": "2026-06-02T04:23:07.258Z"
+    },
+    {
+      "id": 26,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 983 100 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 27,
+      "name": "Юрий Худяков",
+      "position": "",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 28,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 29,
+      "name": "Терехов Алексей Игоревич",
+      "position": "Начальник экструзионного цеха №3 АО ДКС",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7-983-125-8711"
+      ],
+      "emails": [
+        "alexey.terekhov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 30,
+      "name": "Сергей Бертов",
+      "position": "Начальник МТО",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "8-4822-33-28-79;8 910 532-69-50"
+      ],
+      "emails": [
+        "sergey.bertov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 31,
+      "name": "Юлия Евгеневна Бодрова",
+      "position": "Технолог",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "(4822)33-28-81(доб. 512)"
+      ],
+      "emails": [
+        "yulia.bodrova@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 32,
+      "name": "Максим Шевцов",
+      "position": "Менеджер по снабжению",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 (910) 533-99-70"
+      ],
+      "emails": [
+        "maksim.shvetsov@dkc.ru;snabspec@dkc.tver.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 33,
+      "name": "Елена Викторовна Зарицкая",
+      "position": "Технолог",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 (4822) 33-28-81"
+      ],
+      "emails": [
+        "elena.zarutskay@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 34,
+      "name": "Михаил Владимирович Лавриенко",
+      "position": "Главный технолог",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 (980) 623-06-04;+7 9040076353"
+      ],
+      "emails": [
+        "mikhail.lavrienko@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 35,
+      "name": "Андрей Вячеславович Ляпунов",
+      "position": "Главный механик",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 (919) 050-38-07"
+      ],
+      "emails": [
+        "chiefmechanic@dkc.tver.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 36,
+      "name": "Дмитрий Трофимов",
+      "position": "Инженер-механик",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 (4822) 33-28-81 (#549);+7 (920) 692-42-11;+7 (904) 022-59-93"
+      ],
+      "emails": [
+        "dmitry.trofimov@dkc.ru;engmeh2@dkc.tver.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 37,
+      "name": "Алексей Горшков",
+      "position": "Энергетик ЦМ-№3 г.Новосибирск",
+      "companyIds": [
+        236
+      ],
+      "phones": [
+        "+7 (383) 347-84-24 (#110);+7 (983) 308-73-78"
+      ],
+      "emails": [
+        "aleksey.gorshkov@dkc.ru;sniper1979@bk.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 38,
+      "name": "Михаил Геннадьевич Ладов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [
+        237
+      ],
+      "phones": [
+        "+7(3439)297-598;+7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 39,
+      "name": "Екатерина Валеряевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [
+        237
+      ],
+      "phones": [
+        "8 (3439) 297-536;8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 40,
+      "name": "Марат Гамилевич Заинулин",
+      "position": "Информатор",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 41,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 42,
+      "name": "Мавликов Эдуард",
+      "position": "Менеджер ОМТС",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "88555 32-04-05"
+      ],
+      "emails": [
+        "eduard.mavlikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 43,
+      "name": "Сергей Володин",
+      "position": "Технический директор",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "+7 987 060-35-90"
+      ],
+      "emails": [
+        "sergei.volodin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 44,
+      "name": "Андрей Геннадьевич Ефремов",
+      "position": "главный механик ООО АЙ ПЛАСТ",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "+7 917 869-33-03"
+      ],
+      "emails": [
+        "andrey.efremov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 45,
+      "name": "Сергей Анатольевич Михайлов",
+      "position": "Зам.главного механика",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "+7917 258 84 71;+7 8555 383223"
+      ],
+      "emails": [
+        "sergey.mikhaylov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 46,
+      "name": "Александр Владимирович Макаров",
+      "position": "гл. механик",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "+7 (8555) 43-98-74;+7 (8555) 38 32 23"
+      ],
+      "emails": [
+        "aleksandr.makarov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 47,
+      "name": "Козлов Евгений Петрович",
+      "position": "технический директор",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "8-8555-38-32-23"
+      ],
+      "emails": [
+        "evgeniy.kozlov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 48,
+      "name": "Санников Роман",
+      "position": "директор по производству",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "8-919-646-08-11;+7 8555 38 30 25"
+      ],
+      "emails": [
+        "roman.sannikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
+    },
+    {
+      "id": 49,
+      "name": "Александр Николаевич Сайко",
+      "position": "Гл. инженер",
+      "companyIds": [
+        238
+      ],
+      "phones": [
+        "+7 (917) 396-25-80"
+      ],
+      "emails": [
+        "alexandr.sayko@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:02:50.139Z"
     }
   ],
   "deals": [],

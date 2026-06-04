@@ -3527,7 +3527,8 @@ function XlsxImport({data,upd,onClose,bang}) {
 
   const buildContacts=(row,newCoId,existingConts)=>{
     const res=[];
-    for(let ci=1;ci<=3;ci++){
+    const maxContacts=headers.reduce((m,h)=>{const match=h.match(/^Контакт (\d+) Имя$/);return match?Math.max(m,parseInt(match[1])):m;},0);
+    for(let ci=1;ci<=maxContacts;ci++){
       const cName=safe(row[headers.indexOf('Контакт '+ci+' Имя')]);
       if(!cName) continue;
       const cPos=safe(row[headers.indexOf('Контакт '+ci+' Должность')]);

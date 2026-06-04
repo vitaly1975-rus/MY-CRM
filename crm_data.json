@@ -4,7 +4,211 @@
       "inn": "",
       "tags": [],
       "industries": [],
-      "id": 236,
+      "id": 248,
+      "name": "СосновскАгроПромТехника (САПТ), ОАО",
+      "applicability": "RTC",
+      "role": "",
+      "city": "Заволжье, Нижегородская обл.",
+      "region": "",
+      "phone": "",
+      "email": "sapt@sinn.ru",
+      "website": "http://www.sapt.ru",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "БРС счет 180\n€633\n  ПРОДАЖИ  ЗАКАЗ РАЗМЕЩЕН\nНет задач\nХурмак-Алга!\n€0\n  ХУРМАК  Получена обратная связь+\nНет задач\n€343.542\nспреи(120)\n€88.200\nспреи(96)\n€69.600\nСпреи(100)\n€72.500\nспреи(24)\n€17.400\nБРС счет 212\n€138\nСпреи(24)\n€17.400\nСпреи(24)\n€17.400\nБРС счет 36\n€135\nспреи\n€33.000\nБРС счет 330\n€730\nспреи\n€15.840\nБРС счет 34\n€139\nБРС счет 328\n€373\nСмазки\n€2.500\nБРС 090 счет 57\n€40\nБРС счет 11\n€265\nБРС счет 223\n€167\nБРС, счет 187\n€88\nБРС счет 158\n€44\nБРС счет 160\n€664\nБРС счет 93\n€467\nМуфты счет 73\n€664\nНиппель, счет 71\n€48\nБРС счет 53\n€257\nБРС серия 090, прил. 4\n€297\nБРС счет 181\n€543\nБРС 090, счет 161\n€583\nБРС 090, спец. 3\n€664\nБРС 090\n€209\nБРС разные серии\n€2.324\nБРС серия 090\n€529\nБРС\n€167\nБРС\n€167\n€7.032\nСделка #43566125\n€0\nСделка #43397923\n€0\nвнешние деккели\n€5.000\nБРС гидравлика\n€1.780\nСредства очистки\n€252",
+      "priority": "B",
+      "status": "Лид",
+      "createdAt": "2026-06-04T15:08:17.700Z",
+      "industry": ""
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 243,
+      "name": "Менсен Пакаджинг СНГ (MENSHEN)",
+      "city": "Егорьевск",
+      "phone": "+7(499)110 77 65;+7(49640) 4-23-23",
+      "email": "",
+      "website": "http://www.menshen.ru/",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "БРС 103 серия, счет 190\n€1.151\n  ПРОДАЖИ  ЗАКАЗ РАЗМЕЩЕН\nНет задач\n€25.779\nБРС 103, спец. 19\n€1.509\nБРС 099, прил. 18\n€498\nБРС 103 серия, прил. 17\n€754\n099 приложение 16\n€568\nНиппель 099, прил. 15\n€189\nБРС 099.09 прил. 14\n€561\nШланги прил. 13\n€4.824\nШланги прил. 12\n€2.412\nБРС спец. 11\n€196\nБРС спец. 10\n€1.720\nБРС спец.9\n€85\nКоллекторы 118 серия\n€841\nБРС, шланги\n€4.580\nБРС спец. 6\n€2.655\nБРС 099 спец. 5\n€388\nБРС 099.09, шланги спец. 4\n€3.733\nБРС 090.06\n€266\n€45.768\nЧиллер СТ 4\n€6.500\nЧиллер 10 кВт\n€0\nЧиллер NOVATECH YNTC 20\n€8.910\nТермостат прямого действия DIRECT 12 кВт\n€4.704\nШнековая пара 60 мм Demag\n€14.154\nДозаторы Sysmetric\n€11.500",
+      "status": "Лид",
+      "industry": "",
+      "region": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 244,
+      "name": "Павлово-Посадский Гофрокомбинат",
+      "city": "",
+      "phone": "+7 495 960-19-22",
+      "email": "",
+      "website": "https://ppgk.ru/",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "Блочный цилиндр\n€7.368\n  ПРОДАЖИ  ЗАКАЗ РАЗМЕЩЕН\n€3.735\nВтулка, поршень, комплект уплотнений, счет 250\n€3.735\n€2.625\nГЦ+ремкомплект\n€2.625",
+      "status": "Лид",
+      "industry": "",
+      "region": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 245,
+      "name": "ООО Сибирская фабрика Комус-Упаковка",
+      "city": "Юрга",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "Блочный цилиндр\n€7.368\n  ПРОДАЖИ  ЗАКАЗ РАЗМЕЩЕН\n€3.735\nВтулка, поршень, комплект уплотнений, счет 250\n€3.735\n€2.625\nГЦ+ремкомплект\n€2.625",
+      "status": "Лид",
+      "industry": "",
+      "region": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 246,
+      "name": "Завод Инкаб",
+      "city": "Пермский край",
+      "phone": "+7 (342) 211-41-41",
+      "email": "",
+      "website": "http://incab.ru",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "region": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 247,
+      "name": "Мир Упаковки",
+      "city": "4703050281",
+      "phone": "Сертолово",
+      "email": "",
+      "website": "Info@miru.ru",
+      "role": "",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "priority": "B",
+      "applicability": "",
+      "searchTheme": "",
+      "inclusionBasis": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "status": "Лид",
+      "industry": "",
+      "region": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "inn": "6321279299",
+      "tags": [],
+      "industries": [
+        "Автомобилестроение"
+      ],
+      "id": 241,
+      "name": "ООО \"УК ДСК-ГРУПП\"",
+      "applicability": "LANGAN + RTC + ROEMHELD",
+      "role": "",
+      "city": "Тольятти",
+      "region": "Самарская облашть",
+      "phone": "",
+      "email": "",
+      "website": "https://www.groupdsk.ru",
+      "description": "",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "priority": "B",
+      "status": "Лид",
+      "createdAt": "2026-06-04T14:11:05.232Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [],
+      "id": 238,
       "name": "ДКС, ЗАО",
       "city": "Тверь",
       "phone": "+7 (4822) 33-28-81",
@@ -23,17 +227,17 @@
       "inclusionBasis": "",
       "source": "",
       "verificationStatus": "",
-      "comment": "",
+      "comment": "Фильтры Kongskilde\n€1.200\nФильтрозаменитель ЕН 45\n€33.300\nШнек и цилиндр\n€18.150\nМеталлсепаратор\n€4.950\nСистема вытяжки Конскилд.\n€3.647\n€211.596\nАвтоматическая станция растаривания EL12ST\n€142.000\nпредварительная расценка_Тендер 1012-19-Т-МВ-МВ\n€0\nприглашение к участию в закупке 0791-19-М-МВ-МВ\n€0\nНагреватели для ФЗ\n€879\nJCP 1724\n€42.000\nMiniJet\n€14.800\nРоторный питатель Kongskilde\n€3.005\nРоторный питатель Amis\n€5.295\nДозаторы\n€0\nСистема выгрузки Конскилд\n€3.617",
       "status": "Лид",
       "industry": "",
       "region": "Тверская облахть",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
       "inn": "",
       "tags": [],
       "industries": [],
-      "id": 237,
+      "id": 239,
       "name": "ОАО \"УРАЛТРУБПРОМ\"",
       "city": "Первоуральск",
       "phone": "+7 (3439) 29-75-02",
@@ -52,17 +256,17 @@
       "inclusionBasis": "",
       "source": "",
       "verificationStatus": "",
-      "comment": "",
+      "comment": "Гидравлические соединения Roemheld\n€3.071\n  ПРОДАЖИ  ЗАКАЗ РАЗМЕЩЕН\nНет задач\n€2.140\nГидравлические БРС Ромхельд 0460836, 0460832\n€2.140\n€4.879\nГидравлические соединения Roemheld\n€4.879",
       "status": "Лид",
       "industry": "",
       "region": "Свердловская область",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
       "inn": "",
       "tags": [],
       "industries": [],
-      "id": 238,
+      "id": 240,
       "name": "ООО \"АЙ-ПЛАСТ\"",
       "city": "Нижнекамск",
       "phone": "+7 (8555) 38-32-23",
@@ -85,7 +289,67 @@
       "status": "Лид",
       "industry": "",
       "region": "Ханты-Мансийский АО",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
+    },
+    {
+      "inn": "",
+      "tags": [],
+      "industries": [
+        "Автомобилестроение"
+      ],
+      "id": 237,
+      "name": "Шасси Системс РУС",
+      "applicability": "Innomatec, Langan ",
+      "role": "",
+      "city": "Калуга",
+      "region": "Калужская область",
+      "phone": "+7 (4842) 21-11-68",
+      "email": "info@chassis-systems.ru",
+      "website": "",
+      "description": "Компоненты шасси, балки подвески, подрамники, элементы подвески для автопрома. Ранее входило в немецкую группу Benteler.",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "priority": "B",
+      "status": "Лид",
+      "createdAt": "2026-06-02T12:43:12.464Z"
+    },
+    {
+      "inn": "4715027946",
+      "tags": [],
+      "industries": [
+        "ЖД"
+      ],
+      "id": 236,
+      "name": "ООО «ТИЦ ЖТ»",
+      "applicability": "Innomatec, Langan ",
+      "role": "",
+      "city": "Тихвин",
+      "region": "Ленинградская облахть",
+      "phone": "+7 812 612-27-10",
+      "email": "info@railtest.ru",
+      "website": "",
+      "description": "испытания железнодорожной техники: грузовые вагоны, тележки, колесные пары, литые детали, пружины, элементы подвижного состава. Проводят статические, циклические, ресурсные, ударные испытания, испытания под давлением до 3 МПа и с вакуумом",
+      "whyRelevant": "",
+      "processes": "",
+      "applicationPoints": "",
+      "solutionInnomatec": "",
+      "solutionLangAn": "",
+      "inclusionBasis": "",
+      "searchTheme": "",
+      "source": "",
+      "verificationStatus": "",
+      "comment": "",
+      "priority": "B",
+      "status": "Лид",
+      "createdAt": "2026-06-02T12:07:31.368Z"
     },
     {
       "inn": "",
@@ -105,7 +369,7 @@
       "solutionInnomatec": "",
       "solutionLangAn": "",
       "priority": "B",
-      "applicability": "RTC",
+      "applicability": "Langan",
       "searchTheme": "",
       "inclusionBasis": "",
       "source": "Визитка",
@@ -113,8 +377,7 @@
       "comment": "",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-06-02T03:48:24.745Z",
-      "region": "Московская область"
+      "createdAt": "2026-06-02T03:48:24.745Z"
     },
     {
       "inn": "4501190550",
@@ -124,7 +387,7 @@
       ],
       "id": 232,
       "name": "ООО \"ЗДТ \"РЕГИОН 45\"",
-      "applicability": "LANGAN",
+      "applicability": "Langan",
       "role": "",
       "city": "Курган",
       "phone": "8 800 777 59 01",
@@ -144,8 +407,7 @@
       "priority": "B",
       "status": "Лид",
       "createdAt": "2026-06-01T06:37:21.491Z",
-      "industry": "Автомобилестроение",
-      "region": "Курганская область"
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "7415019467",
@@ -175,8 +437,7 @@
       "priority": "B",
       "status": "Лид",
       "createdAt": "2026-06-01T06:28:30.662Z",
-      "industry": "Автомобилестроение",
-      "region": "Челябинская область"
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "7810925712",
@@ -206,8 +467,7 @@
       "priority": "B",
       "status": "Лид",
       "createdAt": "2026-06-01T06:21:28.585Z",
-      "industry": "Автомобилестроение",
-      "region": "Санкт-Петербург"
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "7718016666",
@@ -237,8 +497,7 @@
       "priority": "A",
       "status": "Лид",
       "createdAt": "2026-05-22T08:52:54.965Z",
-      "industry": "Авиация и авиационные двигатели",
-      "region": "Москва"
+      "industry": "Авиация и авиационные двигатели"
     },
     {
       "inn": "",
@@ -268,8 +527,7 @@
       "priority": "C",
       "status": "Лид",
       "createdAt": "2026-05-22T08:03:18.844Z",
-      "industry": "Промышленное производство",
-      "region": "Республика Татарстан"
+      "industry": "Промышленное производство"
     },
     {
       "inn": "",
@@ -298,9 +556,7 @@
       "comment": "",
       "priority": "A",
       "status": "Лид",
-      "createdAt": "2026-05-22T07:36:17.991Z",
-      "region": "Санкт-Петербург",
-      "industry": "производство высоковольтного электротехнического оборудования"
+      "createdAt": "2026-05-22T07:36:17.991Z"
     },
     {
       "inn": "4715019631",
@@ -330,8 +586,7 @@
       "priority": "A",
       "status": "Лид",
       "createdAt": "2026-05-21T11:28:51.576Z",
-      "industry": "Промышленное производство",
-      "region": "Ленинградская область"
+      "industry": "Промышленное производство"
     },
     {
       "inn": "7714013456",
@@ -392,8 +647,7 @@
       "priority": "A",
       "status": "Договор",
       "createdAt": "2026-05-21T10:04:44.114Z",
-      "industry": "Автомобилестроение",
-      "region": "Республика Татарстан"
+      "industry": "Автомобилестроение"
     },
     {
       "inn": "",
@@ -404,7 +658,7 @@
       "id": 1,
       "name": "АО «АРМАТЭК»",
       "industry": "Производство арматуры",
-      "applicability": "INNOMATEC + LANGAN",
+      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
       "role": "Производитель продукции",
       "city": "Санкт-Петербург",
       "phone": "+7 (812) 611-06-18",
@@ -423,8 +677,7 @@
       "source": "https://armatek.ru/about/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить наличие собственного участка испытаний/контроля герметичности на сайте/в документации.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -435,7 +688,7 @@
       "id": 2,
       "name": "АО «АРМАТЭК» (контакты)",
       "industry": "Производство арматуры",
-      "applicability": "INNOMATEC + LANGAN",
+      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
       "role": "Производитель продукции",
       "city": "Санкт-Петербург",
       "phone": "+7 (812) 611-03-77",
@@ -454,8 +707,7 @@
       "source": "https://armatek.ru/kontakty/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон из официального раздела контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -466,7 +718,7 @@
       "id": 3,
       "name": "ООО ПФ «Челнинский арматурный завод» (ЧАЗ)",
       "industry": "Производство арматуры",
-      "applicability": "INNOMATEC + LANGAN",
+      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
       "role": "Производитель продукции",
       "city": "Набережные Челны",
       "phone": "8 (800) 707-01-41",
@@ -485,8 +737,7 @@
       "source": "https://chelaz.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон с главной страницы.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -497,7 +748,7 @@
       "id": 4,
       "name": "Группа компаний LD (Челябинск)",
       "industry": "Производство арматуры",
-      "applicability": "INNOMATEC + LANGAN",
+      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
       "role": "Производитель продукции",
       "city": "Челябинск",
       "phone": "+7 351 730-47-47",
@@ -516,8 +767,7 @@
       "source": "https://xn--d1an.xn--p1ai/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон с главной страницы.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Челябинская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -547,8 +797,7 @@
       "source": "https://temper.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Курганская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -578,8 +827,7 @@
       "source": "https://alsoarm.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Челябинская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -609,8 +857,7 @@
       "source": "https://lztamarshal.ru/contacts/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить производственные площадки в РФ на официальном сайте/в разделе «О производстве».",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -640,8 +887,7 @@
       "source": "https://xn--b1al2b.xn--p1ai/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефоны/адрес завода указаны на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Липецкая область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -671,8 +917,7 @@
       "source": "https://uzpa.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ульяновская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -702,8 +947,7 @@
       "source": "https://sibzta.ru/contacts/",
       "verificationStatus": "Требует проверки",
       "comment": "На сайте указан адрес в Москве; уточнить фактическую производственную площадку в РФ.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -733,8 +977,7 @@
       "source": "https://armatura-paz.ru/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пензенская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -764,8 +1007,7 @@
       "source": "https://armalit.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Сайт на реконструкции; уточнить номенклатуру и наличие собственных испытаний в доступных разделах.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -795,8 +1037,7 @@
       "source": "https://medplant.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "Требуется уточнить: какие именно испытания герметичности применяются и где узкое место по такту.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -826,8 +1067,7 @@
       "source": "https://axion-med.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Удмуртская Республика"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -857,8 +1097,7 @@
       "source": "https://ema.su/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Свердловская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -888,8 +1127,7 @@
       "source": "https://medtechnics.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -919,8 +1157,7 @@
       "source": "https://pascal-med.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -950,8 +1187,7 @@
       "source": "https://mpk-elec.ru/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Липецкая область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -981,8 +1217,7 @@
       "source": "https://www.sterin-mg.ru/contacts.html",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1012,8 +1247,7 @@
       "source": "https://neurosoft.com/ru/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ивановская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1043,8 +1277,7 @@
       "source": "https://www.monitor-ltd.ru/kontaktyi",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ростовская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1074,8 +1307,7 @@
       "source": "https://electronxray.com/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1105,8 +1337,7 @@
       "source": "https://www.xn--g1ajft.xn--p1ai/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Свердловская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1136,8 +1367,7 @@
       "source": "https://medp.spb.ru/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1167,8 +1397,7 @@
       "source": "https://www.azri.ru/Home/Contact",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Краснодарский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1198,8 +1427,7 @@
       "source": "https://medsil.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1229,8 +1457,7 @@
       "source": "https://n-vit.com/",
       "verificationStatus": "Предположительно",
       "comment": "Рекомендуется проверить наличие производственной площадки/участков контроля герметичности.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1260,8 +1487,7 @@
       "source": "https://medizdelie.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1321,8 +1547,7 @@
       "source": "https://pfsatellit.ru/ispytatelnye-stendy",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1412,8 +1637,7 @@
       "source": "https://rosna-spb.ru/uslugi/ispytatelnye-stendy/",
       "verificationStatus": "Проверено",
       "comment": "Телефон не внесён — не извлечён из официальной страницы в источнике.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1504,8 +1728,7 @@
       "source": "https://www.gidrostend.com/contacts.html; https://gidrostend.com/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1535,8 +1758,7 @@
       "source": "https://skbarmatool.ru/catalog/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пензенская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1596,8 +1818,7 @@
       "source": "https://etrspb.ru/about",
       "verificationStatus": "Проверено",
       "comment": "Телефон не внесён — не извлечён из официальной страницы в источнике.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1717,8 +1938,7 @@
       "source": "https://www.enerprom-spb.com/catalog/ispytatelnoe-oborudovanie/",
       "verificationStatus": "Проверено",
       "comment": "Проверить, что телефон относится именно к производителю на этой странице (официально указан).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1898,8 +2118,7 @@
       "source": "https://www.kmpo.ru/; https://www.kmpo.ru/address/",
       "verificationStatus": "Подтверждено",
       "comment": "Телефон указан по официальной странице контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1930,8 +2149,7 @@
       "source": "https://www.uecrus.com/products-and-services/products/gazoperekachivayushchie-ustanovki/gazoturbinnyy-dvigatel-nk-36st/; https://www.uecrus.com/about/structure/pao-odk-kuznetsov/kontakty-pao-odk-kuznetsov/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1962,8 +2180,7 @@
       "source": "https://www.uecrus.com/about/structure/pao-odk-umpo/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен источник о конкретных операциях испытаний герметичности.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Башкортостан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -1994,8 +2211,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-aviadvigatel/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен источник о контроле герметичности/опрессовке в производстве.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2025,8 +2241,7 @@
       "source": "https://www.uecrus.com/products-and-services/products/gazoperekachivayushchie-ustanovki/gazoturbinnaya-ustanovka-gtu-25p630/; https://www.uecrus.com/about/structure/ao-odk-pm/puc-ao-odk-pm-osnovnye-svedeniya/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2056,8 +2271,7 @@
       "source": "https://www.uecrus.com/about/structure/pao-odk-saturn/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен источник о конкретных испытаниях контуров/теплообменников.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2087,8 +2301,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-gt/",
       "verificationStatus": "Подтверждено",
       "comment": "Как «производитель испытательных стендов» — требуется уточнение роли в части собственных стендов (скорее производитель оборудования/интегратор).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2099,7 +2312,7 @@
       "id": 56,
       "name": "АО «ОДК-Климов»",
       "industry": "Авиация и авиационные двигатели",
-      "applicability": "INNOMATEC + LANGAN",
+      "applicability": "Innomatec LTC + Innomatec connec® + LangAn LA",
       "role": "OEM",
       "city": "Санкт‑Петербург",
       "phone": "+7 (812) 647 00 38",
@@ -2118,8 +2331,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-klimov/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен официальный источник о стендовых/контрольных испытаниях герметичности (раздел производство/вакансии/технологии).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2149,8 +2361,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-pm/puc-ao-odk-pm-osnovnye-svedeniya/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2180,8 +2391,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-omo-im-p-i-baranova/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Омская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2211,8 +2421,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-pk-salyut/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2242,8 +2451,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-mmp-imeni-v-v-chernysheva/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2273,8 +2481,7 @@
       "source": "https://uwca.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "Телефон указан как многоканальный call-центр.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Свердловская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2304,8 +2511,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-star/",
       "verificationStatus": "Проверено",
       "comment": "Компонентный производитель для авиационных/ГТД — высокая технологическая релевантность.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2335,8 +2541,7 @@
       "source": "https://rhc.ru/structure/",
       "verificationStatus": "Требует проверки",
       "comment": "На источнике подтвержден профиль предприятия, но детали испытаний не указаны.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2366,8 +2571,7 @@
       "source": "https://www.uecrus.com/about/structure/okb-im-a-m-lyulki/",
       "verificationStatus": "Проверено",
       "comment": "Не серийный завод, но релевантен как R&D/инжиниринг двигателей.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2397,8 +2601,7 @@
       "source": "https://aviatest.aero/test-stands/uav/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2428,8 +2631,7 @@
       "source": "https://www.prom-tex.org/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2459,8 +2661,7 @@
       "source": "https://teracont.ru/product/ispytatelnye-stendy-dlya-aviatsionnykh-agregatov-i-ikh-chastei2/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2490,8 +2691,7 @@
       "source": "https://rosna-spb.ru/uslugi/ispytatelnye-stendy/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2521,8 +2721,7 @@
       "source": "https://kb-78.ru/stands/",
       "verificationStatus": "Проверено",
       "comment": "Авиадвигатели не указаны явно — релевантность по компетенции стендов (в т.ч. вакуум/гидро).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ленинградская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2552,8 +2751,7 @@
       "source": "https://www.silver-wings.su/ispyitatelnyij-stend.html",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2583,8 +2781,7 @@
       "source": "https://www.gap-rt.ru/napravleniya-deyatelnosti/opytno-konstruktorskie-razrabotki-ispytatelnye-stendy/",
       "verificationStatus": "Проверено",
       "comment": "Компания больше проектировщик/генпроектировщик стендов, не обязательно производитель «железа».",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2614,8 +2811,7 @@
       "source": "https://www.elemer.ru/services/inzhiniring/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2645,8 +2841,7 @@
       "source": "https://el-scada.ru/services/ispytatelnye-stendy-pod-klyuch-dlya-aviatsionnykh-i-kosmicheskikh-dvigateley/",
       "verificationStatus": "Требует проверки",
       "comment": "Страница контактов не загрузилась через инструмент (timeout) — телефон/точный адрес нужно проверить вручную.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2676,8 +2871,7 @@
       "source": "https://azpi.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "Релевантно для EOL-контроля и тестов узлов топливной аппаратуры.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Алтайский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2707,8 +2901,7 @@
       "source": "https://altzta.ru/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "Вероятна потребность в снижении времени подключения на стендах.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Алтайский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2738,8 +2931,7 @@
       "source": "https://www.dipoautomotive.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "Подходят решения для ускорения EOL теста и снижения ложного брака.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2769,8 +2961,7 @@
       "source": "https://sedanfilter.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "Актуально для 100% контроля герметичности после сборки.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2800,8 +2991,7 @@
       "source": "https://xn----7sbzkc4abkdr4gsa.xn--p1ai/contact/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2831,8 +3021,7 @@
       "source": "https://bigfilter.com/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2862,8 +3051,7 @@
       "source": "https://honex-filter.com/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Кировская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2893,8 +3081,7 @@
       "source": "https://topmodul.ru/",
       "verificationStatus": "Подтверждено",
       "comment": "Требуется уточнить: какие испытания выполняют на производстве (опрессовка/герметичность).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2924,8 +3111,7 @@
       "source": "https://www.ena.ru/contacts/",
       "verificationStatus": "Подтверждено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2955,8 +3141,7 @@
       "source": "https://www.npptemp.com/company",
       "verificationStatus": "Подтверждено",
       "comment": "Сильная ниша для гелиевых/вакуумных тестов и ускорения подключения.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -2986,8 +3171,7 @@
       "source": "https://aviaagregat.net/en/contacts",
       "verificationStatus": "Подтверждено",
       "comment": "Требуется уточнить конкретные изделия по топливной системе на текущих программах.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3017,8 +3201,7 @@
       "source": "https://agregatufa.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужно подтвердить наличие изделий топливной автоматики/гидроагрегатов; пока связь косвенная.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Башкортостан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3048,8 +3231,7 @@
       "source": "https://ibprom.ru/yaroslavskiy-zavod-dizelnoy-apparatury",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон не внесен: официальный сайт недоступен при проверке; требуется подтвердить контакты с официального ресурса.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3109,8 +3291,7 @@
       "source": "https://agatgidro.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Сайт может быть недоступен; телефон не добавлен (нет подтверждения с официального источника).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3140,8 +3321,7 @@
       "source": "https://www.azpi.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Алтайский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3171,8 +3351,7 @@
       "source": "https://nzta.ru/contacts/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3202,8 +3381,7 @@
       "source": "https://topsys.spb.ru/company",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3233,8 +3411,7 @@
       "source": "https://soate.ru/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F/%D0%A4%D0%BE%D1%80%D1%81%D1%83%D0%BD%D0%BA%D0%B8/",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон заводских контактов на странице указан без городского кода; требуется уточнение единого номера приёмной/отдела продаж.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Белгородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3264,8 +3441,7 @@
       "source": "https://www.oat-group.ru/predpriyatiyagruppydaaz/",
       "verificationStatus": "Требует проверки",
       "comment": "На странице указан e-mail и сайт; телефон для производственной площадки не указан — требуется проверка на www.daaz.ru.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ульяновская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3295,8 +3471,7 @@
       "source": "https://info.avtovaz.ru/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3326,8 +3501,7 @@
       "source": "https://www.uaz.ru/company/contacts",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ульяновская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3357,8 +3531,7 @@
       "source": "https://kamaz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальная страница контактов недоступна в источниках — требуется проверка телефона/контактного подразделения.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3388,8 +3561,7 @@
       "source": "https://www.gaz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальная страница контактов недоступна в источниках — требуется верификация телефона/цеха/дирекции качества.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3419,8 +3591,7 @@
       "source": "https://bakor.pro/; https://bakor.site/kontakty",
       "verificationStatus": "Предположительно",
       "comment": "Контакты (телефон) видны на сайте; при необходимости уточнить юрлицо/заводскую площадку.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3450,8 +3621,7 @@
       "source": "https://autobaki.ru/kontakty/",
       "verificationStatus": "Предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3481,8 +3651,7 @@
       "source": "https://www.td-oat.ru/production/brands/dzr",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон указан у АО «ОАТ» (торговый дом); для производственной площадки требуется отдельная верификация на daaz.ru.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область / Ульяновская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3512,8 +3681,7 @@
       "source": "https://www.autoglushitel.com/; https://www.autoglushitel.com/kontakty/",
       "verificationStatus": "ОК",
       "comment": "Телефоны/адрес указаны на официальном сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3543,8 +3711,7 @@
       "source": "https://tehcom.org/; https://tehcom.org/contact/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ульяновская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3574,8 +3741,7 @@
       "source": "https://robola.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3605,8 +3771,7 @@
       "source": "https://zavod-kd.ru/; https://zavod-kd.ru/about/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ростовская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3636,8 +3801,7 @@
       "source": "https://ecomash-kn.ru/gaz/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3667,8 +3831,7 @@
       "source": "https://bioten.ru/company/requisites/; https://bioten.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3698,8 +3861,7 @@
       "source": "https://mg-race.ru/contacts/; https://mg-race.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3729,8 +3891,7 @@
       "source": "https://azg-nn.ru/; https://azg-nn.ru/contacts/",
       "verificationStatus": "Требует проверки",
       "comment": "На сайте контакт указан для официального дистрибьютора; прямые контакты производства могут отличаться.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3760,8 +3921,7 @@
       "source": "https://bosal.ru/; https://bosal.ru/page/pd/; https://bosal.ru/distribution/",
       "verificationStatus": "Требует проверки",
       "comment": "На сайте не удалось подтвердить телефон (доступ к странице «Контакты» ограничен/таймаут).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3791,8 +3951,7 @@
       "source": "https://eco-nu.ru/contacts/; https://www.eco-nu.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Страница контактов блокирует доступ (403/ошибка); телефон не подтвержден из официального источника в рамках текущей сессии.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Свердловская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3822,8 +3981,7 @@
       "source": "https://crossgroup.su/; https://crossgroup.su/contacts.html",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Омская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3853,8 +4011,7 @@
       "source": "https://luzar.ru/about/ ; https://luzar.ru/contacts/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург / Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3884,8 +4041,7 @@
       "source": "https://lrzavod.ru/about ; https://lrzavod.ru/contacts",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Тверская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3915,8 +4071,7 @@
       "source": "https://teploobmennick.ru/ ; https://teploobmennick.ru/kontakty",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3946,8 +4101,7 @@
       "source": "https://tza11.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужно подтвердить точный город/контакты с официального раздела «Контакты» (если есть).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -3977,8 +4131,7 @@
       "source": "https://www.thomson-auto.ru/contacts.html ; https://www.thomson-auto.ru/company.html",
       "verificationStatus": "Предположительно",
       "comment": "Сайт не открывается инструментом (ошибка кодировки); данные взяты из поискового сниппета официального домена — перепроверить вручную.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Владимирская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4008,8 +4161,7 @@
       "source": "https://www.eltra.ru/ ; https://www.eltra.ru/about/rzhev/ ; https://www.eltra.ru/contacts/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Тверская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4039,8 +4191,7 @@
       "source": "https://www.stron-parts.ru/",
       "verificationStatus": "ОК",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4160,8 +4311,7 @@
       "source": "https://industrial-kamaz.ru/products/produktsiya-i-uslugi/tormoznye-sistemy/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4191,8 +4341,7 @@
       "source": "https://tolvo.llc/company/history/; https://tolvo.llc/company/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить юрлицо/площадку для конкретных тормозных продуктов и контакты производственной площадки (телефон/почта).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва / Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4222,8 +4371,7 @@
       "source": "https://tiir.ru/rus/about/; https://tiir.ru/rus/contacts1/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4253,8 +4401,7 @@
       "source": "https://lavs-bp.ru/proizvodstvo/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Смоленская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4284,8 +4431,7 @@
       "source": "https://www.balrt.ru/index.php/kontakty",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Саратовская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4315,8 +4461,7 @@
       "source": "https://www.bzakauto.ru/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Башкортостан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4346,8 +4491,7 @@
       "source": "https://atikolodka.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4377,8 +4521,7 @@
       "source": "https://www.uralati.ru/contacts/; https://uralati.ru/catalog/friktsionnye_izdeliya/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Свердловская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4408,8 +4551,7 @@
       "source": "https://zavodkolodok.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить, что производство действительно на площадке в Тольятти (адрес производства указан как б-р Кулибина, 19).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4439,8 +4581,7 @@
       "source": "https://info.avtovaz.ru/about; https://info.avtovaz.ru/contacts",
       "verificationStatus": "предположительно",
       "comment": "Нужна верификация конкретных методов испытаний (воздух/гелий/вакуум) на участке двигателей.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4470,8 +4611,7 @@
       "source": "https://zmz.ru/products/zmz-engines/; https://zmz.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон взят из раздела «Контакты» ЗМЗ.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4501,8 +4641,7 @@
       "source": "https://industrial-kamaz.ru/products/produktsiya-i-uslugi/zavod-dvigateley/; https://industrial-kamaz.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Нужна верификация используемых методов (гелий/вакуум) и конкретных узлов теста.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4532,8 +4671,7 @@
       "source": "https://www.ymzmotor.ru/; https://www.ymzmotor.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон взят из раздела «Контакты и реквизиты».",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4563,8 +4701,7 @@
       "source": "https://paotmz.ru/catalog/engines.html; https://paotmz.ru/contacts.html",
       "verificationStatus": "предположительно",
       "comment": "Нужна верификация участков leak test (воздух/вакуум/гелий).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ярославская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4594,8 +4731,7 @@
       "source": "https://www.kama-diesel.ru/; https://www.kama-diesel.ru/rus/contact/",
       "verificationStatus": "предположительно",
       "comment": "Уточнить номенклатуру изделий и типы испытаний на официальных страницах продукции.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4625,8 +4761,7 @@
       "source": "https://www.flama-group.ru/contacts/; https://www.flama-group.ru/",
       "verificationStatus": "Проверено",
       "comment": "Телефон взят только с официальной страницы контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Краснодарский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4656,8 +4791,7 @@
       "source": "https://darina.su/contacts/; https://darina.su/",
       "verificationStatus": "Проверено",
       "comment": "Город/площадка подтверждены на странице контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4687,8 +4821,7 @@
       "source": "https://lzbt.ru/; https://lzbt.ru/kontakti",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пермский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4718,8 +4851,7 @@
       "source": "https://elta-spb.ru/about_company/; https://elta-spb.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4749,8 +4881,7 @@
       "source": "https://deluxetm.com/contacts/; https://deluxetm.com/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Пензенская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4780,8 +4911,7 @@
       "source": "https://xn--80aaokoir0ad3c.xn--p1ai/about; https://xn--80aaokoir0ad3c.xn--p1ai/contacts",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие именно газовых/комбинированных моделей в актуальном каталоге.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Челябинская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4811,8 +4941,7 @@
       "source": "https://bs.gazprom.ru/about/holding/; https://bs.gazprom.ru/d/aboutcompanypost/02/2/statya-v-zhurnale-delovaya-rossiya.pdf",
       "verificationStatus": "Требует проверки",
       "comment": "Нет стабильной официальной страницы контактов предприятия (домен предприятия может быть недоступен). Телефон не заполнялся.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Волгоградская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4842,8 +4971,7 @@
       "source": "https://www.hms-livgidromash.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить конкретный адрес площадки/контакты на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Орловская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4873,8 +5001,7 @@
       "source": "https://knz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие упоминаний об испытаниях/ОТК и телефон в контактах.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Курганская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4904,8 +5031,7 @@
       "source": "https://www.mos-nasos.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город/площадку производства и контакты с официальной страницы.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4935,8 +5061,7 @@
       "source": "https://teploobmennik.ridan.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить адрес производства и контакты в разделе «Контакты».",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4966,8 +5091,7 @@
       "source": "https://nnzto.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить точный город площадки/контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -4997,8 +5121,7 @@
       "source": "https://www.teploobmennik.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить номенклатуру по «теплообменникам» и испытаниям.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5028,8 +5151,7 @@
       "source": "https://roswep.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить площадку производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5059,8 +5181,7 @@
       "source": "https://www.teplotex.ru/teploobmenniki/proizvodstvo-teploobmennikov",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты на официальном сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5090,8 +5211,7 @@
       "source": "https://www.chkz.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить контакты и производственные площадки на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5121,8 +5241,7 @@
       "source": "https://dinskoy-kompressor.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить адрес/телефон на странице контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5152,8 +5271,7 @@
       "source": "https://berg-air.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить, где расположено производство в РФ (город/адрес) на официальном сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5183,8 +5301,7 @@
       "source": "https://enger-air.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить, есть ли собственное производство в РФ (не дилер).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Алтайский край"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5214,8 +5331,7 @@
       "source": "https://www.cooltech.ru/production/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить конкретные участки теста (вакуум/гелий) в описаниях.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5245,8 +5361,7 @@
       "source": "https://nsk-oem.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5276,8 +5391,7 @@
       "source": "https://www.bzho.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие раздела с производством/ОТК и телефон.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Брянская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5307,8 +5421,7 @@
       "source": "https://xn--d1an.xn--p1ai/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город/площадки и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Челябинская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5338,8 +5451,7 @@
       "source": "https://dendor.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить раздел «Производство/Контакты» для города и телефона.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Новосибирская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5369,8 +5481,7 @@
       "source": "https://baz.group/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить контакты на официальной странице.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Тверская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5400,8 +5511,7 @@
       "source": "https://lztamarshal.ru/about/manufacture/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город производства/контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5431,8 +5541,7 @@
       "source": "https://alsoarm.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Челябинская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5462,8 +5571,7 @@
       "source": "https://lemax-kotel.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город (завод) и контакты на сайте.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ростовская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5493,8 +5601,7 @@
       "source": "https://signal-teplo.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "При проверке использовать доступ к разделу контактов/производства.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Саратовская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5524,8 +5631,7 @@
       "source": "https://laggartt.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить контакты и линейки продуктов, где нужны стенды.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Саратовская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5555,8 +5661,7 @@
       "source": "https://ruboiler.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город производства/контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5586,8 +5691,7 @@
       "source": "https://boiler.global/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить площадку и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5617,8 +5721,7 @@
       "source": "https://www.akom.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие производственной площадки/адреса в РФ и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5648,8 +5751,7 @@
       "source": "https://tubor.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить адрес производства и подтверждение тестов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5679,8 +5781,7 @@
       "source": "https://sae.ooo/products/akkumulyatornye-batarei-dlya-elektromobilej/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить местоположение производственной площадки в РФ.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5710,8 +5811,7 @@
       "source": "https://belmy.ru/o-kompanii",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить город/адрес производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5741,8 +5841,7 @@
       "source": "https://www.technofilter.ru/catalog/patronnye-filtry/membrannye-filtruyushchie-elementy/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить город производства и контакты.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Владимирская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5802,8 +5901,7 @@
       "source": "https://reatrack.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Телефон есть на сайте, но нужно взять из раздела контактов (официально) при верификации.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Калужская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5833,8 +5931,7 @@
       "source": "https://grouphms.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Уточнить, какие площадки в РФ отвечают за тест/ОТК модулей.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5864,8 +5961,7 @@
       "source": "https://hms.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Проверить наличие собственной испытательной базы/стендов в РФ.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5895,8 +5991,7 @@
       "source": "https://hs-nauka.ru/catalog/aviatsionnye_teploobmenniki/; https://hs-nauka.ru/contact/; https://npo-nauka.ru/company/affiliated_companies/hs-nauka/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва / Тверская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5926,8 +6021,7 @@
       "source": "https://npo-nauka.ru/; https://npo-nauka.ru/company/history_and_achievements/; https://npo-nauka.ru/press-centre/news/2180/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5957,8 +6051,7 @@
       "source": "https://www.niip.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Нужен отдельный источник о наличии жидкостного охлаждения/холодных плат в изделиях (вакансии/описание РЛС).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -5988,8 +6081,7 @@
       "source": "https://www.teploobmennik.ru/",
       "verificationStatus": "Требует проверки",
       "comment": "Сайт периодически не открывается из инструмента; телефон не подтвержден официально.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Нижегородская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6019,8 +6111,7 @@
       "source": "https://lira-s.com/services/cooler; https://lira-s.com/contact-us",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6050,8 +6141,7 @@
       "source": "https://www.uecrus.com/about/structure/ao-odk-servis/kontakty/",
       "verificationStatus": "Требует проверки",
       "comment": "На странице контактов указан телефон/факс подразделения, но нужно подтвердить, что это официальные контакты именно для производственной площадки; при необходимости — уточнить.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург / Ленинградская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6081,8 +6171,7 @@
       "source": "https://radar-mms.com/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон из официальной страницы контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6112,8 +6201,7 @@
       "source": "https://xn--80aaahiycas2ahds.xn--p1ai/",
       "verificationStatus": "предположительно",
       "comment": "Телефоны из официального раздела «Контакты».",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6143,8 +6231,7 @@
       "source": "https://dsol.ru/contacts/",
       "verificationStatus": "предположительно",
       "comment": "Телефон и адрес из официальной страницы контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6174,8 +6261,7 @@
       "source": "https://nppame.com/",
       "verificationStatus": "предположительно",
       "comment": "Телефон из официального сайта.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6205,8 +6291,7 @@
       "source": "https://www.phazotron.com/",
       "verificationStatus": "предположительно",
       "comment": "Телефон указан на официальном сайте в разделе контактов.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6236,8 +6321,7 @@
       "source": "https://vniirt.ru/index.php?Itemid=12&id=28&option=com_content&view=article",
       "verificationStatus": "предположительно",
       "comment": "Телефон из официальной страницы «Контакты».",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6267,8 +6351,7 @@
       "source": "https://www.kret.com/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт недоступен для извлечения телефона (timeout/robots).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6298,8 +6381,7 @@
       "source": "http://electroavtomatica.kret.com/",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт не открывается для извлечения телефона; номер не внесен.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Санкт-Петербург"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6329,8 +6411,7 @@
       "source": "http://www.ukbp.ru",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт недоступен для извлечения телефона (timeout).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Ульяновская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6360,8 +6441,7 @@
       "source": "http://www.rpkb.ru",
       "verificationStatus": "Требует проверки",
       "comment": "Официальный сайт недоступен (robots/timeout) — телефон не внесен.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Московская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6391,8 +6471,7 @@
       "source": "http://www.aeropribor.ru/DKI.pdf",
       "verificationStatus": "предположительно",
       "comment": "Телефон взят из PDF на официальном сайте компании.",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Москва"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6422,8 +6501,7 @@
       "source": "https://radiotec.ru/ru/keywords?keywords=%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB",
       "verificationStatus": "Требует проверки",
       "comment": "Нужно подтвердить официальный сайт и контакты (по официальным страницам компании).",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Самарская область"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6453,8 +6531,7 @@
       "source": "https://npp-risal.ru/services/razrabotki-ispytatelnyh-stendov/ ; https://npp-risal.ru/contacts/",
       "verificationStatus": "Проверено",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6484,8 +6561,7 @@
       "source": "https://compressormash.ru/contact/",
       "verificationStatus": "предположительно",
       "comment": "",
-      "createdAt": "2025-01-15T10:00:00Z",
-      "region": "Республика Татарстан"
+      "createdAt": "2025-01-15T10:00:00Z"
     },
     {
       "inn": "",
@@ -6507,7 +6583,7 @@
       "solutionInnomatec": "Innomatec LTC-802 / LTC-EV",
       "solutionLangAn": "LangAn Quick Connectors LA600/LA802",
       "priority": "A",
-      "applicability": "RTC + LANGAN + ROEMHELD + MUR + INNOMATEC",
+      "applicability": "",
       "searchTheme": "Железнодорожный сектор",
       "inclusionBasis": "Наличие производства двигателей и гидравлики",
       "source": "https://www.uzloco.ru",
@@ -6515,8 +6591,7 @@
       "comment": "Подтвердить наличие leak test в цехах",
       "status": "Лид",
       "createdAt": "2026-05-21T18:34:17.663Z",
-      "industry": "ЖД",
-      "region": "Свердловская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6546,8 +6621,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:34:17.663Z",
-      "industry": "ЖД",
-      "region": "Нижегородская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6577,8 +6651,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.339Z",
-      "industry": "ЖД",
-      "region": "Санкт-Петербург"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6608,8 +6681,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.339Z",
-      "industry": "ЖД",
-      "region": "Москва"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6639,8 +6711,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД",
-      "region": "Свердловская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6670,8 +6741,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД",
-      "region": "Ростовская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6701,8 +6771,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД",
-      "region": "Свердловская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6732,8 +6801,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.340Z",
-      "industry": "ЖД",
-      "region": "Свердловская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6763,8 +6831,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.341Z",
-      "industry": "ЖД",
-      "region": "Москва"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6794,8 +6861,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.341Z",
-      "industry": "ЖД",
-      "region": "Волгоградская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6855,8 +6921,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.341Z",
-      "industry": "ЖД",
-      "region": "Вологодская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6886,8 +6951,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.342Z",
-      "industry": "ЖД",
-      "region": "Тверская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6917,8 +6981,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.342Z",
-      "industry": "ЖД",
-      "region": "Пермский край"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -6948,8 +7011,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.342Z",
-      "industry": "ЖД",
-      "region": "Московская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7009,8 +7071,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.343Z",
-      "industry": "ЖД",
-      "region": "Тамбовская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7040,8 +7101,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.343Z",
-      "industry": "ЖД",
-      "region": "Курская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7071,8 +7131,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.344Z",
-      "industry": "ЖД",
-      "region": "Нижегородская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7102,8 +7161,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.345Z",
-      "industry": "ЖД",
-      "region": "Воронежская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7133,8 +7191,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.345Z",
-      "industry": "ЖД",
-      "region": "Липецкая область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7164,8 +7221,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.346Z",
-      "industry": "ЖД",
-      "region": "Ярославская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7195,8 +7251,7 @@
       "comment": "",
       "status": "Лид",
       "createdAt": "2026-05-21T18:43:44.346Z",
-      "industry": "ЖД",
-      "region": "Владимирская область"
+      "industry": "ЖД"
     },
     {
       "inn": "",
@@ -7224,8 +7279,7 @@
       "comment": "Контакт со скрина CRM: Евгений, инженер, тел. 79835431055, email engineering@lossew.com. Адрес: 121205, г. Москва, ИЦ Сколково, б-р Большой, д. 42, стр. 1, этаж 4.",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-05-31T10:06:00.685Z",
-      "region": "Москва"
+      "createdAt": "2026-05-31T10:06:00.685Z"
     },
     {
       "inn": "",
@@ -7253,8 +7307,7 @@
       "comment": "Контакт со скрина CRM: Ананьев Александр Дмитриевич, инженер, тел. 79603269556, email ananev.a@pulsar-telecom.ru. Телефон компании со скрина: (8412) 23-47-11. Адрес: Пензенская область, г. Пенза, ул. Гагарина, стр. 11Ш, офис.",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-05-31T10:06:00.685Z",
-      "region": "Пензенская область"
+      "createdAt": "2026-05-31T10:06:00.685Z"
     },
     {
       "inn": "",
@@ -7282,8 +7335,7 @@
       "comment": "",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-06-01T13:55:18.375Z",
-      "region": "Нижегородская область"
+      "createdAt": "2026-06-01T13:55:18.375Z"
     },
     {
       "inn": "",
@@ -7311,11 +7363,192 @@
       "comment": "",
       "status": "Лид",
       "industry": "",
-      "createdAt": "2026-06-01T13:55:18.375Z",
-      "region": "Нижегородская область"
+      "createdAt": "2026-06-01T13:55:18.375Z"
     }
   ],
   "contacts": [
+    {
+      "id": 154,
+      "companyIds": [
+        248
+      ],
+      "name": "Константин Борисович Галкин",
+      "position": "генеральный директор",
+      "phones": [
+        "+7 (83174) 2-81-50"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:10:17.530Z"
+    },
+    {
+      "id": 153,
+      "companyIds": [
+        248
+      ],
+      "name": "Сергей Михайлович Кляпнёв",
+      "position": "директор технический",
+      "phones": [
+        "+7 (910) 384-24-99"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:10:02.986Z"
+    },
+    {
+      "id": 152,
+      "companyIds": [
+        248
+      ],
+      "name": "Павел Валентинович",
+      "position": "заместитель генерального директора",
+      "phones": [
+        "+7 (83174)2-66-74"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:09:48.018Z"
+    },
+    {
+      "id": 151,
+      "companyIds": [
+        248
+      ],
+      "name": "Алексей Кальмин",
+      "position": "нач цеха ТПА",
+      "phones": [
+        "+79101080467"
+      ],
+      "emails": [
+        "tpa_sapt2015@sapt.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:09:30.995Z"
+    },
+    {
+      "id": 150,
+      "companyIds": [
+        248
+      ],
+      "name": "Александр Хомутов",
+      "position": "механик",
+      "phones": [
+        "+79524720450"
+      ],
+      "emails": [
+        "himik8701@yandex.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:09:12.459Z"
+    },
+    {
+      "id": 149,
+      "companyIds": [
+        248
+      ],
+      "name": "Антон",
+      "position": "снабжение",
+      "phones": [
+        "8-930-270-39-84"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:08:55.755Z"
+    },
+    {
+      "id": 148,
+      "companyIds": [
+        248
+      ],
+      "name": "Цаплин Сергей Владимирович",
+      "position": "Директор по развитию",
+      "phones": [
+        "8 (831)- 435- 1987 (187)"
+      ],
+      "emails": [
+        "sapt_tpa14@mail.ru, sapt@sapt.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:08:41.716Z"
+    },
+    {
+      "id": 112,
+      "companyIds": [
+        241
+      ],
+      "name": "Дмитрий Владимирович Селезнев",
+      "position": "специалист по закупкам",
+      "phones": [
+        "+7 (929) 719 44 04"
+      ],
+      "emails": [
+        "d.seleznev@groupdsk.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:11:54.631Z"
+    },
+    {
+      "id": 111,
+      "companyIds": [
+        241
+      ],
+      "name": "Константин Вадимович Чистяков",
+      "position": "Инженер ОАиПРО",
+      "phones": [
+        "+79272680083"
+      ],
+      "emails": [
+        "k.chistyakov@groupdsk.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T14:11:33.208Z"
+    },
+    {
+      "id": 27,
+      "companyIds": [
+        236
+      ],
+      "name": "Моторкин Сергей Викторович",
+      "position": "инженер по неразрушающему контролю 1 категории",
+      "phones": [],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-02T12:15:34.133Z"
+    },
+    {
+      "id": 26,
+      "companyIds": [
+        236
+      ],
+      "name": "Ульянова Алёна Валерьевна",
+      "position": "начальник лаборатории неразрушающего контроля",
+      "phones": [],
+      "emails": [],
+      "telegram": "info@railtest.ru",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-02T12:15:00.029Z"
+    },
     {
       "id": 21,
       "companyIds": [
@@ -7747,11 +7980,943 @@
       "createdAt": "2026-06-02T04:23:07.258Z"
     },
     {
-      "id": 26,
+      "id": 28,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [],
+      "phones": [
+        "+7 983 300 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 29,
+      "name": "Худяков Юрий",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 915-720-11-48; +7(4822) 33-28-79; +7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 30,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [],
+      "phones": [
+        "+7(495)916-5262 доб.(276); +7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 31,
+      "name": "Михаил Геннадьевич Лядов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [],
+      "phones": [
+        "+7(3439)297-598; +7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 32,
+      "name": "Екатерина Валерьевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8 (3439) 297-536; 8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 33,
+      "name": "Марат Гамилевич Заинуллин",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 34,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 35,
+      "name": "Светлана Нугманова",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 987 273-01-01"
+      ],
+      "emails": [
+        "svetlana.nugmanova@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:20:55.482Z"
+    },
+    {
+      "id": 36,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [],
+      "phones": [
+        "+7 983 300 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.095Z"
+    },
+    {
+      "id": 37,
+      "name": "Худяков Юрий #1679",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 915-720-11-48; +7(4822) 33-28-79; +7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.095Z"
+    },
+    {
+      "id": 38,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [],
+      "phones": [
+        "+7(495)916-5262 доб.(276); +7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.095Z"
+    },
+    {
+      "id": 39,
+      "name": "Михаил Геннадьевич Лядов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [],
+      "phones": [
+        "+7(3439)297-598; +7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.095Z"
+    },
+    {
+      "id": 40,
+      "name": "Екатерина Валерьевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8 (3439) 297-536; 8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.095Z"
+    },
+    {
+      "id": 41,
+      "name": "Марат Гамилевич Заинуллин",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.096Z"
+    },
+    {
+      "id": 42,
+      "name": "Руслан Тагирович Сафин, 2191",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.096Z"
+    },
+    {
+      "id": 43,
+      "name": "Светлана Нугманова, 2241",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 987 273-01-01"
+      ],
+      "emails": [
+        "svetlana.nugmanova@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:23:27.096Z"
+    },
+    {
+      "id": 44,
+      "name": "evgeniy.pankratov@dkc.ru",
+      "position": "Юрий Худяков",
+      "companyIds": [],
+      "phones": [],
+      "emails": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:46.172Z"
+    },
+    {
+      "id": 45,
+      "name": "yury.khudyakov@dkc.ru",
+      "position": "Андрей Евгеньевич Миронов",
+      "companyIds": [],
+      "phones": [
+        "Руководитель службы снабжения АО ДКС"
+      ],
+      "emails": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:46.172Z"
+    },
+    {
+      "id": 46,
+      "name": "+7(3439)297-598;+7 963 852-10-00",
+      "position": "m.lyadov@trubprom.com",
+      "companyIds": [],
+      "phones": [
+        "Екатерина Валеряевна Русакова"
+      ],
+      "emails": [
+        "Ведущий специалист по закупкам ОМТС"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:47.667Z"
+    },
+    {
+      "id": 47,
+      "name": "8 (3439) 297-536;8-952-72-72-398",
+      "position": "potreb@trubprom.com",
+      "companyIds": [],
+      "phones": [],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:47.667Z"
+    },
+    {
+      "id": 48,
+      "name": "Марат Гамилевич Заинулин",
+      "position": "Информатор",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:48.971Z"
+    },
+    {
+      "id": 49,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:48.971Z"
+    },
+    {
+      "id": 50,
+      "name": "Мавликов Эдуард",
+      "position": "Менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "88555 32-04-05"
+      ],
+      "emails": [
+        "eduard.mavlikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:37:48.971Z"
+    },
+    {
+      "id": 51,
+      "name": "evgeniy.pankratov@dkc.ru",
+      "position": "Юрий Худяков",
+      "companyIds": [],
+      "phones": [],
+      "emails": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.074Z"
+    },
+    {
+      "id": 52,
+      "name": "yury.khudyakov@dkc.ru",
+      "position": "Андрей Евгеньевич Миронов",
+      "companyIds": [],
+      "phones": [
+        "Руководитель службы снабжения АО ДКС"
+      ],
+      "emails": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.074Z"
+    },
+    {
+      "id": 53,
+      "name": "+7(3439)297-598;+7 963 852-10-00",
+      "position": "m.lyadov@trubprom.com",
+      "companyIds": [],
+      "phones": [
+        "Екатерина Валеряевна Русакова"
+      ],
+      "emails": [
+        "Ведущий специалист по закупкам ОМТС"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.075Z"
+    },
+    {
+      "id": 54,
+      "name": "8 (3439) 297-536;8-952-72-72-398",
+      "position": "potreb@trubprom.com",
+      "companyIds": [],
+      "phones": [],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.075Z"
+    },
+    {
+      "id": 55,
+      "name": "Марат Гамилевич Заинулин",
+      "position": "Информатор",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.075Z"
+    },
+    {
+      "id": 56,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.075Z"
+    },
+    {
+      "id": 57,
+      "name": "Мавликов Эдуард",
+      "position": "Менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "88555 32-04-05"
+      ],
+      "emails": [
+        "eduard.mavlikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:38:42.075Z"
+    },
+    {
+      "id": 58,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [],
+      "phones": [
+        "+7 983 100 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:45:06.074Z"
+    },
+    {
+      "id": 59,
+      "name": "Юрий Худяков",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:45:06.074Z"
+    },
+    {
+      "id": 60,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [],
+      "phones": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:45:06.074Z"
+    },
+    {
+      "id": 61,
+      "name": "Михаил Геннадьевич Ладов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [],
+      "phones": [
+        "+7(3439)297-598;+7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:45:11.650Z"
+    },
+    {
+      "id": 62,
+      "name": "Екатерина Валеряевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8 (3439) 297-536;8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:45:11.650Z"
+    },
+    {
+      "id": 63,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [],
+      "phones": [
+        "+7 983 100 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 64,
+      "name": "Юрий Худяков",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 65,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [],
+      "phones": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 66,
+      "name": "Михаил Геннадьевич Ладов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [],
+      "phones": [
+        "+7(3439)297-598;+7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 67,
+      "name": "Екатерина Валеряевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8 (3439) 297-536;8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 68,
+      "name": "Марат Гамилевич Заинулин",
+      "position": "Информатор",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 69,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 70,
+      "name": "Мавликов Эдуард",
+      "position": "Менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "88555 32-04-05"
+      ],
+      "emails": [
+        "eduard.mavlikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:52:28.553Z"
+    },
+    {
+      "id": 71,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [],
+      "phones": [
+        "+7 983 100 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.861Z"
+    },
+    {
+      "id": 72,
+      "name": "Юрий Худяков",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.861Z"
+    },
+    {
+      "id": 73,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [],
+      "phones": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.861Z"
+    },
+    {
+      "id": 74,
+      "name": "Михаил Геннадьевич Ладов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [],
+      "phones": [
+        "+7(3439)297-598;+7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.862Z"
+    },
+    {
+      "id": 75,
+      "name": "Екатерина Валеряевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8 (3439) 297-536;8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.862Z"
+    },
+    {
+      "id": 76,
+      "name": "Марат Гамилевич Заинулин",
+      "position": "Информатор",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.862Z"
+    },
+    {
+      "id": 77,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.862Z"
+    },
+    {
+      "id": 78,
+      "name": "Мавликов Эдуард",
+      "position": "Менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "88555 32-04-05"
+      ],
+      "emails": [
+        "eduard.mavlikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:54:43.862Z"
+    },
+    {
+      "id": 79,
+      "name": "Евгений Борисович Панкратов",
+      "position": "инженер-технолог",
+      "companyIds": [],
+      "phones": [
+        "+7 983 100 19 23"
+      ],
+      "emails": [
+        "evgeniy.pankratov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 80,
+      "name": "Юрий Худяков",
+      "position": "",
+      "companyIds": [],
+      "phones": [
+        "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
+      ],
+      "emails": [
+        "yury.khudyakov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 81,
+      "name": "Андрей Евгеньевич Миронов",
+      "position": "Руководитель службы снабжения АО ДКС",
+      "companyIds": [],
+      "phones": [
+        "+7(495)916-5262 доб.(276);+7 985 861 307"
+      ],
+      "emails": [
+        "andrey.mironov@dkc.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 82,
+      "name": "Михаил Геннадьевич Ладов",
+      "position": "Заместитель начальника Отдел материально-",
+      "companyIds": [],
+      "phones": [
+        "+7(3439)297-598;+7 963 852-10-00"
+      ],
+      "emails": [
+        "m.lyadov@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 83,
+      "name": "Екатерина Валеряевна Русакова",
+      "position": "Ведущий специалист по закупкам ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8 (3439) 297-536;8-952-72-72-398"
+      ],
+      "emails": [
+        "potreb@trubprom.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 84,
+      "name": "Марат Гамилевич Заинулин",
+      "position": "Информатор",
+      "companyIds": [],
+      "phones": [
+        "+7 987 238-64-44"
+      ],
+      "emails": [
+        "marat.zainullin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 85,
+      "name": "Руслан Тагирович Сафин",
+      "position": "менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "8(8555)32-04-05"
+      ],
+      "emails": [
+        "ruslan.safin@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 86,
+      "name": "Мавликов Эдуард",
+      "position": "Менеджер ОМТС",
+      "companyIds": [],
+      "phones": [
+        "88555 32-04-05"
+      ],
+      "emails": [
+        "eduard.mavlikov@iplast.com"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-03T13:57:32.626Z"
+    },
+    {
+      "id": 87,
       "name": "Евгений Борисович Панкратов",
       "position": "инженер-технолог",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 983 100 19 23"
@@ -7762,14 +8927,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 27,
+      "id": 88,
       "name": "Юрий Худяков",
       "position": "",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 915-720 11 48;+7(4822) 33-28-79;+7(4822) 74-44-39"
@@ -7780,14 +8945,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 28,
+      "id": 89,
       "name": "Андрей Евгеньевич Миронов",
       "position": "Руководитель службы снабжения АО ДКС",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7(495)916-5262 доб.(276);+7 985 861 307"
@@ -7798,14 +8963,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 29,
+      "id": 90,
       "name": "Терехов Алексей Игоревич",
       "position": "Начальник экструзионного цеха №3 АО ДКС",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7-983-125-8711"
@@ -7816,14 +8981,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 30,
+      "id": 91,
       "name": "Сергей Бертов",
       "position": "Начальник МТО",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "8-4822-33-28-79;8 910 532-69-50"
@@ -7834,14 +8999,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 31,
+      "id": 92,
       "name": "Юлия Евгеневна Бодрова",
       "position": "Технолог",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "(4822)33-28-81(доб. 512)"
@@ -7852,14 +9017,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 32,
+      "id": 93,
       "name": "Максим Шевцов",
       "position": "Менеджер по снабжению",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 (910) 533-99-70"
@@ -7870,14 +9035,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 33,
+      "id": 94,
       "name": "Елена Викторовна Зарицкая",
       "position": "Технолог",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 (4822) 33-28-81"
@@ -7888,14 +9053,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 34,
+      "id": 95,
       "name": "Михаил Владимирович Лавриенко",
       "position": "Главный технолог",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 (980) 623-06-04;+7 9040076353"
@@ -7906,14 +9071,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 35,
+      "id": 96,
       "name": "Андрей Вячеславович Ляпунов",
       "position": "Главный механик",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 (919) 050-38-07"
@@ -7924,14 +9089,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 36,
+      "id": 97,
       "name": "Дмитрий Трофимов",
       "position": "Инженер-механик",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 (4822) 33-28-81 (#549);+7 (920) 692-42-11;+7 (904) 022-59-93"
@@ -7942,14 +9107,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 37,
+      "id": 98,
       "name": "Алексей Горшков",
       "position": "Энергетик ЦМ-№3 г.Новосибирск",
       "companyIds": [
-        236
+        238
       ],
       "phones": [
         "+7 (383) 347-84-24 (#110);+7 (983) 308-73-78"
@@ -7960,14 +9125,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 38,
+      "id": 99,
       "name": "Михаил Геннадьевич Ладов",
       "position": "Заместитель начальника Отдел материально-",
       "companyIds": [
-        237
+        239
       ],
       "phones": [
         "+7(3439)297-598;+7 963 852-10-00"
@@ -7978,14 +9143,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 39,
+      "id": 100,
       "name": "Екатерина Валеряевна Русакова",
       "position": "Ведущий специалист по закупкам ОМТС",
       "companyIds": [
-        237
+        239
       ],
       "phones": [
         "8 (3439) 297-536;8-952-72-72-398"
@@ -7996,14 +9161,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 40,
+      "id": 101,
       "name": "Марат Гамилевич Заинулин",
       "position": "Информатор",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "+7 987 238-64-44"
@@ -8014,14 +9179,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 41,
+      "id": 102,
       "name": "Руслан Тагирович Сафин",
       "position": "менеджер ОМТС",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "8(8555)32-04-05"
@@ -8032,14 +9197,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 42,
+      "id": 103,
       "name": "Мавликов Эдуард",
       "position": "Менеджер ОМТС",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "88555 32-04-05"
@@ -8050,14 +9215,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 43,
+      "id": 104,
       "name": "Сергей Володин",
       "position": "Технический директор",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "+7 987 060-35-90"
@@ -8068,14 +9233,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 44,
+      "id": 105,
       "name": "Андрей Геннадьевич Ефремов",
       "position": "главный механик ООО АЙ ПЛАСТ",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "+7 917 869-33-03"
@@ -8086,14 +9251,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 45,
+      "id": 106,
       "name": "Сергей Анатольевич Михайлов",
       "position": "Зам.главного механика",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "+7917 258 84 71;+7 8555 383223"
@@ -8104,14 +9269,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 46,
+      "id": 107,
       "name": "Александр Владимирович Макаров",
       "position": "гл. механик",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "+7 (8555) 43-98-74;+7 (8555) 38 32 23"
@@ -8122,14 +9287,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 47,
+      "id": 108,
       "name": "Козлов Евгений Петрович",
       "position": "технический директор",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "8-8555-38-32-23"
@@ -8140,14 +9305,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 48,
+      "id": 109,
       "name": "Санников Роман",
       "position": "директор по производству",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "8-919-646-08-11;+7 8555 38 30 25"
@@ -8158,14 +9323,14 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
     },
     {
-      "id": 49,
+      "id": 110,
       "name": "Александр Николаевич Сайко",
       "position": "Гл. инженер",
       "companyIds": [
-        238
+        240
       ],
       "phones": [
         "+7 (917) 396-25-80"
@@ -8176,13 +9341,667 @@
       "telegram": "",
       "whatsapp": "",
       "notes": "",
-      "createdAt": "2026-06-04T14:02:50.139Z"
+      "createdAt": "2026-06-04T14:06:59.310Z"
+    },
+    {
+      "id": 113,
+      "name": "http://www.sapt.ru",
+      "position": "Александр Баринов",
+      "companyIds": [],
+      "phones": [],
+      "emails": [
+        "8 831 435-19-87"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 114,
+      "name": "Sapt_snab@mail.ru",
+      "position": "Цаплин Сергей Владимирович",
+      "companyIds": [],
+      "phones": [
+        "Директор по развитию"
+      ],
+      "emails": [
+        "8 (831) 435-1987 (187)"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 115,
+      "name": "sapt_tpa14@mail.ru;sapt@sapt.ru",
+      "position": "Александр Хомутов",
+      "companyIds": [],
+      "phones": [
+        "механик"
+      ],
+      "emails": [
+        "+7 952 472-04-50"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 116,
+      "name": "himik8701@yandex.ru",
+      "position": "Алексей Кальмин",
+      "companyIds": [],
+      "phones": [
+        "нач цеха ТПА"
+      ],
+      "emails": [
+        "+7 910 108-04-67"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 117,
+      "name": "tpa_sapt2015@sapt.ru",
+      "position": "Павел Валентинович",
+      "companyIds": [],
+      "phones": [
+        "заместитель генерального директора"
+      ],
+      "emails": [
+        "+7 (83174)2-66-74"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 118,
+      "name": "sapt@sapt.ru",
+      "position": "Сергей Михайлович Кляпнёв",
+      "companyIds": [],
+      "phones": [
+        "директор технический"
+      ],
+      "emails": [
+        "+7 (910) 384-24-99"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 119,
+      "name": "sapt@sapt.ru",
+      "position": "",
+      "companyIds": [],
+      "phones": [],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.809Z"
+    },
+    {
+      "id": 120,
+      "name": "Андрей Ксенофонтов",
+      "position": "Технический специалист",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 916 160 60 04"
+      ],
+      "emails": [
+        "andrey.ksenofontov@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 121,
+      "name": "Тимур Сагатов",
+      "position": "",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 985 791-44-37"
+      ],
+      "emails": [
+        "timur.sagatov@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 122,
+      "name": "Василий Рыжков",
+      "position": "технический директор",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 916 160 60 04"
+      ],
+      "emails": [
+        "vasiliy.ryzhkov@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 123,
+      "name": "Степанов Андрей Валентинович",
+      "position": "Специалист по закупкам",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 916 355-73-95"
+      ],
+      "emails": [
+        "andrey.stepanov@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 124,
+      "name": "Алексей Васильев",
+      "position": "Технолог",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 916 160 59 81;+7 499 1107765"
+      ],
+      "emails": [
+        "aleksey.vasiliev@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 125,
+      "name": "Денис Грушин",
+      "position": "Ведущий специалист отдела закупок и логист",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 (499) 110 77 65;+7 916 361 61 17"
+      ],
+      "emails": [
+        "denis.grushin@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 126,
+      "name": "Дмитрий Карасев",
+      "position": "продукт-менеджер",
+      "companyIds": [
+        243
+      ],
+      "phones": [
+        "+7 916 355 73 95"
+      ],
+      "emails": [
+        "dmitriy.karasev@menshen.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 127,
+      "name": "Наталия Станиславовна Шевченко",
+      "position": "",
+      "companyIds": [
+        244
+      ],
+      "phones": [
+        "+7-968-564-81-14"
+      ],
+      "emails": [
+        "snab14@ppgk.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 128,
+      "name": "Юлия Васильевна Полетайкина",
+      "position": "",
+      "companyIds": [
+        244
+      ],
+      "phones": [
+        "+7 (495) 972-81-47;8 968 564-81-16"
+      ],
+      "emails": [
+        "snab16@ppgk.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 129,
+      "name": "Алёна Александровна Игнатович",
+      "position": "Начальник ОМТС",
+      "companyIds": [
+        244
+      ],
+      "phones": [
+        "+7(495)960-19-22"
+      ],
+      "emails": [
+        "snab7@ppgk.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 130,
+      "name": "Евгений Викторович Кравец",
+      "position": "",
+      "companyIds": [
+        245
+      ],
+      "phones": [
+        "+7(38451) 4-96-08"
+      ],
+      "emails": [
+        "kev3b@region.komus.net"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 131,
+      "name": "Макаров Иван Владимирович",
+      "position": "Начальник производства ПЛМ Сибирь Комус",
+      "companyIds": [
+        245
+      ],
+      "phones": [
+        "+7 (38451)4-96-08"
+      ],
+      "emails": [
+        "miv3b@region.komus.net"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 132,
+      "name": "Артём Реутов",
+      "position": "Ведущий специалист по закупу запчастей",
+      "companyIds": [
+        246
+      ],
+      "phones": [],
+      "emails": [
+        "a.reutov@incab.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 133,
+      "name": "Илья Палкин",
+      "position": "",
+      "companyIds": [
+        246
+      ],
+      "phones": [
+        "+7 (902) 649-94-87"
+      ],
+      "emails": [
+        "palkin@incab.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 134,
+      "name": "Александр Танов",
+      "position": "",
+      "companyIds": [
+        246
+      ],
+      "phones": [
+        "+7 922 350-23-04"
+      ],
+      "emails": [
+        "tanov@incab.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 135,
+      "name": "Артем Нещерет",
+      "position": "",
+      "companyIds": [
+        246
+      ],
+      "phones": [
+        "+7-922-319-40-85"
+      ],
+      "emails": [
+        "neshcheret@incab.ru"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.810Z"
+    },
+    {
+      "id": 136,
+      "name": "https://miru.ru",
+      "position": "Тамара Калмык",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "закупки"
+      ],
+      "emails": [
+        "+7 981 787 77 00"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 137,
+      "name": "Tamara.Kalmyk@miru.ru",
+      "position": "Алексей Михайлов",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Главный энергетик"
+      ],
+      "emails": [
+        "+7 923 290-11-71"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 138,
+      "name": "energ@sib.miru.ru",
+      "position": "Юрий Мамаев",
+      "companyIds": [
+        247
+      ],
+      "phones": [],
+      "emails": [
+        "+7 391 277 55 77;+7 913 833-16-89"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 139,
+      "name": "mamaev@sib.miru.ru",
+      "position": "Красникова Юлия Александровна",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "директор по закупкам"
+      ],
+      "emails": [
+        "+7 812 777-00-66"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 140,
+      "name": "j.krasnikova@miru.ru",
+      "position": "Максим Луганский",
+      "companyIds": [
+        247
+      ],
+      "phones": [],
+      "emails": [
+        "+7(812) 777 00 66"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 141,
+      "name": "p13@miru.ru",
+      "position": "Алексей Дрожжин",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "руководитель участка ЭВМ"
+      ],
+      "emails": [
+        "+7 921 976-80-05;+7 911 214-05-42"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 142,
+      "name": "droggin@miru.ru",
+      "position": "Евгений Зелянин",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Инженер отдела развития"
+      ],
+      "emails": [
+        "+7 812 777 00 66"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 143,
+      "name": "zelyanin@miru.ru",
+      "position": "Олег Колобков",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Главный инженер"
+      ],
+      "emails": [
+        "+7 812 777 00 66 доб 321"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 144,
+      "name": "orion@miru.ru",
+      "position": "Александр Чернокальский",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Менеджер по закупкам"
+      ],
+      "emails": [
+        "+7 (812) 777 00 66;8 921 421-10-90"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 145,
+      "name": "snab@miru.ru",
+      "position": "Иван Голубков",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Инженер отдела развития"
+      ],
+      "emails": [
+        "+7 812 777 00 66 доб. 337"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 146,
+      "name": "d1@miru.ru",
+      "position": "Валентин Александрович Крепкович",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Руководитель участка ТПА"
+      ],
+      "emails": [
+        "+7 921 951 58 12;+7 (812) 777 00 66"
+      ],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
+    },
+    {
+      "id": 147,
+      "name": "krepkovich@mir-upakovki.ru;krepkovich@miru.ru",
+      "position": "Елов Александр",
+      "companyIds": [
+        247
+      ],
+      "phones": [
+        "Руководитель отдела развития"
+      ],
+      "emails": [],
+      "telegram": "",
+      "whatsapp": "",
+      "notes": "",
+      "createdAt": "2026-06-04T15:04:13.811Z"
     }
   ],
   "deals": [],
   "projects": [],
   "tasks": [],
   "actions": [
+    {
+      "id": 22,
+      "companyId": 241,
+      "contactId": 111,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "узнать контакт технолога",
+      "planned": true,
+      "plannedDate": "2026-06-05T06:00:00.000Z",
+      "date": null,
+      "files": [],
+      "createdAt": "2026-06-04T14:13:10.894Z"
+    },
+    {
+      "id": 21,
+      "companyId": 241,
+      "contactId": 111,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "Константин, еще раз приветствую!\nПо муфтам и заглушкам для проверки герметичности\nМожем подобрать варианты из готовых решений, можем разработать именно под вас\nНапомните, пожалуйста, контакт Вашего коллеги, кто этим занимается. Он хотел отправить мне чертежи для проработки\nПерешлите ему это письмо\nhttps://langanfc.ru/ \nНа этом сайте по данной теме вся исчерпывающая информация на русском языке. Так же высылаю проспект в PDF.\nЕще для информации – компания ИНДЕКС г. Тольятти занимается изготовлением и ремонтом оснастки (пресс-форм, штампов), а так же изготавливает изделия на заказ. По этой теме можете обращаться к Карпову Евгению (он собственник) +79225523536. Он в копии письма\nСайт компании https://index-info.ru/\nЖду запрос от Вашего коллеги по заглушкам для подключения к внутренней резьбе . Это продукт LA300\nПо любым вопросам обращайтесь\n",
+      "planned": false,
+      "plannedDate": null,
+      "date": "2026-06-04T14:12:44.358Z",
+      "files": [],
+      "createdAt": "2026-06-04T14:12:44.358Z"
+    },
+    {
+      "id": 20,
+      "companyId": 236,
+      "contactId": 27,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "знакомство",
+      "planned": true,
+      "plannedDate": "2026-06-03T05:00:00.000Z",
+      "date": null,
+      "files": [],
+      "createdAt": "2026-06-02T12:16:28.723Z"
+    },
+    {
+      "id": 19,
+      "companyId": 236,
+      "contactId": 26,
+      "projectId": null,
+      "type": "Звонок",
+      "content": "знакомство",
+      "planned": true,
+      "plannedDate": "2026-06-03T05:00:00.000Z",
+      "date": null,
+      "files": [],
+      "createdAt": "2026-06-02T12:16:09.924Z"
+    },
     {
       "id": 18,
       "companyId": 134,

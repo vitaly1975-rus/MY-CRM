@@ -29,6 +29,8 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 /* topbar */
 
 .tb{height:52px;background:var(--bg-card);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 14px;gap:8px;flex-shrink:0;z-index:50}
+.tb-row1{display:contents}
+.tb-row2{display:contents}
 
 .brand{font-family:'Instrument Serif',serif;font-size:17px;letter-spacing:-.02em;white-space:nowrap;line-height:1.1}
 
@@ -87,6 +89,10 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 .flt{padding:7px 24px 7px 10px;font-family:inherit;font-size:13px;border:1px solid var(--border-s);border-radius:var(--r);background:var(--bg-card);color:var(--text);cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23a39f99' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 7px center;outline:none}
 
 .flt:focus{border-color:var(--text)}
+
+.flt-wrap{position:relative;display:inline-flex;align-items:center}
+.flt-icon{position:absolute;left:8px;font-size:12px;pointer-events:none;z-index:1;line-height:1}
+.flt-ic{padding-left:26px}
 
 /* table */
 
@@ -326,7 +332,7 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 /* toast */
 
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);padding:9px 16px;background:var(--text);color:#fff;font-size:13px;border-radius:var(--r);box-shadow:var(--shl);z-index:300;animation:tI .18s ease}
-.remote-banner{position:fixed;top:0;left:0;right:0;padding:6px 16px;font-size:12px;font-weight:500;text-align:center;z-index:400;animation:tI .2s ease}
+.remote-banner{position:fixed;top:0;left:0;right:0;padding:7px 16px;font-size:12px;font-weight:500;text-align:center;z-index:400;animation:tI .2s ease}
 .remote-banner.loaded{background:#16a34a;color:#fff}
 .remote-banner.same{background:#2563eb;color:#fff}
 
@@ -367,7 +373,49 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 .appl-add-row{display:flex;gap:5px;margin-top:4px;width:100%}
 .appl-add-row .inp{flex:1;min-width:0}
 
-@media(max-width:640px){.tb{padding:0 8px;gap:5px}.brand-s{display:none}.nb span{display:none}.ph,.filters,.tw,.kanban,.stats{padding-left:10px;padding-right:10px}.panel{width:100%}.ph2,.ptabs,.pb{padding-left:12px;padding-right:12px}.frow{flex-direction:column;gap:0}}
+@media(max-width:640px){
+/* ── Двухстрочный топбар ── */
+.tb{padding:0;gap:0;height:auto;flex-direction:column;align-items:stretch}
+.tb-row1{display:flex;align-items:center;padding:0 10px;height:44px;gap:6px}
+.tb-row2{display:flex;align-items:center;padding:0 4px;height:36px;border-top:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tb-row2::-webkit-scrollbar{display:none}
+.brand{font-size:13px;flex-shrink:0}.brand-s{display:none}
+.sep{display:none}
+.nav{gap:0;flex-shrink:0}
+.nb{padding:4px 8px;font-size:12px;white-space:nowrap}
+.nb span{display:inline}
+.nb .c{font-size:9px;padding:1px 4px}
+.tba{gap:3px;margin-left:auto;flex-shrink:0}
+.mob-hide{display:none}
+.tba .btn{padding:5px 8px}
+.ph{padding:14px 12px 8px;flex-direction:column;align-items:flex-start;gap:8px}
+.pt{font-size:22px}
+.filters{padding:0 12px 10px;gap:6px}
+.sw{min-width:0;max-width:none;width:100%;flex:1 1 100%}
+.flt{min-width:80px;max-width:100%;flex:1}
+.flt-wrap{flex:1;min-width:80px}
+.tw{padding:0 0 20px}
+.tbl{display:none}
+.co-cards{display:flex;flex-direction:column;gap:0;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rm);margin:0 12px;overflow:hidden}
+.co-card{padding:12px 14px;border-bottom:1px solid var(--border);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.co-card:last-child{border-bottom:none}
+.co-card:active{background:var(--bg-h)}
+.co-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:5px}
+.co-card-name{font-size:13px;font-weight:500;line-height:1.35;flex:1}
+.co-card-prio{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0;font-family:'Geist Mono',monospace}
+.co-card-prio.A{background:var(--rbg);color:var(--red)}
+.co-card-prio.B{background:var(--abg);color:var(--amber)}
+.co-card-prio.C{background:var(--bg-h);color:var(--mu)}
+.co-card-meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--mu)}
+.co-card-status{display:inline-flex;align-items:center;padding:1px 7px;border-radius:10px;font-size:11px;font-weight:500}
+.panel{width:100%;border-left:none}
+.overlay{background:rgba(0,0,0,.45)}
+.ph2,.ptabs,.pb{padding-left:12px;padding-right:12px}
+.inp,.sel,.txa{font-size:16px;padding:9px 11px}
+.frow{flex-direction:column;gap:0}
+.ph,.filters,.kanban,.stats{padding-left:12px;padding-right:12px}
+.remote-banner{font-size:11px;padding:5px 12px}
+}
 
 
 
@@ -750,7 +798,7 @@ function App() {
 
   const [toast, setToast] = useState(null);
 
-  const [remoteStatus, setRemoteStatus] = useState(null); // null | 'loaded' | 'error' | 'same'
+  const [remoteStatus, setRemoteStatus] = useState(null);
 
   const fileRef = useRef();
 
@@ -758,11 +806,10 @@ function App() {
 
   useEffect(()=>{ try{ localStorage.setItem(SK,JSON.stringify(data)); }catch(e){} },[data]);
 
-  /* ── Auto-load crm_data.json from server on startup ── */
+  /* ── Auto-load crm_data.json on startup ── */
   useEffect(()=>{
     fetchRemoteData().then(remote => {
       const local = loadData();
-      // Use remote if it has more companies OR if localStorage is empty
       const localCount = local.companies ? local.companies.length : 0;
       const remoteCount = remote.companies ? remote.companies.length : 0;
       if(remoteCount >= localCount) {
@@ -773,9 +820,7 @@ function App() {
         setRemoteStatus('same');
         setTimeout(()=>setRemoteStatus(null), 3000);
       }
-    }).catch(()=>{
-      // crm_data.json not found — normal when running locally
-    });
+    }).catch(()=>{});
   }, []);
 
 
@@ -878,27 +923,13 @@ function App() {
 
     <div className="tb">
 
-      <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v15</span></div>
+      <div className="tb-row1">
 
-      <div className="sep"/>
+        <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v15</span></div>
 
-      <nav className="nav">
+        <div className="sep"/>
 
-        {TABS.map(t=>(
-
-          <button key={t.id} className={`nb${tab===t.id?' active':''}`} onClick={()=>setTab(t.id)}>
-
-            <I n={t.icon} s={13}/><span>{t.label}</span>
-
-            {t.cnt!=null&&<span className="c">{t.cnt}</span>}
-
-          </button>
-
-        ))}
-
-      </nav>
-
-      <div className="tba">
+        <div className="tba">
 
         {activeTag && (
 
@@ -922,9 +953,22 @@ function App() {
 
         <input type="file" ref={fileRef} accept=".json" style={{display:'none'}} onChange={doImportJSON}/>
 
-        <button className="btn btn-sm btn-p" onClick={doExport} title="Скачать crm_data.json для загрузки на GitHub"><I n="dl" s={13}/><span>→ GitHub</span></button>
-        <button className="btn btn-sm" onClick={doExportBackup} title="Скачать резервную копию с датой"><I n="dl" s={13}/><span>Бэкап</span></button>
+        <button className="btn btn-sm btn-p" onClick={doExport} title="Скачать crm_data.json для GitHub"><I n="dl" s={13}/><span className="mob-hide">→ GitHub</span></button>
+        <button className="btn btn-g btn-sm" onClick={doExportBackup} title="Резервная копия с датой"><I n="dl" s={13}/><span className="mob-hide">Бэкап</span></button>
 
+      </div>
+
+      </div>{/* /tb-row1 */}
+
+      <div className="tb-row2">
+        <nav className="nav">
+          {TABS.map(t=>(
+            <button key={t.id} className={`nb${tab===t.id?' active':''}`} onClick={()=>setTab(t.id)}>
+              <I n={t.icon} s={13}/><span>{t.label}</span>
+              {t.cnt!=null&&<span className="c">{t.cnt}</span>}
+            </button>
+          ))}
+        </nav>
       </div>
 
     </div>
@@ -969,7 +1013,7 @@ function App() {
 
     {toast && <div className="toast">{toast}</div>}
     {remoteStatus==='loaded' && <div className="remote-banner loaded">✓ Данные загружены из crm_data.json (GitHub)</div>}
-    {remoteStatus==='same' && <div className="remote-banner same">ℹ Локальные данные актуальнее — crm_data.json не применён</div>}
+    {remoteStatus==='same' && <div className="remote-banner same">ℹ Локальные данные актуальнее</div>}
 
   </>;
 
@@ -1462,36 +1506,38 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
       </div>
 
-      <select className="flt" value={fInd} onChange={e=>setFInd(e.target.value)}>
+      <div className="flt-wrap" title="Отрасль">
+        <span className="flt-icon">🏭</span>
+        <select className="flt flt-ic" value={fInd} onChange={e=>setFInd(e.target.value)}>
+          <option value="">Все отрасли</option>
+          <option value="__none__">— Без отрасли</option>
+          {getAllInds(data).map(i=><option key={i} value={i}>{i}</option>)}
+        </select>
+      </div>
 
-        <option value="">Все отрасли</option>
+      <div className="flt-wrap" title="Приоритет">
+        <span className="flt-icon">⭐</span>
+        <select className="flt flt-ic" value={fPrio} onChange={e=>setFPrio(e.target.value)}>
+          <option value="">Все приоритеты</option>
+          {PRIO.map(p=><option key={p} value={p}>Приоритет {p}</option>)}
+        </select>
+      </div>
 
-        <option value="__none__">— Без отрасли</option>
+      <div className="flt-wrap" title="Статус">
+        <span className="flt-icon">🔵</span>
+        <select className="flt flt-ic" value={fSt} onChange={e=>setFSt(e.target.value)}>
+          <option value="">Все статусы</option>
+          {CO_ST.map(s=><option key={s} value={s}>{s}</option>)}
+        </select>
+      </div>
 
-        {getAllInds(data).map(i=><option key={i} value={i}>{i}</option>)}
-
-      </select>
-
-      <select className="flt" value={fPrio} onChange={e=>setFPrio(e.target.value)}>
-
-        <option value="">Все приоритеты</option>
-
-        {PRIO.map(p=><option key={p} value={p}>Приоритет {p}</option>)}
-
-      </select>
-
-      <select className="flt" value={fSt} onChange={e=>setFSt(e.target.value)}>
-
-        <option value="">Все статусы</option>
-
-        {CO_ST.map(s=><option key={s} value={s}>{s}</option>)}
-
-      </select>
-
-      <select className="flt" value={fReg} onChange={e=>setFReg(e.target.value)}>
-        <option value="">Все регионы</option>
-        {[...new Set(data.companies.map(c=>c.region||cityToRegion(c.city)).filter(Boolean))].sort().map(r=><option key={r} value={r}>{r}</option>)}
-      </select>
+      <div className="flt-wrap" title="Регион">
+        <span className="flt-icon">📍</span>
+        <select className="flt flt-ic" value={fReg} onChange={e=>setFReg(e.target.value)}>
+          <option value="">Все регионы</option>
+          {[...new Set(data.companies.map(c=>c.region||cityToRegion(c.city)).filter(Boolean))].sort().map(r=><option key={r} value={r}>{r}</option>)}
+        </select>
+      </div>
 
       {activeTagIds&&activeTagIds.length>0 &&
 
@@ -1569,6 +1615,28 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
             </tbody>
 
           </table>}
+
+      {list.length > 0 && <div className="co-cards">
+        {list.map(c => {
+          const st = c.status || '';
+          const stBg = st==='Договор'?'var(--gbg)':st==='КП'?'var(--bbg)':st==='Переговоры'?'var(--abg)':st==='Отказ'?'var(--rbg)':'var(--bg-h)';
+          const stColor = st==='Договор'?'var(--green)':st==='КП'?'var(--blue)':st==='Переговоры'?'var(--amber)':st==='Отказ'?'var(--red)':'var(--mu)';
+          return (
+            <div key={c.id} className="co-card" onClick={()=>onSel(c.id)}>
+              <div className="co-card-top">
+                <div className="co-card-name">{c.name}</div>
+                {c.priority && <span className={`co-card-prio ${c.priority}`}>{c.priority}</span>}
+              </div>
+              <div className="co-card-meta">
+                {c.city && <span>📍 {c.city}</span>}
+                {(c.industries||[c.industry]).filter(Boolean)[0] && <span>{(c.industries||[c.industry]).filter(Boolean)[0]}</span>}
+                {st && <span className="co-card-status" style={{color:stColor,background:stBg}}>{st}</span>}
+                {c.phone && <span>📞 {c.phone}</span>}
+              </div>
+            </div>
+          );
+        })}
+      </div>}
 
     </div>
 

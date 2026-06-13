@@ -179,7 +179,7 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 .stitle{font-family:'Geist Mono',monospace;font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.07em;font-weight:500;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
 
 /* cards */
-
+.co-cards{display:none}
 .card{padding:10px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);margin-bottom:6px;transition:all .1s}
 
 .card.lnk{cursor:pointer}.card.lnk:hover{border-color:var(--border-s);box-shadow:var(--sh)}
@@ -335,6 +335,20 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 .remote-banner{position:fixed;top:0;left:0;right:0;padding:7px 16px;font-size:12px;font-weight:500;text-align:center;z-index:400;animation:tI .2s ease}
 .remote-banner.loaded{background:#16a34a;color:#fff}
 .remote-banner.same{background:#2563eb;color:#fff}
+
+/* Кнопка «Отчёт» — заметная, бренд-цвет */
+.btn-report{background:#005DAA;color:#fff;border-color:#005DAA;font-weight:600}
+.btn-report:hover{background:#00488a;border-color:#00488a}
+.btn-report.pulse{animation:reportPulse 2s ease-in-out infinite}
+@keyframes reportPulse{0%,100%{box-shadow:0 0 0 0 rgba(217,119,6,.5)}50%{box-shadow:0 0 0 5px rgba(217,119,6,0)}}
+/* Баннер-напоминание про отчёт */
+.report-reminder{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 14px;padding:11px 16px;background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #d97706;border-radius:var(--rm);font-size:13px;color:#92400e}
+.report-reminder .rr-msg{flex:1;min-width:160px}
+.report-reminder b{color:#7c2d12}
+/* Бейдж зависшего лида в таблице/карточке */
+.stale-badge{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:10px;background:var(--abg);color:var(--amber);white-space:nowrap}
+.co-card.stale{border-left:3px solid var(--amber)}
+.row.stale td:first-child{box-shadow:inset 3px 0 0 var(--amber)}
 
 @keyframes tI{from{transform:translate(-50%,14px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
 
@@ -503,7 +517,11 @@ const I = ({ n, s = 16 }) => {
 
     cal:     <><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></>,
 
-    check:   <><polyline points="20 6 9 17 4 12"/></>
+    check:   <><polyline points="20 6 9 17 4 12"/></>,
+
+    chart:   <><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></>,
+
+    copy:    <><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></>
 
   };
 
@@ -590,6 +608,32 @@ const fmtShort = iso => {
 const isPast  = iso => iso && new Date(iso) < new Date();
 
 const isFuture = iso => iso && new Date(iso) > new Date();
+
+/* ── Аналитика лидов ── */
+// Последняя дата активности по компании (действия + createdAt компании)
+const lastActivity = (co, data) => {
+  let max = co.createdAt || '';
+  (data.actions||[]).forEach(a=>{
+    if(a.companyId===co.id){
+      const d = a.date || a.plannedDate || a.createdAt || '';
+      if(d && d>max) max=d;
+    }
+  });
+  (data.deals||[]).forEach(d=>{ if(d.companyId===co.id && d.createdAt>max) max=d.createdAt; });
+  (data.projects||[]).forEach(p=>{ if(p.companyId===co.id && p.createdAt>max) max=p.createdAt; });
+  return max;
+};
+// Сколько дней прошло с последней активности
+const daysSince = iso => {
+  if(!iso) return 9999;
+  const diff = Date.now() - new Date(iso).getTime();
+  return Math.floor(diff / 86400000);
+};
+// Активные (незакрытые) статусы — для «зависших лидов»
+const ACTIVE_STATES = ['Лид','Переговоры','КП'];
+// Зависший лид: активный статус + нет активности дольше STALE_DAYS
+const STALE_DAYS = 30;
+const isStale = (co, data) => ACTIVE_STATES.includes(co.status||'Лид') && daysSince(lastActivity(co,data)) >= STALE_DAYS;
 
 const fsz  = b => b>1048576?`${(b/1048576).toFixed(1)} MB`:b>1024?`${(b/1024).toFixed(0)} KB`:`${b} B`;
 
@@ -796,6 +840,10 @@ function App() {
 
   const [showImport, setShowImport] = useState(false);
 
+  const [showReport, setShowReport] = useState(false);
+
+  const [reportDue, setReportDue] = useState(false);
+
   const [toast, setToast] = useState(null);
 
   const [remoteStatus, setRemoteStatus] = useState(null);
@@ -805,6 +853,16 @@ function App() {
 
 
   useEffect(()=>{ try{ localStorage.setItem(SK,JSON.stringify(data)); }catch(e){} },[data]);
+
+  /* ── Напоминание про отчёт раз в 2 недели ── */
+  useEffect(()=>{
+    try{
+      const last = localStorage.getItem('crm_lastReport');
+      if(!last){ setReportDue(true); return; }
+      const days = (Date.now()-new Date(last).getTime())/86400000;
+      setReportDue(days >= 14);
+    }catch(e){}
+  }, [showReport]);
 
   /* ── Auto-load crm_data.json on startup ── */
   useEffect(()=>{
@@ -925,7 +983,7 @@ function App() {
 
       <div className="tb-row1">
 
-        <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v15</span></div>
+        <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v23</span></div>
 
         <div className="sep"/>
 
@@ -948,6 +1006,8 @@ function App() {
         </button>
 
         <button className="btn btn-g btn-sm" onClick={()=>setShowImport(true)}><I n="xlsx" s={13}/><span>CSV</span></button>
+
+        <button className={`btn btn-sm btn-report${reportDue?' pulse':''}`} onClick={()=>setShowReport(true)} title="Сформировать отчёт (RU/EN)"><I n="chart" s={13}/><span>Отчёт{reportDue?' •':''}</span></button>
 
         <button className="btn btn-g btn-sm" onClick={()=>fileRef.current?.click()}><I n="ul" s={13}/></button>
 
@@ -977,7 +1037,7 @@ function App() {
 
     <div className="content">
 
-      {tab==='dashboard' && <Dashboard data={data} setTab={setTab} onOpenAction={id=>setOpenAction(id)} onSelTask={id=>setOpenTask(id)}/>}
+      {tab==='dashboard' && <Dashboard data={data} setTab={setTab} onOpenAction={id=>setOpenAction(id)} onSelTask={id=>setOpenTask(id)} reportDue={reportDue} onReport={()=>setShowReport(true)} onSelCo={id=>setOpenCo(id)}/>}
 
       {tab==='companies' && <Companies data={data} upd={upd} onSel={id=>setOpenCo(id)} bang={bang} activeTagFilter={activeTagFilter} activeTagIds={activeTagIds} setActiveTagIds={setActiveTagIds}/>}
 
@@ -1009,6 +1069,8 @@ function App() {
 
     {showImport && <XlsxImport data={data} upd={upd} onClose={()=>setShowImport(false)} bang={bang}/>}
 
+    {showReport && <ReportModal data={data} onClose={()=>setShowReport(false)} bang={bang}/>}
+
 
 
     {toast && <div className="toast">{toast}</div>}
@@ -1023,7 +1085,7 @@ function App() {
 
 /* ══ Dashboard ══ */
 
-function Dashboard({data,setTab,onOpenAction,onSelTask}) {
+function Dashboard({data,setTab,onOpenAction,onSelTask,reportDue,onReport,onSelCo}) {
 
   // ЗАДАЧИ: и открытые (запланированные), и закрытые (выполненные). Всё показываем здесь.
 
@@ -1078,11 +1140,23 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
   const coName=id=>data.companies.find(c=>c.id===id)?.name||'';
 
+  const staleLeads = useMemo(()=>
+    data.companies.filter(c=>isStale(c,data))
+      .map(c=>({...c, _idle:daysSince(lastActivity(c,data))}))
+      .sort((a,b)=>b._idle-a._idle)
+  ,[data]);
+
 
 
   return <>
 
     <div className="ph"><div><div className="pt">Дашборд</div><div className="pm">{new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})}</div></div></div>
+
+    {reportDue && <div style={{padding:'0 26px'}}><div className="report-reminder">
+      <I n="chart" s={18}/>
+      <div className="rr-msg">Прошло <b>2 недели</b> с последнего отчёта. Пора сформировать новый — RU/EN за период.</div>
+      <button className="btn btn-sm btn-report" onClick={onReport}><I n="chart" s={13}/> Сформировать отчёт</button>
+    </div></div>}
 
     <div className="stats">
 
@@ -1156,9 +1230,28 @@ function Dashboard({data,setTab,onOpenAction,onSelTask}) {
 
     
 
-    <div style={{padding:'0 26px 26px'}}>
+    {staleLeads.length > 0 && <div style={{padding:'0 26px 26px'}}>
 
-    </div>
+      <div style={{fontFamily:'Instrument Serif,serif',fontSize:18,marginBottom:10,display:'flex',alignItems:'center',gap:10}}>
+        <I n="warn" s={17}/> Зависшие лиды
+        <span style={{fontSize:13,color:'var(--mu)',fontFamily:'Geist,sans-serif'}}>({staleLeads.length}) — нет активности ≥ {STALE_DAYS} дн.</span>
+      </div>
+
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:8,maxHeight:'46vh',overflowY:'auto',overflowX:'hidden',paddingRight:4}}>
+
+        {staleLeads.slice(0,60).map(c=>(
+          <div key={c.id} style={{padding:'10px 12px',background:'var(--bg-card)',border:'1px solid var(--border)',borderLeft:'3px solid var(--amber)',borderRadius:'var(--r)',cursor:'pointer'}} onClick={()=>onSelCo&&onSelCo(c.id)}>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8,marginBottom:4}}>
+              <span style={{fontSize:13,fontWeight:500,lineHeight:1.3}}>{c.name}</span>
+              <span className="stale-badge">{c._idle>=9999?'нет данных':`${c._idle} дн.`}</span>
+            </div>
+            <div style={{fontSize:12,color:'var(--mu)'}}>{[c.city,c.status||'Лид',`приоритет ${c.priority||'B'}`].filter(Boolean).join(' · ')}</div>
+          </div>
+        ))}
+
+      </div>
+
+    </div>}
 
   </>;
 
@@ -1364,6 +1457,10 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
   const [showNew,setShowNew]= useState(false);
 
+  const [fStale,setFStale]  = useState(false);
+
+  const [showDups,setShowDups] = useState(false);
+
   const [visibleCols,setVisibleCols] = useState(loadCols);
 
   const [colWidths,setColWidths]     = useState(loadWidths);
@@ -1448,11 +1545,13 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
       }
 
+      if(fStale && !isStale(c,data)) return false;
+
       return true;
 
     });
 
-  },[data.companies,q,fInd,fPrio,fSt,fCity,fReg,fAppl,activeTagIds]);
+  },[data.companies,q,fInd,fPrio,fSt,fCity,fReg,fAppl,activeTagIds,fStale,data]);
 
 
 
@@ -1490,7 +1589,10 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
       </div>
 
-      <button className="btn btn-p" onClick={()=>setShowNew(true)}><I n="plus" s={14}/> Добавить компанию</button>
+      <div style={{display:'flex',gap:8}}>
+        <button className="btn btn-g" onClick={()=>setShowDups(true)} title="Найти дубли компаний в базе"><I n="copy" s={14}/> Найти дубли</button>
+        <button className="btn btn-p" onClick={()=>setShowNew(true)}><I n="plus" s={14}/> Добавить компанию</button>
+      </div>
 
     </div>
 
@@ -1550,6 +1652,8 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
       {fCity&&<button className="btn btn-sm btn-d" onClick={()=>setFCity('')}>× {fCity}</button>}
       <input className="inp" style={{width:160,fontSize:12}} value={fAppl} onChange={e=>setFAppl(e.target.value)} placeholder="Применяемость…"/>{fAppl&&<button className="btn btn-sm btn-d" onClick={()=>setFAppl('')}>×</button>}
 
+      <button className={`btn btn-sm${fStale?' btn-report':' btn-g'}`} onClick={()=>setFStale(v=>!v)} title={`Лиды без активности ≥ ${STALE_DAYS} дней`}><I n="warn" s={13}/> Зависшие{fStale?' ✓':''}</button>
+
     </div>
 
 
@@ -1600,7 +1704,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
               {list.map(c=>(
 
-                <tr key={c.id} className="row" onClick={()=>onSel(c.id)}>
+                <tr key={c.id} className={`row${isStale(c,data)?' stale':''}`} onClick={()=>onSel(c.id)}>
 
                   {activeCols.map(col=>(
 
@@ -1621,8 +1725,9 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
           const st = c.status || '';
           const stBg = st==='Договор'?'var(--gbg)':st==='КП'?'var(--bbg)':st==='Переговоры'?'var(--abg)':st==='Отказ'?'var(--rbg)':'var(--bg-h)';
           const stColor = st==='Договор'?'var(--green)':st==='КП'?'var(--blue)':st==='Переговоры'?'var(--amber)':st==='Отказ'?'var(--red)':'var(--mu)';
+          const stale = isStale(c,data);
           return (
-            <div key={c.id} className="co-card" onClick={()=>onSel(c.id)}>
+            <div key={c.id} className={`co-card${stale?' stale':''}`} onClick={()=>onSel(c.id)}>
               <div className="co-card-top">
                 <div className="co-card-name">{c.name}</div>
                 {c.priority && <span className={`co-card-prio ${c.priority}`}>{c.priority}</span>}
@@ -1631,6 +1736,7 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
                 {c.city && <span>📍 {c.city}</span>}
                 {(c.industries||[c.industry]).filter(Boolean)[0] && <span>{(c.industries||[c.industry]).filter(Boolean)[0]}</span>}
                 {st && <span className="co-card-status" style={{color:stColor,background:stBg}}>{st}</span>}
+                {stale && <span className="stale-badge">⚠ {daysSince(lastActivity(c,data))} дн.</span>}
                 {c.phone && <span>📞 {c.phone}</span>}
               </div>
             </div>
@@ -1727,6 +1833,8 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
 
     {showNew && <NewCoForm onClose={()=>setShowNew(false)} onSave={create} data={data} upd={upd}/>}
+
+    {showDups && <DupFinder data={data} upd={upd} onClose={()=>setShowDups(false)} bang={bang} onSel={id=>{setShowDups(false);onSel(id);}}/>}
 
   </>;
 
@@ -3860,6 +3968,134 @@ function XlsxImport({data,upd,onClose,bang}) {
 
 
 
+/* ══ Модалка отчёта (RU/EN) ══ */
+function ReportModal({data, onClose, bang}){
+  const PERIODS=[{k:'14',l:'2 недели'},{k:'30',l:'30 дней'},{k:'90',l:'Квартал'},{k:'all',l:'Всё время'}];
+  const [period,setPeriod]=useState('14');
+  const fromISO = period==='all' ? null : new Date(Date.now()-parseInt(period)*86400000).toISOString();
+  const stats = useMemo(()=>computeReportStats(data, fromISO),[data,fromISO]);
+  const markDone=()=>{ try{ localStorage.setItem('crm_lastReport', new Date().toISOString()); }catch(e){} };
+  const dl=()=>{ exportReportWord(data, fromISO); markDone(); bang('Отчёт скачан (.doc) · RU/EN'); };
+  const openHTML=()=>{
+    const w=window.open('','_blank');
+    if(w){ w.document.write(buildReportHTML(data, fromISO)); w.document.close(); markDone(); bang('Отчёт открыт в новой вкладке'); }
+    else { bang('Браузер заблокировал всплывающее окно'); }
+  };
+  return <div className="dlg-ov" onClick={onClose}><div className="dlg" style={{maxWidth:560,width:'94vw'}} onClick={e=>e.stopPropagation()}>
+    <div className="dh"><div style={{fontFamily:'Instrument Serif,serif',fontSize:19,display:'flex',alignItems:'center',gap:8}}><I n="chart" s={18}/> Отчёт по CRM (RU / EN)</div><button className="btn btn-g btn-ic" onClick={onClose}><I n="x"/></button></div>
+    <div className="db">
+      <div style={{fontSize:13,color:'var(--mu)',marginBottom:8}}>Период:</div>
+      <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:16}}>
+        {PERIODS.map(p=>(
+          <button key={p.k} className={`btn btn-sm${period===p.k?' btn-p':' btn-g'}`} onClick={()=>setPeriod(p.k)}>{p.l}</button>
+        ))}
+      </div>
+
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(120px,1fr))',gap:8,marginBottom:16}}>
+        {[['Всего компаний',stats.totalCos],['Новых за период',stats.newCos.length],['Активностей',stats.acts.length],['Зависших лидов',stats.stale.length],['Просрочено задач',stats.tasksOverdue.length+stats.actionsPlannedOverdue.length],['Открытых задач',stats.tasksOpen.length]].map(([l,v])=>(
+          <div key={l} style={{border:'1px solid var(--border)',borderRadius:'var(--rm)',padding:'10px 12px',background:'var(--bg-card)'}}>
+            <div style={{fontSize:22,fontWeight:600,color:'#005DAA',lineHeight:1}}>{v}</div>
+            <div style={{fontSize:11,color:'var(--mu)',marginTop:4}}>{l}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{fontSize:12.5,color:'var(--mu)',lineHeight:1.6,marginBottom:16}}>
+        Отчёт включает: воронку по статусам, распределение приоритетов A/B/C, активность по типам, открытые и просроченные задачи, список зависших лидов и новые компании за период. Файл .doc содержит обе версии — русскую и английскую.
+      </div>
+
+      <div className="df" style={{flexWrap:'wrap',gap:8}}>
+        <button className="btn btn-g" onClick={onClose}>Закрыть</button>
+        <button className="btn btn-g" onClick={openHTML}><I n="ext" s={13}/> Открыть на экране</button>
+        <button className="btn btn-report" onClick={dl}><I n="word" s={13}/> Скачать .doc</button>
+      </div>
+    </div>
+  </div></div>;
+}
+
+
+
+/* ══ Поиск дублей в базе ══ */
+function findDuplicateGroups(companies){
+  // Группируем по: ИНН (если есть) и по нормализованному имени
+  const byInn = {}, byName = {};
+  companies.forEach(c=>{
+    const inn=(c.inn||'').replace(/\D/g,'');
+    if(inn) (byInn[inn]=byInn[inn]||[]).push(c);
+    const nm=normName(c.name);
+    if(nm) (byName[nm]=byName[nm]||[]).push(c);
+  });
+  const groups=[];
+  const seen=new Set();
+  const pushGroup=(arr,reason)=>{
+    if(arr.length<2) return;
+    const ids=arr.map(c=>c.id).sort((a,b)=>a-b);
+    const key=reason+':'+ids.join(',');
+    if(seen.has(key)) return;
+    seen.add(key);
+    groups.push({reason,companies:arr.slice().sort((a,b)=>a.id-b.id)});
+  };
+  Object.values(byInn).forEach(arr=>pushGroup(arr,'inn'));
+  Object.values(byName).forEach(arr=>{
+    // не дублируем группу, уже покрытую по ИНН целиком
+    pushGroup(arr,'name');
+  });
+  return groups;
+}
+
+function DupFinder({data, upd, onClose, bang, onSel}){
+  const groups = useMemo(()=>findDuplicateGroups(data.companies),[data.companies]);
+  const totalDup = groups.reduce((s,g)=>s+g.companies.length-1,0);
+
+  // Удалить компанию (с переносом связей на «оставленную»)
+  const mergeDelete=(keepId, dropId)=>{
+    if(!confirm('Удалить дубль и перенести его связи (контакты/сделки/проекты/действия) на оставленную компанию?')) return;
+    upd(p=>({
+      ...p,
+      companies: p.companies.filter(c=>c.id!==dropId),
+      contacts: p.contacts.map(c=>({...c, companyIds:[...new Set((c.companyIds||[]).map(i=>i===dropId?keepId:i))]})),
+      deals: p.deals.map(d=>d.companyId===dropId?{...d,companyId:keepId}:d),
+      projects: p.projects.map(pr=>pr.companyId===dropId?{...pr,companyId:keepId}:pr),
+      actions: p.actions.map(a=>a.companyId===dropId?{...a,companyId:keepId}:a),
+    }));
+    bang('Дубль удалён, связи перенесены');
+  };
+
+  return <div className="dlg-ov" onClick={onClose}><div className="dlg" style={{maxWidth:620,width:'95vw'}} onClick={e=>e.stopPropagation()}>
+    <div className="dh"><div style={{fontFamily:'Instrument Serif,serif',fontSize:19,display:'flex',alignItems:'center',gap:8}}><I n="copy" s={18}/> Поиск дублей</div><button className="btn btn-g btn-ic" onClick={onClose}><I n="x"/></button></div>
+    <div className="db">
+      {groups.length===0
+        ? <div style={{padding:'24px 0',textAlign:'center',color:'var(--mu)'}}><I n="check" s={28}/><div style={{marginTop:8}}>Дублей не найдено</div></div>
+        : <>
+          <div style={{fontSize:13,color:'var(--mu)',marginBottom:14}}>Найдено групп: <b style={{color:'var(--text)'}}>{groups.length}</b> · потенциальных дублей: <b style={{color:'var(--amber)'}}>{totalDup}</b>. Совпадение по ИНН или по названию. Оставь нужную карточку, лишние удали — связи перенесутся автоматически.</div>
+          <div style={{display:'flex',flexDirection:'column',gap:12,maxHeight:'56vh',overflowY:'auto'}}>
+            {groups.map((g,gi)=>(
+              <div key={gi} style={{border:'1px solid var(--border)',borderRadius:'var(--rm)',padding:'10px 12px',background:'var(--bg-card)'}}>
+                <div style={{fontSize:11,fontFamily:'Geist Mono,monospace',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--so)',marginBottom:8}}>
+                  {g.reason==='inn'?`🔢 Совпадение по ИНН: ${g.companies[0].inn}`:'📛 Совпадение по названию'}
+                </div>
+                {g.companies.map((c,ci)=>{
+                  const keep=g.companies[0];
+                  const isKeep=ci===0;
+                  return <div key={c.id} style={{display:'flex',alignItems:'center',gap:8,padding:'6px 0',borderTop:ci>0?'1px solid var(--border)':'none'}}>
+                    <div style={{flex:1,minWidth:0}}>
+                      <div style={{fontSize:13,fontWeight:500,cursor:'pointer'}} onClick={()=>{onSel&&onSel(c.id);}}>{c.name}{isKeep&&<span style={{fontSize:10,marginLeft:6,padding:'1px 6px',borderRadius:4,background:'var(--gbg)',color:'var(--green)',fontWeight:600}}>оставить</span>}</div>
+                      <div style={{fontSize:11.5,color:'var(--mu)',marginTop:2}}>id {c.id}{c.city?' · '+c.city:''}{c.inn?' · ИНН '+c.inn:''} · {c.status||'Лид'} · {c.priority||'B'}{c.phone?' · '+c.phone:''}</div>
+                    </div>
+                    {!isKeep && <button className="btn btn-g btn-sm btn-d" onClick={()=>mergeDelete(keep.id,c.id)} title={`Удалить дубль, перенести связи на «${keep.name}»`}><I n="trash" s={12}/> Удалить</button>}
+                  </div>;
+                })}
+              </div>
+            ))}
+          </div>
+        </>}
+      <div className="df" style={{marginTop:14}}><button className="btn btn-g" onClick={onClose}>Закрыть</button></div>
+    </div>
+  </div></div>;
+}
+
+
+
 /* ══ Word export ══ */
 
 function exportDealWord(deal,data){const co=data.companies.find(c=>c.id===deal.companyId);const sm={'Запрос':'Request','Счёт':'Invoice','Оплата':'Payment','Закрыт':'Closed','Отказ':'Rejected'};const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Arial,sans-serif;margin:40px;font-size:13px}h1{font-size:20px;margin-bottom:4px}h2{font-size:14px;margin-top:20px;border-bottom:1px solid #ccc;padding-bottom:3px}.r{display:flex;margin-bottom:5px}.l{width:180px;font-weight:bold;flex-shrink:0}.v{flex:1}</style></head><body><h1>Deal Card</h1><p style="color:#666;font-size:11px">Generated: ${new Date().toLocaleDateString('en-GB')} | Innomatec/LangAn CRM</p><h2>Deal</h2><div class="r"><div class="l">Title:</div><div class="v">${deal.title}</div></div><div class="r"><div class="l">Stage:</div><div class="v">${sm[deal.stage]||deal.stage}</div></div><div class="r"><div class="l">Amount (RUB):</div><div class="v">${deal.amount?deal.amount.toLocaleString('en-US')+' ₽':'—'}</div></div><div class="r"><div class="l">Start:</div><div class="v">${deal.startDate||'—'}</div></div><div class="r"><div class="l">Due:</div><div class="v">${deal.endDate||'—'}</div></div><div class="r"><div class="l">Description:</div><div class="v">${deal.description||'—'}</div></div>${co?`<h2>Company</h2><div class="r"><div class="l">Name:</div><div class="v">${co.name}</div></div>${co.inn?`<div class="r"><div class="l">INN:</div><div class="v">${co.inn}</div></div>`:''}<div class="r"><div class="l">City:</div><div class="v">${co.city||'—'}</div></div><div class="r"><div class="l">Region:</div><div class="v">${co.region||''}</div></div><div class="r"><div class="l">Phone:</div><div class="v">${co.phone||'—'}</div></div><div class="r"><div class="l">Industry:</div><div class="v">${(co.industries||[co.industry]).filter(Boolean).join(', ')||'—'}</div></div><div class="r"><div class="l">Activity:</div><div class="v">${co.description||'—'}</div></div><h2>Solutions</h2><div class="r"><div class="l">Innomatec:</div><div class="v">${co.solutionInnomatec||'—'}</div></div><div class="r"><div class="l">LangAn:</div><div class="v">${co.solutionLangAn||'—'}</div></div>`:''}`;
@@ -3871,6 +4107,123 @@ const b=new Blob(['\ufeff'+h],{type:'application/msword'});const a=document.crea
 function exportProjWord(proj,data){const co=data.companies.find(c=>c.id===proj.companyId);const sm={'Новый':'New','В работе':'In Progress','На паузе':'On Hold','Завершён':'Completed'};const contacts=(proj.participantContactIds||[]).map(id=>data.contacts.find(c=>c.id===id)).filter(Boolean);const h=`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:Arial,sans-serif;margin:40px;font-size:13px}h1{font-size:20px;margin-bottom:4px}h2{font-size:14px;margin-top:20px;border-bottom:1px solid #ccc;padding-bottom:3px}.r{display:flex;margin-bottom:5px}.l{width:180px;font-weight:bold;flex-shrink:0}.v{flex:1}ul{margin:0;padding-left:18px}</style></head><body><h1>Project Brief</h1><p style="color:#666;font-size:11px">Generated: ${new Date().toLocaleDateString('en-GB')} | Innomatec/LangAn CRM</p><h2>Project</h2><div class="r"><div class="l">Title:</div><div class="v">${proj.title}</div></div><div class="r"><div class="l">Stage:</div><div class="v">${sm[proj.stage]||proj.stage||'New'}</div></div><div class="r"><div class="l">Budget (RUB):</div><div class="v">${proj.budget?proj.budget.toLocaleString('en-US')+' ₽':'—'}</div></div><div class="r"><div class="l">Start:</div><div class="v">${proj.startDate||'—'}</div></div><div class="r"><div class="l">Deadline:</div><div class="v">${proj.endDate||'—'}</div></div><div class="r"><div class="l">Description:</div><div class="v">${proj.description||'—'}</div></div>${(proj.milestones||[]).length>0?`<h2>Milestones</h2><ul>${proj.milestones.map(m=>`<li>${m.done?'[x]':'[ ]'} ${m.title}</li>`).join('')}</ul>`:''}${contacts.length>0?`<h2>Participants</h2><ul>${contacts.map(c=>`<li>${c.name}${c.position?' — '+c.position:''}${c.phones?.[0]?' · '+c.phones[0]:''}</li>`).join('')}</ul>`:''}${co?`<h2>Company</h2><div class="r"><div class="l">Name:</div><div class="v">${co.name}</div></div>${co.inn?`<div class="r"><div class="l">INN:</div><div class="v">${co.inn}</div></div>`:''}<div class="r"><div class="l">City:</div><div class="v">${co.city||'—'}</div></div><div class="r"><div class="l">Region:</div><div class="v">${co.region||''}</div></div><div class="r"><div class="l">Industry:</div><div class="v">${(co.industries||[co.industry]).filter(Boolean).join(', ')||'—'}</div></div><div class="r"><div class="l">Activity:</div><div class="v">${co.description||'—'}</div></div><h2>Applicable Solutions</h2><div class="r"><div class="l">Innomatec:</div><div class="v">${co.solutionInnomatec||'—'}</div></div><div class="r"><div class="l">LangAn:</div><div class="v">${co.solutionLangAn||'—'}</div></div><div class="r"><div class="l">Processes:</div><div class="v">${co.processes||'—'}</div></div><div class="r"><div class="l">Application points:</div><div class="v">${co.applicationPoints||'—'}</div></div>`:''}`;
 
 const b=new Blob(['\ufeff'+h],{type:'application/msword'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`project_${proj.title.replace(/\s+/g,'_')}_EN.doc`;a.click();}
+
+
+
+/* ══ Двухнедельный отчёт (RU/EN) ══ */
+// Сбор метрик за период [fromISO .. nowISO]
+function computeReportStats(data, fromISO){
+  const from = fromISO ? new Date(fromISO).getTime() : 0;
+  const inPeriod = iso => iso && new Date(iso).getTime() >= from;
+  const cos = data.companies||[];
+  // По статусам
+  const byStatus = {};
+  CO_ST.forEach(s=>byStatus[s]=0);
+  cos.forEach(c=>{ const s=c.status||'Лид'; byStatus[s]=(byStatus[s]||0)+1; });
+  // По приоритету
+  const byPrio = {A:0,B:0,C:0};
+  cos.forEach(c=>{ const p=c.priority||'B'; if(byPrio[p]!=null) byPrio[p]++; });
+  // Новые компании за период
+  const newCos = cos.filter(c=>inPeriod(c.createdAt));
+  // Активность за период
+  const acts = (data.actions||[]).filter(a=>inPeriod(a.date||a.createdAt));
+  const actsByType = {};
+  acts.forEach(a=>{ actsByType[a.type]=(actsByType[a.type]||0)+1; });
+  // Задачи
+  const tasksOpen = (data.tasks||[]).filter(t=>!t.completed);
+  const tasksDoneInPeriod = (data.tasks||[]).filter(t=>t.completed && inPeriod(t.completedAt||t.createdAt));
+  const tasksOverdue = tasksOpen.filter(t=>t.deadline && isPast(t.deadline));
+  const actionsPlannedOverdue = (data.actions||[]).filter(a=>a.planned && a.plannedDate && isPast(a.plannedDate));
+  // Зависшие лиды
+  const stale = cos.filter(c=>isStale(c,data));
+  // Сделки
+  const deals = data.deals||[];
+  const dealsSum = deals.reduce((s,d)=>s+(d.amount||0),0);
+  return {byStatus,byPrio,newCos,acts,actsByType,tasksOpen,tasksDoneInPeriod,tasksOverdue,actionsPlannedOverdue,stale,deals,dealsSum,totalCos:cos.length};
+}
+
+function buildReportHTML(data, fromISO){
+  const s = computeReportStats(data, fromISO);
+  const dFrom = fromISO ? new Date(fromISO).toLocaleDateString('ru-RU') : '—';
+  const dFromEN = fromISO ? new Date(fromISO).toLocaleDateString('en-GB') : '—';
+  const dTo = new Date().toLocaleDateString('ru-RU');
+  const dToEN = new Date().toLocaleDateString('en-GB');
+  const rows = obj => Object.entries(obj).filter(([k,v])=>v>0).map(([k,v])=>`<tr><td>${k}</td><td style="text-align:right">${v}</td></tr>`).join('') || '<tr><td colspan="2" style="color:#999">—</td></tr>';
+  const staleList = arr => arr.length ? `<ul>${arr.slice(0,40).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} — ${daysSince(lastActivity(c,data))} дн. без активности (${c.status||'Лид'}, ${c.priority||'B'})</li>`).join('')}${arr.length>40?`<li>… и ещё ${arr.length-40}</li>`:''}</ul>` : '<p style="color:#999">Нет</p>';
+  const staleListEN = arr => arr.length ? `<ul>${arr.slice(0,40).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} — ${daysSince(lastActivity(c,data))} days idle (${c.status||'Lead'}, ${c.priority||'B'})</li>`).join('')}${arr.length>40?`<li>… and ${arr.length-40} more</li>`:''}</ul>` : '<p style="color:#999">None</p>';
+  const css = `body{font-family:Arial,sans-serif;margin:36px;font-size:12.5px;color:#1a1917}h1{font-size:22px;margin:0 0 2px}h2{font-size:15px;margin:22px 0 8px;border-bottom:2px solid #005DAA;padding-bottom:3px;color:#005DAA}h3{font-size:13px;margin:16px 0 6px;color:#00A7C8}.sub{color:#666;font-size:11px;margin-bottom:4px}table{border-collapse:collapse;width:60%;margin:6px 0}td{border:1px solid #ddd;padding:4px 9px}th{background:#f0f4f8;border:1px solid #ddd;padding:4px 9px;text-align:left}.kpi{display:inline-block;border:1px solid #ddd;border-radius:6px;padding:8px 14px;margin:4px 8px 4px 0;min-width:90px}.kpi b{display:block;font-size:22px;color:#005DAA}.kpi span{font-size:11px;color:#666}ul{margin:4px 0;padding-left:20px}li{margin:2px 0}.hr{border:none;border-top:3px double #005DAA;margin:34px 0}`;
+  const ruActsByType = Object.keys(s.actsByType).length ? `<table><tr><th>Тип</th><th>Кол-во</th></tr>${rows(s.actsByType)}</table>` : '<p style="color:#999">Активностей за период не зафиксировано</p>';
+
+  const ru = `
+  <h1>Отчёт по CRM Innomatec / LangAn</h1>
+  <div class="sub">Период: ${dFrom} — ${dTo} · Сформировано: ${new Date().toLocaleString('ru-RU')}</div>
+  <div style="margin:14px 0">
+    <div class="kpi"><b>${s.totalCos}</b><span>Всего компаний</span></div>
+    <div class="kpi"><b>${s.newCos.length}</b><span>Новых за период</span></div>
+    <div class="kpi"><b>${s.acts.length}</b><span>Активностей за период</span></div>
+    <div class="kpi"><b>${s.stale.length}</b><span>Зависших лидов</span></div>
+    <div class="kpi"><b>${s.tasksOverdue.length+s.actionsPlannedOverdue.length}</b><span>Просрочено задач</span></div>
+  </div>
+  <h2>Воронка по статусам</h2>
+  <table><tr><th>Статус</th><th>Компаний</th></tr>${rows(s.byStatus)}</table>
+  <h2>Приоритеты</h2>
+  <table><tr><th>Приоритет</th><th>Компаний</th></tr>${rows(s.byPrio)}</table>
+  <h2>Активность за период</h2>
+  ${ruActsByType}
+  <h3>Задачи</h3>
+  <ul>
+    <li>Открытых задач: <b>${s.tasksOpen.length}</b></li>
+    <li>Выполнено за период: <b>${s.tasksDoneInPeriod.length}</b></li>
+    <li>Просрочено (задачи): <b>${s.tasksOverdue.length}</b></li>
+    <li>Просрочено (запланированные действия): <b>${s.actionsPlannedOverdue.length}</b></li>
+  </ul>
+  <h2>Зависшие лиды (нет активности ≥ ${STALE_DAYS} дн.)</h2>
+  ${staleList(s.stale)}
+  <h2>Новые компании за период</h2>
+  ${s.newCos.length?`<ul>${s.newCos.slice(0,60).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} (${c.priority||'B'})</li>`).join('')}</ul>`:'<p style="color:#999">Нет</p>'}
+  `;
+
+  const enActsByType = Object.keys(s.actsByType).length ? `<table><tr><th>Type</th><th>Count</th></tr>${rows(s.actsByType)}</table>` : '<p style="color:#999">No activity logged in period</p>';
+  const en = `
+  <h1>Innomatec / LangAn CRM Report</h1>
+  <div class="sub">Period: ${dFromEN} — ${dToEN} · Generated: ${new Date().toLocaleString('en-GB')}</div>
+  <div style="margin:14px 0">
+    <div class="kpi"><b>${s.totalCos}</b><span>Total companies</span></div>
+    <div class="kpi"><b>${s.newCos.length}</b><span>New in period</span></div>
+    <div class="kpi"><b>${s.acts.length}</b><span>Activities in period</span></div>
+    <div class="kpi"><b>${s.stale.length}</b><span>Stale leads</span></div>
+    <div class="kpi"><b>${s.tasksOverdue.length+s.actionsPlannedOverdue.length}</b><span>Overdue tasks</span></div>
+  </div>
+  <h2>Pipeline by status</h2>
+  <table><tr><th>Status</th><th>Companies</th></tr>${rows(s.byStatus)}</table>
+  <h2>Priorities</h2>
+  <table><tr><th>Priority</th><th>Companies</th></tr>${rows(s.byPrio)}</table>
+  <h2>Activity in period</h2>
+  ${enActsByType}
+  <h3>Tasks</h3>
+  <ul>
+    <li>Open tasks: <b>${s.tasksOpen.length}</b></li>
+    <li>Completed in period: <b>${s.tasksDoneInPeriod.length}</b></li>
+    <li>Overdue (tasks): <b>${s.tasksOverdue.length}</b></li>
+    <li>Overdue (planned actions): <b>${s.actionsPlannedOverdue.length}</b></li>
+  </ul>
+  <h2>Stale leads (no activity ≥ ${STALE_DAYS} days)</h2>
+  ${staleListEN(s.stale)}
+  <h2>New companies in period</h2>
+  ${s.newCos.length?`<ul>${s.newCos.slice(0,60).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} (${c.priority||'B'})</li>`).join('')}</ul>`:'<p style="color:#999">None</p>'}
+  `;
+
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>${css}</style></head><body>${ru}<hr class="hr">${en}</body></html>`;
+}
+
+function exportReportWord(data, fromISO){
+  const h = buildReportHTML(data, fromISO);
+  const b = new Blob(['\ufeff'+h],{type:'application/msword'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(b);
+  a.download = `crm_report_${new Date().toISOString().slice(0,10)}.doc`;
+  a.click();
+}
 
 
 

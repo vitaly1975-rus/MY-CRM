@@ -429,6 +429,8 @@ body{font-family:'Geist',-apple-system,sans-serif;font-size:14px;background:var(
 .frow{flex-direction:column;gap:0}
 .ph,.filters,.kanban,.stats{padding-left:12px;padding-right:12px}
 .remote-banner{font-size:11px;padding:5px 12px}
+.co-toolbar{width:100%}
+.co-toolbar .btn{flex:1 1 auto;justify-content:center;padding:7px 4px;font-size:11.5px;white-space:nowrap}
 }
 
 
@@ -983,7 +985,7 @@ function App() {
 
       <div className="tb-row1">
 
-        <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v23</span></div>
+        <div className="brand">Innomatec / LangAn<span className="brand-s">CRM · v25</span></div>
 
         <div className="sep"/>
 
@@ -1589,9 +1591,10 @@ function Companies({data,upd,onSel,bang,activeTagFilter,activeTagIds,setActiveTa
 
       </div>
 
-      <div style={{display:'flex',gap:8}}>
-        <button className="btn btn-g" onClick={()=>setShowDups(true)} title="Найти дубли компаний в базе"><I n="copy" s={14}/> Найти дубли</button>
-        <button className="btn btn-p" onClick={()=>setShowNew(true)}><I n="plus" s={14}/> Добавить компанию</button>
+      <div style={{display:'flex',gap:8,flexWrap:'wrap'}} className="co-toolbar">
+        <button className="btn btn-g" onClick={()=>exportCompaniesXLS(list,data)} title="Экспорт отфильтрованного списка компаний в Excel"><I n="xlsx" s={14}/><span>Экспорт в Excel</span></button>
+        <button className="btn btn-g" onClick={()=>setShowDups(true)} title="Найти дубли компаний в базе"><I n="copy" s={14}/><span>Найти дубли</span></button>
+        <button className="btn btn-p" onClick={()=>setShowNew(true)}><I n="plus" s={14}/><span>Добавить компанию</span></button>
       </div>
 
     </div>
@@ -2036,7 +2039,7 @@ function CoPanel({co,data,upd,bang,onClose,onContact,onDeal,onProject,onOpenActi
 
     const id=nid(data.contacts);
 
-    upd(p=>({...p,contacts:[{id,companyIds:[co.id],name:cd.name||'',position:cd.position||'',phones:cd.phone?[cd.phone]:[],emails:cd.email?[cd.email]:[],telegram:'',whatsapp:'',notes:'',createdAt:now()},...p.contacts]}));
+    upd(p=>({...p,contacts:[{id,companyIds:[co.id],name:cd.name||'',position:cd.position||'',phones:cd.phones||[],emails:cd.emails||[],telegram:'',whatsapp:'',notes:'',createdAt:now()},...p.contacts]}));
 
     bang('Контакт добавлен');
 
@@ -2512,7 +2515,7 @@ function ContactsSearch({data,onSel,upd,bang}) {
 
   },[data.contacts,q]);
 
-  const create=cd=>{const id=nid(data.contacts);upd(p=>({...p,contacts:[{id,companyIds:[],name:cd.name||'',position:cd.position||'',phones:cd.phone?[cd.phone]:[],emails:cd.email?[cd.email]:[],telegram:'',whatsapp:'',notes:'',createdAt:now()},...p.contacts]}));setShowNew(false);bang('Контакт добавлен');};
+  const create=cd=>{const id=nid(data.contacts);upd(p=>({...p,contacts:[{id,companyIds:[],name:cd.name||'',position:cd.position||'',phones:cd.phones||[],emails:cd.emails||[],telegram:'',whatsapp:'',notes:'',createdAt:now()},...p.contacts]}));setShowNew(false);bang('Контакт добавлен');};
 
   return <>
 
@@ -3992,7 +3995,7 @@ function ReportModal({data, onClose, bang}){
       </div>
 
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(120px,1fr))',gap:8,marginBottom:16}}>
-        {[['Всего компаний',stats.totalCos],['Новых за период',stats.newCos.length],['Активностей',stats.acts.length],['Зависших лидов',stats.stale.length],['Просрочено задач',stats.tasksOverdue.length+stats.actionsPlannedOverdue.length],['Открытых задач',stats.tasksOpen.length]].map(([l,v])=>(
+        {[['Всего событий',stats.totalEvents],['Действий выполнено',stats.acts.length],['Новых сделок',stats.newDeals.length],['Новых проектов',stats.newProjects.length]].map(([l,v])=>(
           <div key={l} style={{border:'1px solid var(--border)',borderRadius:'var(--rm)',padding:'10px 12px',background:'var(--bg-card)'}}>
             <div style={{fontSize:22,fontWeight:600,color:'#005DAA',lineHeight:1}}>{v}</div>
             <div style={{fontSize:11,color:'var(--mu)',marginTop:4}}>{l}</div>
@@ -4001,7 +4004,7 @@ function ReportModal({data, onClose, bang}){
       </div>
 
       <div style={{fontSize:12.5,color:'var(--mu)',lineHeight:1.6,marginBottom:16}}>
-        Отчёт включает: воронку по статусам, распределение приоритетов A/B/C, активность по типам, открытые и просроченные задачи, список зависших лидов и новые компании за период. Файл .doc содержит обе версии — русскую и английскую.
+        Отчёт показывает только то, что вы сделали за выбранный период: выполненные действия (звонки/встречи/письма/заметки), новые и изменённые сделки, новые проекты, новые компании и контакты. Файл .doc содержит обе версии — русскую и английскую.
       </div>
 
       <div className="df" style={{flexWrap:'wrap',gap:8}}>
@@ -4110,36 +4113,42 @@ const b=new Blob(['\ufeff'+h],{type:'application/msword'});const a=document.crea
 
 
 
-/* ══ Двухнедельный отчёт (RU/EN) ══ */
-// Сбор метрик за период [fromISO .. nowISO]
+/* ══ Отчёт по активности (что сделано за период) ══ */
+const ACT_TYPE_LABELS_RU = {call:'Звонок',meeting:'Встреча',email:'Письмо',note:'Заметка'};
+const ACT_TYPE_LABELS_EN = {call:'Call',meeting:'Meeting',email:'Email',note:'Note'};
+
+// Сбор данных об активности пользователя за период [fromISO .. nowISO]
 function computeReportStats(data, fromISO){
   const from = fromISO ? new Date(fromISO).getTime() : 0;
   const inPeriod = iso => iso && new Date(iso).getTime() >= from;
   const cos = data.companies||[];
-  // По статусам
-  const byStatus = {};
-  CO_ST.forEach(s=>byStatus[s]=0);
-  cos.forEach(c=>{ const s=c.status||'Лид'; byStatus[s]=(byStatus[s]||0)+1; });
-  // По приоритету
-  const byPrio = {A:0,B:0,C:0};
-  cos.forEach(c=>{ const p=c.priority||'B'; if(byPrio[p]!=null) byPrio[p]++; });
-  // Новые компании за период
+  const coById = {};
+  cos.forEach(c=>coById[c.id]=c);
+  const coName = id => coById[id]?.name || '—';
+
+  // Новые компании, добавленные в CRM за период
   const newCos = cos.filter(c=>inPeriod(c.createdAt));
-  // Активность за период
-  const acts = (data.actions||[]).filter(a=>inPeriod(a.date||a.createdAt));
-  const actsByType = {};
-  acts.forEach(a=>{ actsByType[a.type]=(actsByType[a.type]||0)+1; });
-  // Задачи
-  const tasksOpen = (data.tasks||[]).filter(t=>!t.completed);
-  const tasksDoneInPeriod = (data.tasks||[]).filter(t=>t.completed && inPeriod(t.completedAt||t.createdAt));
-  const tasksOverdue = tasksOpen.filter(t=>t.deadline && isPast(t.deadline));
-  const actionsPlannedOverdue = (data.actions||[]).filter(a=>a.planned && a.plannedDate && isPast(a.plannedDate));
-  // Зависшие лиды
-  const stale = cos.filter(c=>isStale(c,data));
-  // Сделки
-  const deals = data.deals||[];
-  const dealsSum = deals.reduce((s,d)=>s+(d.amount||0),0);
-  return {byStatus,byPrio,newCos,acts,actsByType,tasksOpen,tasksDoneInPeriod,tasksOverdue,actionsPlannedOverdue,stale,deals,dealsSum,totalCos:cos.length};
+
+  // Выполненные/зафиксированные действия (звонки, встречи, письма, заметки) за период
+  const acts = (data.actions||[]).filter(a=>!a.planned && inPeriod(a.date||a.createdAt));
+
+  // Новые задачи/действия, запланированные в этот период (на будущее)
+  const plannedAdded = (data.actions||[]).filter(a=>a.planned && inPeriod(a.createdAt));
+
+  // Сделки, созданные за период
+  const newDeals = (data.deals||[]).filter(d=>inPeriod(d.createdAt));
+  // Сделки, обновлённые за период (но созданные раньше) — учитываем по updatedAt, если есть
+  const updatedDeals = (data.deals||[]).filter(d=>d.updatedAt && inPeriod(d.updatedAt) && !inPeriod(d.createdAt));
+
+  // Проекты, созданные за период
+  const newProjects = (data.projects||[]).filter(p=>inPeriod(p.createdAt));
+
+  // Новые контакты за период
+  const newContacts = (data.contacts||[]).filter(c=>inPeriod(c.createdAt));
+
+  const totalEvents = acts.length + newDeals.length + updatedDeals.length + newProjects.length + plannedAdded.length;
+
+  return {newCos, acts, plannedAdded, newDeals, updatedDeals, newProjects, newContacts, totalEvents, coName, totalCos:cos.length};
 }
 
 function buildReportHTML(data, fromISO){
@@ -4148,69 +4157,103 @@ function buildReportHTML(data, fromISO){
   const dFromEN = fromISO ? new Date(fromISO).toLocaleDateString('en-GB') : '—';
   const dTo = new Date().toLocaleDateString('ru-RU');
   const dToEN = new Date().toLocaleDateString('en-GB');
-  const rows = obj => Object.entries(obj).filter(([k,v])=>v>0).map(([k,v])=>`<tr><td>${k}</td><td style="text-align:right">${v}</td></tr>`).join('') || '<tr><td colspan="2" style="color:#999">—</td></tr>';
-  const staleList = arr => arr.length ? `<ul>${arr.slice(0,40).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} — ${daysSince(lastActivity(c,data))} дн. без активности (${c.status||'Лид'}, ${c.priority||'B'})</li>`).join('')}${arr.length>40?`<li>… и ещё ${arr.length-40}</li>`:''}</ul>` : '<p style="color:#999">Нет</p>';
-  const staleListEN = arr => arr.length ? `<ul>${arr.slice(0,40).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} — ${daysSince(lastActivity(c,data))} days idle (${c.status||'Lead'}, ${c.priority||'B'})</li>`).join('')}${arr.length>40?`<li>… and ${arr.length-40} more</li>`:''}</ul>` : '<p style="color:#999">None</p>';
-  const css = `body{font-family:Arial,sans-serif;margin:36px;font-size:12.5px;color:#1a1917}h1{font-size:22px;margin:0 0 2px}h2{font-size:15px;margin:22px 0 8px;border-bottom:2px solid #005DAA;padding-bottom:3px;color:#005DAA}h3{font-size:13px;margin:16px 0 6px;color:#00A7C8}.sub{color:#666;font-size:11px;margin-bottom:4px}table{border-collapse:collapse;width:60%;margin:6px 0}td{border:1px solid #ddd;padding:4px 9px}th{background:#f0f4f8;border:1px solid #ddd;padding:4px 9px;text-align:left}.kpi{display:inline-block;border:1px solid #ddd;border-radius:6px;padding:8px 14px;margin:4px 8px 4px 0;min-width:90px}.kpi b{display:block;font-size:22px;color:#005DAA}.kpi span{font-size:11px;color:#666}ul{margin:4px 0;padding-left:20px}li{margin:2px 0}.hr{border:none;border-top:3px double #005DAA;margin:34px 0}`;
-  const ruActsByType = Object.keys(s.actsByType).length ? `<table><tr><th>Тип</th><th>Кол-во</th></tr>${rows(s.actsByType)}</table>` : '<p style="color:#999">Активностей за период не зафиксировано</p>';
+  const css = `body{font-family:Arial,sans-serif;margin:36px;font-size:12.5px;color:#1a1917}h1{font-size:22px;margin:0 0 2px}h2{font-size:15px;margin:22px 0 8px;border-bottom:2px solid #005DAA;padding-bottom:3px;color:#005DAA}h3{font-size:13px;margin:16px 0 6px;color:#00A7C8}.sub{color:#666;font-size:11px;margin-bottom:4px}table{border-collapse:collapse;width:100%;margin:6px 0}td{border:1px solid #ddd;padding:4px 9px}th{background:#f0f4f8;border:1px solid #ddd;padding:4px 9px;text-align:left}.kpi{display:inline-block;border:1px solid #ddd;border-radius:6px;padding:8px 14px;margin:4px 8px 4px 0;min-width:90px}.kpi b{display:block;font-size:22px;color:#005DAA}.kpi span{font-size:11px;color:#666}ul{margin:4px 0;padding-left:20px}li{margin:2px 0}.hr{border:none;border-top:3px double #005DAA;margin:34px 0}.empty{color:#999}`;
+
+  const fmtRU = iso => iso ? new Date(iso).toLocaleDateString('ru-RU') : '';
+  const fmtEN = iso => iso ? new Date(iso).toLocaleDateString('en-GB') : '';
+
+  // ---- RU ----
+  const actsListRU = s.acts.length
+    ? `<table><tr><th>Дата</th><th>Компания</th><th>Тип</th><th>Содержание</th></tr>${s.acts.map(a=>`<tr><td>${fmtRU(a.date||a.createdAt)}</td><td>${s.coName(a.companyId)}</td><td>${ACT_TYPE_LABELS_RU[a.type]||a.type||'—'}</td><td>${(a.content||'').replace(/\n/g,'<br>')}</td></tr>`).join('')}</table>`
+    : '<p class="empty">Действий не зафиксировано</p>';
+
+  const plannedListRU = s.plannedAdded.length
+    ? `<ul>${s.plannedAdded.map(a=>`<li>${s.coName(a.companyId)} — ${ACT_TYPE_LABELS_RU[a.type]||a.type||'—'}${a.plannedDate?', запланировано на '+fmtRU(a.plannedDate):''}${a.content?': '+a.content:''}</li>`).join('')}</ul>`
+    : '<p class="empty">Нет</p>';
+
+  const newDealsListRU = s.newDeals.length
+    ? `<ul>${s.newDeals.map(d=>`<li>${d.title} — ${s.coName(d.companyId)} (этап: ${d.stage||'Запрос'}${d.amount?', '+d.amount.toLocaleString('ru-RU')+' ₽':''})</li>`).join('')}</ul>`
+    : '<p class="empty">Нет</p>';
+
+  const updatedDealsListRU = s.updatedDeals.length
+    ? `<ul>${s.updatedDeals.map(d=>`<li>${d.title} — ${s.coName(d.companyId)} (текущий этап: ${d.stage||'Запрос'})</li>`).join('')}</ul>`
+    : '<p class="empty">Нет</p>';
+
+  const newProjectsListRU = s.newProjects.length
+    ? `<ul>${s.newProjects.map(p=>`<li>${p.title} — ${s.coName(p.companyId)} (этап: ${p.stage||'Новый'})</li>`).join('')}</ul>`
+    : '<p class="empty">Нет</p>';
 
   const ru = `
-  <h1>Отчёт по CRM Innomatec / LangAn</h1>
+  <h1>Отчёт по работе в CRM Innomatec / LangAn</h1>
   <div class="sub">Период: ${dFrom} — ${dTo} · Сформировано: ${new Date().toLocaleString('ru-RU')}</div>
   <div style="margin:14px 0">
-    <div class="kpi"><b>${s.totalCos}</b><span>Всего компаний</span></div>
-    <div class="kpi"><b>${s.newCos.length}</b><span>Новых за период</span></div>
-    <div class="kpi"><b>${s.acts.length}</b><span>Активностей за период</span></div>
-    <div class="kpi"><b>${s.stale.length}</b><span>Зависших лидов</span></div>
-    <div class="kpi"><b>${s.tasksOverdue.length+s.actionsPlannedOverdue.length}</b><span>Просрочено задач</span></div>
+    <div class="kpi"><b>${s.totalEvents}</b><span>Всего событий</span></div>
+    <div class="kpi"><b>${s.acts.length}</b><span>Действий выполнено</span></div>
+    <div class="kpi"><b>${s.newDeals.length}</b><span>Новых сделок</span></div>
+    <div class="kpi"><b>${s.newProjects.length}</b><span>Новых проектов</span></div>
   </div>
-  <h2>Воронка по статусам</h2>
-  <table><tr><th>Статус</th><th>Компаний</th></tr>${rows(s.byStatus)}</table>
-  <h2>Приоритеты</h2>
-  <table><tr><th>Приоритет</th><th>Компаний</th></tr>${rows(s.byPrio)}</table>
-  <h2>Активность за период</h2>
-  ${ruActsByType}
-  <h3>Задачи</h3>
-  <ul>
-    <li>Открытых задач: <b>${s.tasksOpen.length}</b></li>
-    <li>Выполнено за период: <b>${s.tasksDoneInPeriod.length}</b></li>
-    <li>Просрочено (задачи): <b>${s.tasksOverdue.length}</b></li>
-    <li>Просрочено (запланированные действия): <b>${s.actionsPlannedOverdue.length}</b></li>
-  </ul>
-  <h2>Зависшие лиды (нет активности ≥ ${STALE_DAYS} дн.)</h2>
-  ${staleList(s.stale)}
-  <h2>Новые компании за период</h2>
-  ${s.newCos.length?`<ul>${s.newCos.slice(0,60).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} (${c.priority||'B'})</li>`).join('')}</ul>`:'<p style="color:#999">Нет</p>'}
+
+  <h2>Выполненные действия (звонки, встречи, письма, заметки)</h2>
+  ${actsListRU}
+
+  <h2>Новые сделки</h2>
+  ${newDealsListRU}
+
+  <h3>Изменённые сделки (созданные ранее)</h3>
+  ${updatedDealsListRU}
+
+  <h2>Новые проекты</h2>
+  ${newProjectsListRU}
+
+  <h2>Запланированные действия (добавлены за период)</h2>
+  ${plannedListRU}
   `;
 
-  const enActsByType = Object.keys(s.actsByType).length ? `<table><tr><th>Type</th><th>Count</th></tr>${rows(s.actsByType)}</table>` : '<p style="color:#999">No activity logged in period</p>';
+  // ---- EN ----
+  const actsListEN = s.acts.length
+    ? `<table><tr><th>Date</th><th>Company</th><th>Type</th><th>Notes</th></tr>${s.acts.map(a=>`<tr><td>${fmtEN(a.date||a.createdAt)}</td><td>${s.coName(a.companyId)}</td><td>${ACT_TYPE_LABELS_EN[a.type]||a.type||'—'}</td><td>${(a.content||'').replace(/\n/g,'<br>')}</td></tr>`).join('')}</table>`
+    : '<p class="empty">No activities logged</p>';
+
+  const plannedListEN = s.plannedAdded.length
+    ? `<ul>${s.plannedAdded.map(a=>`<li>${s.coName(a.companyId)} — ${ACT_TYPE_LABELS_EN[a.type]||a.type||'—'}${a.plannedDate?', scheduled for '+fmtEN(a.plannedDate):''}${a.content?': '+a.content:''}</li>`).join('')}</ul>`
+    : '<p class="empty">None</p>';
+
+  const newDealsListEN = s.newDeals.length
+    ? `<ul>${s.newDeals.map(d=>`<li>${d.title} — ${s.coName(d.companyId)} (stage: ${d.stage||'Request'}${d.amount?', '+d.amount.toLocaleString('en-US')+' RUB':''})</li>`).join('')}</ul>`
+    : '<p class="empty">None</p>';
+
+  const updatedDealsListEN = s.updatedDeals.length
+    ? `<ul>${s.updatedDeals.map(d=>`<li>${d.title} — ${s.coName(d.companyId)} (current stage: ${d.stage||'Request'})</li>`).join('')}</ul>`
+    : '<p class="empty">None</p>';
+
+  const newProjectsListEN = s.newProjects.length
+    ? `<ul>${s.newProjects.map(p=>`<li>${p.title} — ${s.coName(p.companyId)} (stage: ${p.stage||'New'})</li>`).join('')}</ul>`
+    : '<p class="empty">None</p>';
+
   const en = `
-  <h1>Innomatec / LangAn CRM Report</h1>
+  <h1>Innomatec / LangAn CRM — Work Report</h1>
   <div class="sub">Period: ${dFromEN} — ${dToEN} · Generated: ${new Date().toLocaleString('en-GB')}</div>
   <div style="margin:14px 0">
-    <div class="kpi"><b>${s.totalCos}</b><span>Total companies</span></div>
-    <div class="kpi"><b>${s.newCos.length}</b><span>New in period</span></div>
-    <div class="kpi"><b>${s.acts.length}</b><span>Activities in period</span></div>
-    <div class="kpi"><b>${s.stale.length}</b><span>Stale leads</span></div>
-    <div class="kpi"><b>${s.tasksOverdue.length+s.actionsPlannedOverdue.length}</b><span>Overdue tasks</span></div>
+    <div class="kpi"><b>${s.totalEvents}</b><span>Total events</span></div>
+    <div class="kpi"><b>${s.acts.length}</b><span>Activities logged</span></div>
+    <div class="kpi"><b>${s.newDeals.length}</b><span>New deals</span></div>
+    <div class="kpi"><b>${s.newProjects.length}</b><span>New projects</span></div>
   </div>
-  <h2>Pipeline by status</h2>
-  <table><tr><th>Status</th><th>Companies</th></tr>${rows(s.byStatus)}</table>
-  <h2>Priorities</h2>
-  <table><tr><th>Priority</th><th>Companies</th></tr>${rows(s.byPrio)}</table>
-  <h2>Activity in period</h2>
-  ${enActsByType}
-  <h3>Tasks</h3>
-  <ul>
-    <li>Open tasks: <b>${s.tasksOpen.length}</b></li>
-    <li>Completed in period: <b>${s.tasksDoneInPeriod.length}</b></li>
-    <li>Overdue (tasks): <b>${s.tasksOverdue.length}</b></li>
-    <li>Overdue (planned actions): <b>${s.actionsPlannedOverdue.length}</b></li>
-  </ul>
-  <h2>Stale leads (no activity ≥ ${STALE_DAYS} days)</h2>
-  ${staleListEN(s.stale)}
-  <h2>New companies in period</h2>
-  ${s.newCos.length?`<ul>${s.newCos.slice(0,60).map(c=>`<li>${c.name}${c.city?' · '+c.city:''} (${c.priority||'B'})</li>`).join('')}</ul>`:'<p style="color:#999">None</p>'}
+
+  <h2>Activities completed (calls, meetings, emails, notes)</h2>
+  ${actsListEN}
+
+  <h2>New deals</h2>
+  ${newDealsListEN}
+
+  <h3>Updated deals (created earlier)</h3>
+  ${updatedDealsListEN}
+
+  <h2>New projects</h2>
+  ${newProjectsListEN}
+
+  <h2>Planned actions (added in period)</h2>
+  ${plannedListEN}
   `;
 
   return `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>${css}</style></head><body>${ru}<hr class="hr">${en}</body></html>`;
@@ -4222,6 +4265,47 @@ function exportReportWord(data, fromISO){
   const a = document.createElement('a');
   a.href = URL.createObjectURL(b);
   a.download = `crm_report_${new Date().toISOString().slice(0,10)}.doc`;
+  a.click();
+}
+
+/* ══ Экспорт отфильтрованных компаний в Excel ══ */
+function esc(v){
+  return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function exportCompaniesXLS(companies, data){
+  if(!companies.length){ alert('Список компаний пуст — измените фильтры.'); return; }
+  const head = ['Компания','Сайт','Телефон компании','Город','Регион','Адрес','Чем занимается','Отрасли','Статус','Приоритет','Контакт','Должность','Email','Телефон'];
+  const rows = [];
+  companies.forEach(c=>{
+    const inds = (c.industries||[c.industry]).filter(Boolean).join(', ');
+    const region = c.region || cityToRegion(c.city) || '';
+    const contacts = (data.contacts||[]).filter(ct=>(ct.companyIds||[]).includes(c.id));
+    const base = [c.name, c.website||'', c.phone||'', c.city||'', region, c.address||'', c.description||'', inds, c.status||'Лид', c.priority||'B'];
+    if(contacts.length===0){
+      rows.push([...base,'','','','']);
+    } else {
+      contacts.forEach((ct,i)=>{
+        const r = i===0 ? base : ['','','','','','','','','','']; // повторять данные компании только в первой строке
+        rows.push([...r, ct.name||'', ct.position||'', (ct.emails||[]).join('; '), (ct.phones||[]).join('; ')]);
+      });
+    }
+  });
+  // индекс колонки "Сайт" (для гиперссылок)
+  const siteCol = head.indexOf('Сайт');
+  const thead = `<tr>${head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr>`;
+  const tbody = rows.map(r=>`<tr>${r.map((v,i)=>{
+    if(i===siteCol && v){
+      const url = /^https?:\/\//i.test(v) ? v : `https://${v}`;
+      return `<td><a href="${esc(url)}">${esc(v)}</a></td>`;
+    }
+    return `<td>${esc(v)}</td>`;
+  }).join('')}</tr>`).join('');
+  const css = `table{border-collapse:collapse;font-family:Calibri,Arial,sans-serif;font-size:12px}th,td{border:1px solid #ccc;padding:4px 8px;text-align:left;vertical-align:top}th{background:#005DAA;color:#fff;font-weight:600}a{color:#005DAA;text-decoration:underline}`;
+  const html = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Компании</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><style>${css}</style></head><body><table>${thead}${tbody}</table></body></html>`;
+  const blob = new Blob(['\ufeff'+html],{type:'application/vnd.ms-excel'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `companies_export_${new Date().toISOString().slice(0,10)}.xls`;
   a.click();
 }
 
@@ -4241,7 +4325,32 @@ return <div><div className="fdrop" onClick={()=>ref.current?.click()} onDragOver
 
 /* ══ New forms ══ */
 
-function NewContactForm({companyName,onClose,onSave}){const [f,setF]=useState({name:'',position:'',phone:'',email:''});const ok=()=>{if(!f.name.trim()){alert('Введите имя');return;}onSave(f);};return <Dlg onClose={onClose} title={`Новый контакт${companyName?` · ${companyName}`:''}`}><F l="ФИО / Имя *"><input className="inp" autoFocus value={f.name} onChange={e=>setF({...f,name:e.target.value})} placeholder="Иванов Иван Иванович"/></F><F l="Должность"><input className="inp" value={f.position} onChange={e=>setF({...f,position:e.target.value})} placeholder="Главный инженер"/></F><div className="frow"><F l="Телефон"><input className="inp" value={f.phone} onChange={e=>setF({...f,phone:e.target.value})} placeholder="+7 ..."/></F><F l="Email"><input className="inp" type="email" value={f.email} onChange={e=>setF({...f,email:e.target.value})} placeholder="i@example.ru"/></F></div><div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> Создать</button></div></Dlg>;}
+function NewContactForm({companyName,onClose,onSave}){
+  const [f,setF]=useState({name:'',position:'',phones:[''],emails:['']});
+  const ok=()=>{
+    if(!f.name.trim()){alert('Введите имя');return;}
+    onSave({...f,phones:f.phones.filter(p=>p?.trim()),emails:f.emails.filter(e=>e?.trim())});
+  };
+  return <Dlg onClose={onClose} title={`Новый контакт${companyName?` · ${companyName}`:''}`}>
+    <F l="ФИО / Имя *"><input className="inp" autoFocus value={f.name} onChange={e=>setF({...f,name:e.target.value})} placeholder="Иванов Иван Иванович"/></F>
+    <F l="Должность"><input className="inp" value={f.position} onChange={e=>setF({...f,position:e.target.value})} placeholder="Главный инженер"/></F>
+    <F l="Телефоны">
+      {f.phones.map((p,i)=><div key={i} style={{display:'flex',gap:5,marginBottom:4}}>
+        <input className="inp" value={p} onChange={e=>{const a=[...f.phones];a[i]=e.target.value;setF({...f,phones:a});}} placeholder="+7 ..."/>
+        {f.phones.length>1&&<button className="btn btn-g btn-ic" onClick={()=>setF({...f,phones:f.phones.filter((_,j)=>j!==i)})}><I n="x" s={13}/></button>}
+      </div>)}
+      <button className="btn btn-g btn-sm" onClick={()=>setF({...f,phones:[...f.phones,'']})}>+ Ещё телефон</button>
+    </F>
+    <F l="Email">
+      {f.emails.map((e,i)=><div key={i} style={{display:'flex',gap:5,marginBottom:4}}>
+        <input className="inp" type="email" value={e} onChange={ev=>{const a=[...f.emails];a[i]=ev.target.value;setF({...f,emails:a});}} placeholder="i@example.ru"/>
+        {f.emails.length>1&&<button className="btn btn-g btn-ic" onClick={()=>setF({...f,emails:f.emails.filter((_,j)=>j!==i)})}><I n="x" s={13}/></button>}
+      </div>)}
+      <button className="btn btn-g btn-sm" onClick={()=>setF({...f,emails:[...f.emails,'']})}>+ Ещё email</button>
+    </F>
+    <div className="df"><button className="btn btn-g" onClick={onClose}>Отмена</button><button className="btn btn-p" onClick={ok}><I n="save" s={13}/> Создать</button></div>
+  </Dlg>;
+}
 
 
 
